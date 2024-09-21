@@ -1,0 +1,5 @@
+use plantquest_back;
+
+insert into plantas (abono, caracteristicas, humedad, iluminacion, image_path, localización, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
+values ("según el fabricante y humus de lombriz", "sarán de crecer.Además de todo lo anterior, ¡purifica el aire!", "entre -2 y 25ºC", "luz indirecta o semisombra",
+        "https://unsplash.com/photos/green-leaf-plant-in-pot-Si8rYoK5tf0", "exterior", "cinta", "malamadre", "cuando el sustrato esté seco", "media/baja", "no");

@@ -12,5 +12,4 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public class Admin extends Usuario{
 
-    //lista de plantas
 }
