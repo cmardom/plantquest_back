@@ -12,25 +12,30 @@ public class PlantaService {
     @Autowired
     private PlantaRepository plantaRepository;
 
-    public List<Planta> all(){
-        return plantaRepository.findAll();
-    }
-    public Planta create(Planta planta) {
-        return plantaRepository.save(planta);
-    }
-    public Planta update (Long id, Planta planta){
-        return plantaRepository.findById(id).map(p-> (id.equals(planta.getID())?
-                plantaRepository.save(planta) : planta)).orElse(null);
-    }
-    public void delete(Planta planta) {
-        plantaRepository.delete(planta);
-    }
+    public List<Planta> all(){return plantaRepository.findAll();}
 
-
-    public Planta findById(Long id){
+    public Planta one(Long id){
         return plantaRepository.findById(id).get();
     }
 
+    public Planta save(Planta planta) {
+        return plantaRepository.save(planta);
+    }
+
+    public void delete(Long id) {
+        plantaRepository.findById(id).map(p ->
+            {plantaRepository.delete(p); return p;}).orElseThrow(() -> new RuntimeException("Planta no encontrada"));
+
+    }
+
+    public Planta replace (Long id, Planta planta){
+        return plantaRepository.findById(id).map(p-> (id.equals(planta.getID())?
+                plantaRepository.save(planta) : planta)).orElseThrow(() -> new RuntimeException("Planta no encontrada"));
+    }
+
+
+
+    //cambiar para que busque por los nombres coloquial y cientifico
     public Planta findByName(String name){
         return plantaRepository.findByNombre(name);
     }
