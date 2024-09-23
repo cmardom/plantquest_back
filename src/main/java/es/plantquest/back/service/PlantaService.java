@@ -35,10 +35,8 @@ public class PlantaService {
 
 
 
-    //cambiar para que busque por los nombres coloquial y cientifico
-    public Planta findByName(String name){
-        return plantaRepository.findByNombre(name);
-    }
+    //metodo para busccar por los dos nombres O todos los textos
+
 
 
 }
