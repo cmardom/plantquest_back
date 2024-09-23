@@ -2,7 +2,6 @@ package es.plantquest.back.controller;
 
 
 import es.plantquest.back.domain.Planta;
-import es.plantquest.back.domain.Usuario;
 import es.plantquest.back.service.PlantaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
