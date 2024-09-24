@@ -1,5 +1,12 @@
 use plantquest_back;
+-- Insertar una nueva planta
+INSERT INTO plantas (nombre_comun, nombre_cientifico, humedad, iluminacion, toxicidad)
+VALUES ('Rosa', 'Rosa rubiginosa', 'Alta', 'Sol directo', 'Leve');
 
-insert into plantas (abono, caracteristicas, humedad, iluminacion, image_path, localización, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
-values ("según el fabricante y humus de lombriz", "sarán de crecer.Además de todo lo anterior, ¡purifica el aire!", "entre -2 y 25ºC", "luz indirecta o semisombra",
-        "https://unsplash.com/photos/green-leaf-plant-in-pot-Si8rYoK5tf0", "exterior", "cinta", "malamadre", "cuando el sustrato esté seco", "media/baja", "no");
+-- Insertar otra planta con más detalles
+INSERT INTO plantas (nombre_comun, nombre_cientifico, caracteristicas, image_path, localización, riego, temperatura)
+VALUES ('Cactus', 'Opuntia microdasys', 'Planta suculenta con espinas pequeñas', '/imagenes/cactus.jpg', 'Interior', 'Esporádico', 'Cálido');
+
+-- Insertar una última planta, especificando todos los campos
+INSERT INTO plantas (abono, caracteristicas, humedad, iluminacion, image_path, localización, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
+VALUES ('Orgánico mensual', 'Arbusto con flores blancas', 'Media', 'Sombra parcial', '/imagenes/arbusto.jpg', 'Exterior', 'Gardenia jasminoides', 'Gardenia', 'Regular', 'Templado', 'No');
