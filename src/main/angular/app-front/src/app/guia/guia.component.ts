@@ -1,18 +1,21 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Provider} from '@angular/core';
 import {HeaderComponent} from "../header/header.component";
 import {RouterOutlet} from "@angular/router";
 import {Planta} from "../interfaces/planta-interface";
 import {PlantaService} from "../services/planta.service";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-guia',
   standalone: true,
   imports: [
     HeaderComponent,
-    RouterOutlet
+    RouterOutlet,
+    NgForOf
   ],
   templateUrl: './guia.component.html',
-  styleUrl: './guia.component.scss'
+  styleUrl: './guia.component.scss',
+  providers: [PlantaService]
 })
 export class GuiaComponent implements OnInit{
 

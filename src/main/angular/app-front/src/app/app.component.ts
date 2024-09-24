@@ -12,6 +12,8 @@ import {LandingComponent} from "./landing/landing.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
+
 export class AppComponent {
   title = 'app-front';
 }

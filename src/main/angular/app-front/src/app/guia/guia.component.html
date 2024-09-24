@@ -1,11 +1,5 @@
 <div class="container-fluid">
   <div *ngIf="isLoading">Cargando...</div>
-  <ul *ngIf="!isLoading">
-    <li *ngFor="let planta of plantas">
-      {{ planta.nombre }} - {{ planta.descripcion }}
-    </li>
-  </ul>
-
   <div *ngIf="!isLoading" class="row cartas">
     <h3>Guía botánica</h3>
     <p>Explora nuestra recopilación de plantas y añade las que más te gusten a tus listas.</p>
