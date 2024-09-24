@@ -1,9 +1,10 @@
-import {Component, OnInit, Provider} from '@angular/core';
+import {Component, NgModule, OnInit, Provider} from '@angular/core';
 import {HeaderComponent} from "../header/header.component";
 import {RouterOutlet} from "@angular/router";
 import {Planta} from "../interfaces/planta-interface";
 import {PlantaService} from "../services/planta.service";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
+
 
 @Component({
   selector: 'app-guia',
@@ -11,7 +12,8 @@ import {NgForOf} from "@angular/common";
   imports: [
     HeaderComponent,
     RouterOutlet,
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './guia.component.html',
   styleUrl: './guia.component.scss',
@@ -22,8 +24,6 @@ export class GuiaComponent implements OnInit{
   plantas: Planta[] = [];
   isLoading = false;
 
-  constructor(private plantaService: PlantaService) {  }
-
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -33,4 +33,10 @@ export class GuiaComponent implements OnInit{
         this.isLoading = false;
       });
   }
+
+  constructor(private plantaService: PlantaService) {  }
+
+
 }
+
+
