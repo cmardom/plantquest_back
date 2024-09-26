@@ -1,21 +1,23 @@
 <div class="container-fluid">
   <div *ngIf="isLoading">Cargando...</div>
-  <div *ngIf="!isLoading" class="row cartas">
+  <div *ngIf="!isLoading" class="row p-4">
     <h3>Guía botánica</h3>
     <p>Explora nuestra recopilación de plantas y añade las que más te gusten a tus listas.</p>
 
-
-    <div class="col-sm-6">
-      <div *ngFor="let planta of plantas" class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ planta.nombre_comun }}</h5>
-          <img class="card-img" src="assets/logo.png">
-          <p class="card-text">{{ planta.caracteristicas }}</p>
-          <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
+    <div class="row">
+      <div class="col-sm-6 cartas">
+        <div *ngFor="let planta of plantas" class="card ">
+          <div class="card-body">
+            <h5 class="card-title">{{ planta.nombre_comun }}</h5>
+            <img class="card-img" src="assets/logo.png">
+            <p class="card-text">{{ planta.caracteristicas }}</p>
+            <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
+          </div>
         </div>
       </div>
     </div>
 
+    <br>
   </div>
 
 </div>

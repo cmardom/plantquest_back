@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Planta} from "../interfaces/planta-interface";
+import {environment} from "../../enviroments/enviroment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlantaService {
-  private apiUrl = 'http://localhost:8080/v1/api/plantas';
+  private baseUrl: string = environment.apiUrl;
+  private apiUrl: string =  this.baseUrl + '/plantas';
 
   constructor(private http: HttpClient) { }
 

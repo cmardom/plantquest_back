@@ -1,3 +1,29 @@
 *{
-  font-family: "DM Sans";
+  font-family: "DM Sans", sans-serif;
+}
+
+.botonCustom{
+  font-family: Courier;
+  color: #006F42;
+
+
+}
+.botonCustom:hover{
+  color: #FE6D98;
+}
+
+.cartas{
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    img{
+      width: 10rem;
+    }
+  }
 }
