@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit
 
 
 
-  constructor(private modalService: NgbModal, private usuarioService : UsuarioService) { }
+  constructor(private modalService: NgbModal, private usuarioService : UsuarioService) {
+
+  }
 
   ngOnInit():
     void {
@@ -48,7 +50,7 @@ export class LoginComponent implements OnInit
 
   login() {
 
-    this.usuarioService.login(this.usuario.email).subscribe((data) => {
+    this.usuarioService.login(this.usuario).subscribe((data) => {
       this.usuario.dtype = data.dtype;
       this.usuario.id = data.id;
       this.usuario.email = data.email;
@@ -71,7 +73,7 @@ export class LoginComponent implements OnInit
       rol: ""
     };
 
-    this.usuarioService.login(usuario.email).subscribe({
+    this.usuarioService.login(usuario).subscribe({
       next: (data) => {
         usuario.dtype = data.dtype;
         usuario.id = data.id;

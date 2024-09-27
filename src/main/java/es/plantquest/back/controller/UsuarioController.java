@@ -34,7 +34,7 @@ public class UsuarioController {
         return usuarioService.one(id);
     }
 */
-    @GetMapping("/{id}")
+    @GetMapping("/{email}")
     public Usuario login(@PathVariable("email") String email, @PathVariable("password") String password) {
         return usuarioService.login(email, password);
     }
