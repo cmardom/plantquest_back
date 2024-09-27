@@ -48,8 +48,12 @@ export class LoginComponent implements OnInit
 
   login() {
 
-    this.usuarioService.login(this.usuario).subscribe((data) => {
-      console.log(data);
+    this.usuarioService.login(this.usuario.email).subscribe((data) => {
+      this.usuario.dtype = data.dtype;
+      this.usuario.id = data.id;
+      this.usuario.email = data.email;
+      this.usuario.password = data.password;
+      this.usuario.rol = data.rol;;
     });
   }
 
@@ -67,7 +71,7 @@ export class LoginComponent implements OnInit
       rol: ""
     };
 
-    this.usuarioService.login(usuario).subscribe({
+    this.usuarioService.login(usuario.email).subscribe({
       next: (data) => {
         usuario.dtype = data.dtype;
         usuario.id = data.id;
@@ -81,7 +85,7 @@ export class LoginComponent implements OnInit
       }
     });
 
-    this.login();
+    //this.login();
     console.log(this.usuario);
   }
 

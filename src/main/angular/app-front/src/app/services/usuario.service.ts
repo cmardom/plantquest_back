@@ -13,8 +13,8 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {}
 
-  login(user: Usuario | undefined): Observable<Usuario> {
+  login(email: string): Observable<Usuario> {
     // @ts-ignore
-    return this.http.get(this.apiUrl, user?.id);
+    return this.http.get(this.apiUrl, email);
   }
 }
