@@ -1,27 +1,33 @@
 
 import {Component, OnInit, TemplateRef} from '@angular/core';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, NgForm} from "@angular/forms";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
+import {Usuario} from "../interfaces/usuario";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
 
   ],
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit
 {
-  modal: NgbModalRef | undefined;
-  user = {
-    username: '',
-    password:
-      ''
+  // @ts-ignore
+  usuario: Usuario = {
+    dtype: "",
+    id: undefined,
+    email: "",
+    nombre: "",
+    password: "",
+    rol: ""
   };
+  modal: NgbModalRef | undefined;
+
 
 
   constructor(private modalService: NgbModal, private usuarioService : UsuarioService) { }
@@ -41,15 +47,42 @@ export class LoginComponent implements OnInit
 
 
   login() {
-    const user = { username: this.user.username, password: this.user.password };
-    this.usuarioService.login(user).subscribe((data) => {
+
+    this.usuarioService.login(this.usuario).subscribe((data) => {
       console.log(data);
     });
   }
 
-  onSubmit() {
+  onSubmit(loginForm: NgForm) {
+    if (!loginForm.valid) {
+      return;
+    }
+
+    const usuario: Usuario = {
+      dtype: "",
+      id: -1,
+      email: loginForm.value.email,
+      nombre: "",
+      password: loginForm.value.password,
+      rol: ""
+    };
+
+    this.usuarioService.login(usuario).subscribe({
+      next: (data) => {
+        usuario.dtype = data.dtype;
+        usuario.id = data.id;
+        usuario.email = data.email;
+        usuario.password = data.password;
+        usuario.rol = data.rol;
+      },
+      error: (error) => {
+
+        console.error(error);
+      }
+    });
+
     this.login();
-    console.log(this.user);
+    console.log(this.usuario);
   }
 
 

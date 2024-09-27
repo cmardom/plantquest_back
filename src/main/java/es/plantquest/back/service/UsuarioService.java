@@ -20,6 +20,15 @@ public class UsuarioService {
 
     public Usuario one(Long id) {return usuarioRepository.findById(id).get();}
 
+    public Usuario login (String email, String password) {
+        if (usuarioRepository.findByEmail(email).getPassword().equals(password)){
+            return usuarioRepository.findByEmail(email);
+        } else {
+            return null;
+        }
+
+    }
+
     public Usuario save(Usuario usuario) {return usuarioRepository.save(usuario);}
 
     public void delete(Long id) {

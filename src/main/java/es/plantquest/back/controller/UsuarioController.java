@@ -29,10 +29,17 @@ public class UsuarioController {
         return usuarioService.save(usuario);
     }
 
-    @GetMapping("/{id}")
+   /* @GetMapping("/{id}")
     public Usuario one(@PathVariable("id") Long id) {
         return usuarioService.one(id);
     }
+*/
+    @GetMapping("/{id}")
+    public Usuario login(@PathVariable("email") String email, @PathVariable("password") String password) {
+        return usuarioService.login(email, password);
+    }
+
+
 
     @PutMapping("/{id}")
     public Usuario replaceUsuario(@PathVariable("id") Long id, @RequestBody Usuario usuario) {
