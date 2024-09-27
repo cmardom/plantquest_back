@@ -19,12 +19,12 @@ export class LoginComponent implements OnInit
 {
   // @ts-ignore
   usuario: Usuario = {
-    dtype: "",
+    dtype: undefined,
     id: undefined,
     email: "",
     nombre: "",
     password: "",
-    rol: ""
+    rol: undefined
   };
   modal: NgbModalRef | undefined;
 
@@ -50,43 +50,31 @@ export class LoginComponent implements OnInit
 
   login() {
 
-    this.usuarioService.login(this.usuario).subscribe((data) => {
-      this.usuario.dtype = data.dtype;
-      this.usuario.id = data.id;
-      this.usuario.email = data.email;
-      this.usuario.password = data.password;
-      this.usuario.rol = data.rol;;
-    });
+    console.log("login correcto")
   }
 
   onSubmit(loginForm: NgForm) {
     if (!loginForm.valid) {
       return;
-    }
+    } else {
 
-    const usuario: Usuario = {
-      dtype: "",
-      id: -1,
-      email: loginForm.value.email,
-      nombre: "",
-      password: loginForm.value.password,
-      rol: ""
-    };
 
-    this.usuarioService.login(usuario).subscribe({
+    console.log(this.usuario)
+    this.usuarioService.login(this.usuario).subscribe({
+
       next: (data) => {
-        usuario.dtype = data.dtype;
-        usuario.id = data.id;
-        usuario.email = data.email;
-        usuario.password = data.password;
-        usuario.rol = data.rol;
+        this.usuario.dtype = data.dtype;
+        this.usuario.id = data.id;
+        this.usuario.email = data.email;
+        this.usuario.password = data.password;
+        this.usuario.rol = data.rol;
       },
       error: (error) => {
 
         console.error(error);
       }
     });
-
+    }
     //this.login();
     console.log(this.usuario);
   }

@@ -34,9 +34,9 @@ public class UsuarioController {
         return usuarioService.one(id);
     }
 */
-    @GetMapping("/login")
-    public Usuario login(Usuario usuario) {
-        return usuarioService.login(usuario.getEmail(), usuario.getEmail());
+    @PostMapping("/login")
+    public Usuario login(@RequestBody Usuario usuario) {
+        return usuarioService.login(usuario);
     }
 
 

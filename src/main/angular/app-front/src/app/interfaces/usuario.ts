@@ -1,8 +1,8 @@
 export interface Usuario {
-  dtype: string;
+  dtype: string | undefined;
   id: number | undefined;
   email: string;
   nombre: string;
   password: string;
-  rol: string;
+  rol: string | undefined;
 }
