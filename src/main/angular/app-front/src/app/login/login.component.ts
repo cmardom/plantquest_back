@@ -1,42 +1,48 @@
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
-import {open} from "node:fs";
-import { Component, inject, TemplateRef } from '@angular/core';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import {Component, OnInit, TemplateRef} from '@angular/core';
+import {FormsModule} from "@angular/forms";
+import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   standalone: true,
   imports: [
-    ReactiveFormsModule,
-    NgbInputDatepicker
+    FormsModule
+
   ],
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent
+export class LoginComponent implements OnInit
 {
-  private modalService = inject(NgbModal);
-  closeResult = '';
-  open(content: TemplateRef<any>) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-      (result) => {
-        this.closeResult = `Closed with: ${result}`;
-      },
-      (reason) => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      },
-    );
+  modal: NgbModalRef | undefined;
+  user = {
+    username: '',
+    password:
+      ''
+  };
+
+
+  constructor(private modalService: NgbModal) { }
+
+  ngOnInit():
+    void {
   }
 
-  private getDismissReason(reason: any): string {
-    switch (reason) {
-      case ModalDismissReasons.ESC:
-        return 'by pressing ESC';
-      case ModalDismissReasons.BACKDROP_CLICK:
-        return 'by clicking on a backdrop';
-      default:
-        return `with: ${reason}`;
-    }
+  openModal() {
+    this.modal = this.modalService.open(TemplateRef);
   }
+
+  closeModal() {
+
+    this.modalService.dismissAll();
+  }
+
+  onSubmit() {
+    // Aquí realizarías la lógica para enviar los datos del formulario al servidor
+    console.log(this.user);
+  }
+
+
+
 }

@@ -1,17 +1,15 @@
 import {Component, NgModule} from '@angular/core';
-import {Routes, RouterModule, RouterLink, RouterOutlet} from '@angular/router';
-import {LandingComponent} from "../landing/landing.component";
-import {GuiaComponent} from "../guia/guia.component";
-import {routes} from "../app.routes";
-import {open} from "node:fs";
+import {RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "../login/login.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     RouterLink,
-    RouterOutlet
+    RouterOutlet,
+    LoginComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -20,7 +18,10 @@ import {LoginComponent} from "../login/login.component";
 
 
 export class HeaderComponent {
+  constructor(private modalService: NgbModal) {}
 
-  protected readonly open = open;
-  protected readonly LoginComponent = LoginComponent;
+  open(content: any)
+  {
+    this.modalService.open(content);
+  }
 }

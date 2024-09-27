@@ -10,7 +10,7 @@ import {NgbModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgbModule, RouterOutlet, FormsModule, LoginComponent, HeaderComponent, LandingComponent],
+  imports: [RouterOutlet, FormsModule, LoginComponent, HeaderComponent, LandingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -19,10 +19,5 @@ import {NgbModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent {
   title = 'app-front';
 
-  constructor(private modalService: NgbModal) {
-  }
 
-  open(content: any){
-    this.modalService.open(content);
-  }
 }
