@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {FormsModule} from "@angular/forms";
-import {LoginComponent} from "./login/login.component";
 import {HeaderComponent} from "./header/header.component";
 import {LandingComponent} from "./landing/landing.component";
+import {LoginComponent} from "./login/login.component";
+import {NgbModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, LoginComponent, HeaderComponent, LandingComponent],
+  imports: [NgbModule, RouterOutlet, FormsModule, LoginComponent, HeaderComponent, LandingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -16,4 +18,11 @@ import {LandingComponent} from "./landing/landing.component";
 
 export class AppComponent {
   title = 'app-front';
+
+  constructor(private modalService: NgbModal) {
+  }
+
+  open(content: any){
+    this.modalService.open(content);
+  }
 }
