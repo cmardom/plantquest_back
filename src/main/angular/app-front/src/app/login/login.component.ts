@@ -2,6 +2,7 @@
 import {Component, OnInit, TemplateRef} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
+import {UsuarioService} from "../services/usuario.service";
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit
   };
 
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private usuarioService : UsuarioService) { }
 
   ngOnInit():
     void {
@@ -38,10 +39,19 @@ export class LoginComponent implements OnInit
     this.modalService.dismissAll();
   }
 
+
+  login() {
+    const user = { username: this.user.username, password: this.user.password };
+    this.usuarioService.login(user).subscribe((data) => {
+      console.log(data);
+    });
+  }
+
   onSubmit() {
-    // Aquí realizarías la lógica para enviar los datos del formulario al servidor
+    this.login();
     console.log(this.user);
   }
+
 
 
 
