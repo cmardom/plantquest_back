@@ -63,11 +63,13 @@ export class LoginComponent implements OnInit
     this.usuarioService.login(this.usuario).subscribe({
 
       next: (data) => {
+        console.log(data);
         this.usuario.dtype = data.dtype;
         this.usuario.id = data.id;
         this.usuario.email = data.email;
         this.usuario.password = data.password;
-        this.usuario.rol = data.rol;
+        this.usuario.rol = data.rol?.toString();
+
       },
       error: (error) => {
 
