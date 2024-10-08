@@ -9,6 +9,4 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     //metodos para las colecciones del usuario
 
-    public Usuario findByEmail(String email);
-    public Usuario create(Usuario usuario);
 }

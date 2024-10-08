@@ -20,29 +20,40 @@ public class UsuarioService {
 
     public Usuario one(Long id) {return usuarioRepository.findById(id).get();}
 
+    public Usuario findByEmail(String email) {
+        List<Usuario> usuarios = all();
+        Usuario usuario = usuarios.stream().filter(user -> user.getEmail().equals(email)).findFirst().get();
+
+        return usuario;
+    }
+
     public Usuario login (Usuario usuarioLgin) {
         //declara usuario como usuariofindbyemail
         //devolver token
         //redirigir al landing
 
-        Usuario usuario = usuarioRepository.findByEmail(usuarioLgin.getEmail());
+        System.out.println("usuario que llega en back > " + usuarioLgin);
+
+        Usuario usuario = findByEmail(usuarioLgin.getEmail());
+
         if (usuario !=  null && usuario.getPassword().equals(usuarioLgin.getPassword())){
             System.out.println("usuario: " + usuario);
 
             return usuario;
         }
-
         return null;
-
     }
+
+
+
 
     public Usuario signin (Usuario usuarioLgin) {
 
-        Usuario usuario = usuarioRepository.findByEmail(usuarioLgin.getEmail());
-        if (usuarioRepository.findByEmail(usuarioLgin.getEmail()) == null){
+        Usuario usuario = findByEmail(usuarioLgin.getEmail());
+        if (usuario != null) {
             System.out.println("usuario: " + usuario);
 
-            usuarioRepository.create(usuario);
+            usuarioRepository.save(usuario);
 
             return usuario;
         }

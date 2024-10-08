@@ -5,6 +5,8 @@ import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
 import {Usuario} from "../interfaces/usuario";
 import {RouterLink} from "@angular/router";
+import {SigninComponent} from "../signin/signin.component";
+import {open} from "node:fs";
 
 @Component({
   selector: 'app-login',
@@ -13,6 +15,7 @@ import {RouterLink} from "@angular/router";
   imports: [
     FormsModule,
     RouterLink,
+    SigninComponent,
 
   ],
   styleUrls: ['./login.component.scss']
@@ -36,12 +39,16 @@ export class LoginComponent implements OnInit
 
   }
 
+
   ngOnInit():
     void {
   }
 
-  openModal() {
-    this.modal = this.modalService.open(TemplateRef);
+
+
+  open(content: any)
+  {
+    this.modalService.open(content);
   }
 
   closeModal() {
@@ -65,7 +72,7 @@ export class LoginComponent implements OnInit
     this.usuarioService.login(this.usuario).subscribe({
 
       next: (data) => {
-        console.log(data);
+        console.log(data + "despues de next");
         this.usuario.dtype = data.dtype;
         this.usuario.id = data.id;
         this.usuario.email = data.email;
@@ -81,8 +88,6 @@ export class LoginComponent implements OnInit
     }
 
   }
-
-
 
 
 }
