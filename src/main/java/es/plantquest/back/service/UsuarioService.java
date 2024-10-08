@@ -53,8 +53,9 @@ public class UsuarioService {
         Usuario usuario = findByEmail(usuarioLgin.getEmail());
         System.out.println("usuario que se encuentra en singin por email > " + usuario);
         if (usuario == null) {
-            System.out.println("usuario que se va a guardar: " + usuarioLgin);
             usuarioLgin.setRol(Rol.ROL_USER);
+            System.out.println("usuario que se va a guardar: " + usuarioLgin);
+
             usuarioRepository.save(usuarioLgin);
 
             return usuario;

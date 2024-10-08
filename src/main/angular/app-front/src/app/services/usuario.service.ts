@@ -14,8 +14,6 @@ export class UsuarioService {
   constructor(private http: HttpClient) {}
 
   login(usuario: Usuario): Observable<Usuario> {
-    console.log("email en usuarioservice.login > " + usuario.email);
-    console.log("url >" + this.apiUrl)
     // @ts-ignore
     return this.http.post(this.apiUrl + "/login", usuario);
   }

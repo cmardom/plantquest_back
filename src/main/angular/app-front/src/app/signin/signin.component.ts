@@ -48,13 +48,12 @@ export class SigninComponent implements OnInit{
       return;
     } else {
 
-
       console.log(this.usuario)
+
       this.usuarioService.signin(this.usuario).subscribe({
 
+
         next: (data) => {
-          console.log("datos que llegan en next" + data);
-          this.usuario.dtype = data.dtype;
           this.usuario.id = data.id;
           this.usuario.email = data.email;
           this.usuario.password = data.password;
