@@ -17,4 +17,9 @@ export class UsuarioService {
     // @ts-ignore
     return this.http.post(this.apiUrl + "/login", usuario);
   }
+
+  signin(usuario: Usuario): Observable<Usuario> {
+    // @ts-ignore
+    return this.http.post(this.apiUrl + "/signin", usuario);
+  }
 }

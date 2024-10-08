@@ -5,7 +5,7 @@
   <div class="modal-body">
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
       <div class="form-group">
-        <label for="email">Usuario:</label>
+        <label for="email">Correo:</label>
         <input type="email" class="form-control" id="email"
                name="email" required
                [(ngModel)]="usuario.email">
@@ -16,7 +16,7 @@
                required [(ngModel)]="usuario.password">
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">Iniciar
-        Sesión</button>
+        sesión</button>
     </form>
   </div>
   <div class="modal-footer">
