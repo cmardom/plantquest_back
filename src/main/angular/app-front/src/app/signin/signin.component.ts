@@ -2,6 +2,7 @@ import {Component, OnInit, TemplateRef} from '@angular/core';
 import {FormsModule, NgForm} from "@angular/forms";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signin',
@@ -25,7 +26,7 @@ export class SigninComponent implements OnInit{
   };
   modal: NgbModalRef | undefined;
 
-  constructor(private modalService: NgbModal, private usuarioService : UsuarioService) {
+  constructor(private modalService: NgbModal, private usuarioService : UsuarioService, private router : Router) {
 
   }
 
@@ -53,11 +54,9 @@ export class SigninComponent implements OnInit{
       this.usuarioService.signin(this.usuario).subscribe({
 
 
-        next: (data) => {
-          this.usuario.id = data.id;
-          this.usuario.email = data.email;
-          this.usuario.password = data.password;
-          this.usuario.rol = data.rol?.toString();
+        next: (response) => {
+          this.router.navigate(['/home']);
+          this.closeModal();
 
         },
         error: (error) => {
