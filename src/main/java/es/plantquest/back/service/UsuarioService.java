@@ -36,6 +36,21 @@ public class UsuarioService {
 
     }
 
+    public Usuario signin (Usuario usuarioLgin) {
+
+        Usuario usuario = usuarioRepository.findByEmail(usuarioLgin.getEmail());
+        if (usuarioRepository.findByEmail(usuarioLgin.getEmail()) == null){
+            System.out.println("usuario: " + usuario);
+
+            usuarioRepository.create(usuario);
+
+            return usuario;
+        }
+
+        return null;
+
+    }
+
 
     public Usuario save(Usuario usuario) {return usuarioRepository.save(usuario);}
 

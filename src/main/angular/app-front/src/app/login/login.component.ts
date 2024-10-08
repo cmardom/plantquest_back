@@ -4,6 +4,7 @@ import {FormsModule, NgForm} from "@angular/forms";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
 import {Usuario} from "../interfaces/usuario";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import {Usuario} from "../interfaces/usuario";
   standalone: true,
   imports: [
     FormsModule,
+    RouterLink,
 
   ],
   styleUrls: ['./login.component.scss']

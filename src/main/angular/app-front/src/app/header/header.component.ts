@@ -2,6 +2,7 @@ import {Component, NgModule} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "../login/login.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {SigninComponent} from "../signin/signin.component";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,8 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
   imports: [
     RouterLink,
     RouterOutlet,
-    LoginComponent
+    LoginComponent,
+    SigninComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
