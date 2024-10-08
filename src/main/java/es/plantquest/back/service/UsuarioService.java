@@ -1,5 +1,6 @@
 package es.plantquest.back.service;
 
+import es.plantquest.back.domain.Rol;
 import es.plantquest.back.domain.Usuario;
 import es.plantquest.back.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class UsuarioService {
 
     public Usuario findByEmail(String email) {
         List<Usuario> usuarios = all();
-        Usuario usuario = usuarios.stream().filter(user -> user.getEmail().equals(email)).findFirst().get();
+        Usuario usuario = usuarios.stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
 
         return usuario;
     }
@@ -50,12 +51,15 @@ public class UsuarioService {
     public Usuario signin (Usuario usuarioLgin) {
 
         Usuario usuario = findByEmail(usuarioLgin.getEmail());
-        if (usuario != null) {
-            System.out.println("usuario: " + usuario);
-
-            usuarioRepository.save(usuario);
+        System.out.println("usuario que se encuentra en singin por email > " + usuario);
+        if (usuario == null) {
+            System.out.println("usuario que se va a guardar: " + usuarioLgin);
+            usuarioLgin.setRol(Rol.ROL_USER);
+            usuarioRepository.save(usuarioLgin);
 
             return usuario;
+        } else {
+            System.out.println("el usuario existe");
         }
 
         return null;

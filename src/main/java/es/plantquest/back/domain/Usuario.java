@@ -21,6 +21,7 @@ public class Usuario {
     private String email;
     private String password;
 
+    @Column(columnDefinition = "ENUM('ROL_USER', 'ROL_ADMIN') DEFAULT 'ROL_USER'")
     @Enumerated(EnumType.STRING)
     private Rol rol;
 

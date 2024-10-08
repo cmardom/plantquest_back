@@ -50,10 +50,10 @@ export class SigninComponent implements OnInit{
 
 
       console.log(this.usuario)
-      this.usuarioService.login(this.usuario).subscribe({
+      this.usuarioService.signin(this.usuario).subscribe({
 
         next: (data) => {
-          console.log(data);
+          console.log("datos que llegan en next" + data);
           this.usuario.dtype = data.dtype;
           this.usuario.id = data.id;
           this.usuario.email = data.email;
