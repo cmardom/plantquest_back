@@ -26,7 +26,9 @@ export class SigninComponent implements OnInit{
   };
   modal: NgbModalRef | undefined;
 
-  constructor(private modalService: NgbModal, private usuarioService : UsuarioService, private router : Router) {
+  constructor(private modalService: NgbModal,
+              private usuarioService : UsuarioService,
+              private router : Router) {
 
   }
 

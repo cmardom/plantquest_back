@@ -4,7 +4,7 @@ import {FormsModule, NgForm} from "@angular/forms";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
 import {Usuario} from "../interfaces/usuario";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {SigninComponent} from "../signin/signin.component";
 import {open} from "node:fs";
 
@@ -35,7 +35,9 @@ export class LoginComponent implements OnInit
 
 
 
-  constructor(private modalService: NgbModal, private usuarioService : UsuarioService) {
+  constructor(private modalService: NgbModal,
+              private usuarioService : UsuarioService,
+              private router : Router) {
 
   }
 
@@ -78,6 +80,9 @@ export class LoginComponent implements OnInit
         this.usuario.email = data.email;
         this.usuario.password = data.password;
         this.usuario.rol = data.rol?.toString();
+
+        this.router.navigate(['/home']);
+        this.closeModal();
 
       },
       error: (error) => {
