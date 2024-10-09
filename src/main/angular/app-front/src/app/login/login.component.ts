@@ -74,14 +74,14 @@ export class LoginComponent implements OnInit
     this.usuarioService.login(this.usuario).subscribe({
 
       next: (data) => {
-        console.log(data + "despues de next");
+        console.log(data + " > despues de next");
         this.usuario.dtype = data.dtype;
         this.usuario.id = data.id;
         this.usuario.email = data.email;
         this.usuario.password = data.password;
         this.usuario.rol = data.rol?.toString();
 
-        this.router.navigate(['/home']);
+        this.router.navigate(['/perfil']);
         this.closeModal();
 
       },

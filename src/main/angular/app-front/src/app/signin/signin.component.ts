@@ -57,7 +57,7 @@ export class SigninComponent implements OnInit{
 
 
         next: (response) => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/perfil']);
           this.closeModal();
 
         },
