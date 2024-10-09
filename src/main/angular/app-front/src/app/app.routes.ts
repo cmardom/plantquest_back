@@ -4,6 +4,7 @@ import {GuiaComponent} from "./guia/guia.component";
 import {LoginComponent} from "./login/login.component";
 import {SigninComponent} from "./signin/signin.component";
 import {PerfilComponent} from "./perfil/perfil.component";
+import {BlogComponent} from "./blog/blog.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -11,6 +12,8 @@ export const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'singin', component: SigninComponent},
   {path: 'perfil', component: PerfilComponent},
+  {path: 'blog', component: BlogComponent},
+
 
 
   //{path:'campings/nuevo', component: CampingsFormularioComponent},
