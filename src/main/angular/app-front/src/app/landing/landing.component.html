@@ -1,15 +1,17 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row text-center p-4">
     <h4>Bienvenido 🌿</h4>
     <p>
       Encuentra inspiración y consejos prácticos para crear espacios verdes que te inspiren. Desde suculentas hasta plantas tropicales, te ayudamos a cultivar tu propio oasis.
     </p>
     <br>
-    <a class="botonCustom">Explora nuestra guía completa.</a>
+    <a class="botonCustom" [routerLink]="['/guia']" href="#guia">Explora nuestra guía completa.</a>
     <br>
   </div>
 
   <div class="row cartas">
+    <hr>
+
     <h3>Plantas más buscadas</h3>
 
     <div class="col-sm-6">
@@ -55,13 +57,18 @@
         </div>
       </div>
     </div>
-
-
-</div>
-<br>
+  </div>
+  <br>
+  <div class="text-center">
+    <a href="#" class="btn btn-outline-success">Ver mas</a>
+  </div>
+  <br>
   <div class="row">
-    <h3>Últimas entradas de blog</h3>
-
+    <hr>
+    <app-blog></app-blog>
 
   </div>
+
+
+
 </div>

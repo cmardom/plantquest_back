@@ -1,7 +1,16 @@
 *{
-  font-family: "DM Sans";
+  font-family: "DM Sans", sans-serif;
 }
 
+.botonCustom{
+  font-family: Courier;
+  color: #006F42;
+
+
+}
+.botonCustom:hover{
+  color: #FE6D98;
+}
 
 body{
   margin-top:20px;
@@ -60,7 +69,7 @@ Timeline
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
 }
 
-.vtimeline-content h3 {
+.vtimeline-content h2 {
   font-size: 1.5em;
   font-weight: 600;
   display: inline-block;
@@ -116,7 +125,7 @@ Timeline
 .post-meta li:not(:last-child) {
   margin-right: 10px;
 }
-h3 {
+h2 {
   color: #252525;
   font-weight: 700;
   font-variant-ligatures: common-ligatures;
