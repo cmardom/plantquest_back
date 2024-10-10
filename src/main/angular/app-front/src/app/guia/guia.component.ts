@@ -25,9 +25,6 @@ export class GuiaComponent implements OnInit{
 
   plantas: Planta[] = [];
   isLoading = false;
-  // @ts-ignore
-  @Output() plantaSeleccionada = new EventEmitter<number>();
-
 
 
   ngOnInit(): void {
@@ -37,11 +34,6 @@ export class GuiaComponent implements OnInit{
         this.plantas = plantas;
         this.isLoading = false;
       });
-  }
-
-  seleccionarPlanta(idPlanta: number){
-    // @ts-ignore
-    this.plantaSeleccionada.emit(idPlanta);
   }
 
   constructor(private plantaService: PlantaService) {  }

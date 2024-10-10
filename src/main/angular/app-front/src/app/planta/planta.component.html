@@ -1,8 +1,59 @@
-<p>https://codepen.io/connah99/pen/LYvNoGQ</p>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
+<div class="container">
+  <div class="row volver">
+    <a id="flecha" href="javascript:window.history.back();">
+      <span class="material-symbols-outlined">arrow_back </span> <p>Volver</p></a>
+  </div>
 
 
-<div class="card-body">
-  <h5 class="card-title">{{ plantaClicada?.nombre_comun }}</h5>
-  <p class="card-text">{{ plantaClicada?.iluminacion }}</p>
-  <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
+  <div class="card mb-3">
+    <br>
+
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{plantaClicada?.nombre_comun}}</h5>
+          <h6 class="card-title">{{plantaClicada?.nombre_cientifico}}</h6>
+          <p class="card-text">{{plantaClicada?.info}}</p>
+
+          <table>
+            <tr>
+              <td>Abono</td>
+              <td>{{ plantaClicada?.abono }}</td>
+            </tr>
+              <td>Humedad</td>
+              <td>{{ plantaClicada?.humedad }}</td>
+            <tr>
+              <td>Iluminacion</td>
+              <td>{{ plantaClicada?.iluminacion }}</td>
+            </tr>
+            <tr>
+              <td>Localizacion</td>
+              <td>{{ plantaClicada?.localizacion }}</td>
+            </tr>
+            <tr>
+              <td>Riego</td>
+              <td>{{ plantaClicada?.riego }}</td>
+            </tr>
+            <tr>
+              <td>Temperatura</td>
+              <td>{{ plantaClicada?.temperatura }}</td>
+            </tr>
+            <tr>
+              <td>Toxicidad</td>
+              <td>{{ plantaClicada?.toxicidad }}</td>
+            </tr>
+          </table>
+
+          <br>
+          <hr>
+          <a class="botonCustom align-content-center">Anadir a mi lista</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

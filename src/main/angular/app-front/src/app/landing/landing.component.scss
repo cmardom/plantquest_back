@@ -16,7 +16,7 @@
 .cartas{
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 1;
+  flex-shrink: 1;
 
   .card-body{
     display: flex;
@@ -25,6 +25,14 @@
 
     img{
       width: 10rem;
+    }
+
+    .card-text{
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* ajustar el numero de líneas  */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

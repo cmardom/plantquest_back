@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -31,7 +32,9 @@ public class PlantaController {
     }
 
     @GetMapping("/{id}")
-    public Planta one (@PathVariable("id") Long id) {
+    public Optional<Planta> one (@PathVariable("id") Long id) {
+        log.info("get planta con id> " + id);
+
         return plantaService.one(id);
     }
 

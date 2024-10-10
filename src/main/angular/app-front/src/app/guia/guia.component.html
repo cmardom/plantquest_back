@@ -11,8 +11,8 @@
             <h5 class="card-title">{{ planta.nombre_comun }}</h5>
             <img class="card-img" src="assets/logo.png">
             <p class="card-text">{{ planta.info }}</p>
-            <a [routerLink]="['/planta/' + planta.id]" href="#planta"
-               class="botonCustom" (click)="seleccionarPlanta(i)"
+            <a [routerLink]="['/planta', planta.id]" href="#planta"
+               class="botonCustom"
                data-mdb-ripple-init>Go somewhere</a>
           </div>
         </div>

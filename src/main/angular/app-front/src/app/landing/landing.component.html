@@ -9,58 +9,29 @@
     <br>
   </div>
 
-  <div class="row cartas">
+  <div>
     <hr>
-
     <h3>Plantas más buscadas</h3>
 
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Planta</h5>
-          <img class="card-img" src="assets/logo.png">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
+    <div class="row">
+      <div class="col-sm-6 cartas">
+        <div *ngFor="let planta of plantas; let i = index" class="card ">
+          <div class="card-body">
+            <h5 class="card-title">{{ planta.nombre_comun }}</h5>
+            <img class="card-img" src="assets/logo.png">
+            <p class="card-text">{{ planta.info }}</p>
+            <a [routerLink]="['/planta', planta.id]" href="#planta"
+               class="botonCustom"
+               data-mdb-ripple-init>Ver más</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Planta</h5>
-          <img class="card-img" src="assets/logo.png">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Planta</h5>
-          <img class="card-img" src="assets/logo.png">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Planta</h5>
-          <img class="card-img" src="assets/logo.png">
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-        </div>
-      </div>
-    </div>
   </div>
   <br>
   <div class="text-center">
-    <a href="#" class="btn btn-outline-success">Ver mas</a>
+    <a [routerLink]="['/guia']" href="#guia" class="btn btn-outline-success">Ver más</a>
   </div>
   <br>
   <div class="row">
