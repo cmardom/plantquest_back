@@ -1,9 +1,10 @@
-import {Component, NgModule, OnInit, Provider} from '@angular/core';
+import {Component, NgModule, OnInit, Output, Provider} from '@angular/core';
 import {HeaderComponent} from "../header/header.component";
-import {RouterOutlet} from "@angular/router";
+import {RouterLink, RouterOutlet} from "@angular/router";
 import {Planta} from "../interfaces/planta-interface";
 import {PlantaService} from "../services/planta.service";
 import {NgForOf, NgIf} from "@angular/common";
+import EventEmitter from "node:events";
 
 
 @Component({
@@ -13,7 +14,8 @@ import {NgForOf, NgIf} from "@angular/common";
     HeaderComponent,
     RouterOutlet,
     NgForOf,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './guia.component.html',
   styleUrl: './guia.component.scss',
@@ -23,6 +25,9 @@ export class GuiaComponent implements OnInit{
 
   plantas: Planta[] = [];
   isLoading = false;
+  // @ts-ignore
+  @Output() plantaSeleccionada = new EventEmitter<number>();
+
 
 
   ngOnInit(): void {
@@ -32,6 +37,11 @@ export class GuiaComponent implements OnInit{
         this.plantas = plantas;
         this.isLoading = false;
       });
+  }
+
+  seleccionarPlanta(idPlanta: number){
+    // @ts-ignore
+    this.plantaSeleccionada.emit(idPlanta);
   }
 
   constructor(private plantaService: PlantaService) {  }

@@ -6,6 +6,7 @@ import {SigninComponent} from "./signin/signin.component";
 import {PerfilComponent} from "./perfil/perfil.component";
 import {BlogComponent} from "./blog/blog.component";
 import {FaqComponent} from "./faq/faq.component";
+import {PlantaComponent} from "./planta/planta.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -15,6 +16,7 @@ export const routes: Routes = [
   {path: 'perfil', component: PerfilComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'faq', component: FaqComponent},
+  {path: 'planta/:id', component: PlantaComponent},
 
 
 

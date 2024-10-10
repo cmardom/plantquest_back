@@ -17,6 +17,10 @@ export class PlantaService {
     return this.http.get<Planta[]>(this.apiUrl)
   }
 
+  getOnePlanta(id: number): Observable<Planta>{
+    return this.http.get<Planta>(this.apiUrl + '/' + id);
+  }
+
 }
 
 

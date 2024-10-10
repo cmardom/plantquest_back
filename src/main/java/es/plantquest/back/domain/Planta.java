@@ -22,10 +22,13 @@ public class Planta {
     private String iluminacion;
     private String humedad;
     private String temperatura;
-    private String localización;
+    private String localizacion;
     private String toxicidad;
     private String abono;
-    private String caracteristicas;
+
+    @Lob
+    @Column (columnDefinition = "LONGTEXT")
+    private String info;
 
     @Lob
     private String imagePath;

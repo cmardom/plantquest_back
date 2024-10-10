@@ -1,5 +1,14 @@
+
 use plantquest_back;
 -- Insertar PLANTAS
+INSERT INTO plantas (abono, caracteristicas, humedad, iluminacion, image_path, localización, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
+VALUES ("una vez al año",
+"La cinta es una de las plantas de interior más populares y por buenas razones. Su resistencia y facilidad de cuidado la convierten en la elección perfecta para aquellos que se inician en el mundo de la jardinería o que no tienen mucho tiempo para dedicarle a sus plantas.
+Soporta una amplia variedad de condiciones de luz y temperatura, desde lugares muy luminosos hasta zonas con poca luz. Es muy tolerante a la sequía gracias a sus raíces gruesas que almacenan agua.
+Se multiplica rápidamente por hijuelos, lo que te permitirá tener más plantas sin mucho esfuerzo y además, ayuda a mejorar la calidad del aire al absorber toxinas.",
+ "media-baja", luz indirecta brillante, ".jpg", "exterior en sombra o interior muy iluminado", "Chlorophytum comosum", "Cinta", "cuando el sustrato esté seco", "entre -2º y 30º", "no");
+
+
 INSERT INTO plantas (nombre_comun, nombre_cientifico, humedad, iluminacion, toxicidad)
 VALUES ('Rosa', 'Rosa rubiginosa', 'Alta', 'Sol directo', 'Leve');
 

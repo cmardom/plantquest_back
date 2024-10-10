@@ -31,7 +31,7 @@ public class PlantaController {
     }
 
     @GetMapping("/{id}")
-    public Planta one (@PathVariable("id") Long id, @RequestBody Planta planta) {
+    public Planta one (@PathVariable("id") Long id) {
         return plantaService.one(id);
     }
 

@@ -10,6 +10,6 @@ export interface Planta {
   localizacion: string;
   toxicidad: string;
   abono: string;
-  caracteristicas: string;
+  info: string;
   imagePath: string;
 }
