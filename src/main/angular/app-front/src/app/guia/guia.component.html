@@ -5,12 +5,14 @@
     <p>Explora nuestra recopilación de plantas y añade las que más te gusten a tus listas.</p>
 
     <div class="row">
-      <div class="col-sm-6 cartas">
+      <div class="col cartas">
         <div *ngFor="let planta of plantas; let i = index" class="card ">
           <div class="card-body">
             <h5 class="card-title">{{ planta.nombre_comun }}</h5>
             <img class="card-img" src="assets/logo.png">
             <p class="card-text">{{ planta.info }}</p>
+            <p class="card-text"> <span class="fw-bold">Iluminacion:</span>  {{planta.riego}}</p>
+            <p class="card-text"> <span class="fw-bold">Riego:</span> {{planta.riego}}</p>
             <a [routerLink]="['/planta', planta.id]" href="#planta"
                class="botonCustom"
                data-mdb-ripple-init>Ver más</a>

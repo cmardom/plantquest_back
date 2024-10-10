@@ -12,25 +12,37 @@
   color: #FE6D98;
 }
 
-.cartas{
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  gap: 1rem;
+.row{
 
 
-  .card{
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-
-  }
-
-  .card-body{
+  .cartas{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    gap: 1rem;
+    flex-grow: 1;
 
-    img{
-      width: 10rem;
+    .card{
+
+
+
+      .card-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img{
+          width: 10rem;
+        }
+
+        .card-text{
+          display: -webkit-box;
+          -webkit-line-clamp: 4; /* ajustar el numero de líneas  */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
     }
+
+
   }
 }

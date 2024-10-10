@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
 <div class="container">
   <div class="row volver">
     <a id="flecha" href="javascript:window.history.back();">
-      <span class="material-symbols-outlined">arrow_back </span> <p>Volver</p></a>
+      <span class="material-symbols-outlined">arrow_back</span> <p>Volver</p></a>
   </div>
 
 
@@ -21,36 +21,40 @@
 
           <table>
             <tr>
-              <td>Abono</td>
+              <td class="text-success">Abono</td>
               <td>{{ plantaClicada?.abono }}</td>
             </tr>
-              <td>Humedad</td>
-              <td>{{ plantaClicada?.humedad }}</td>
             <tr>
-              <td>Iluminacion</td>
+              <td class="text-success">Humedad</td>
+              <td>{{ plantaClicada?.humedad }}</td>
+            </tr>
+            <tr>
+              <td class="text-success">Iluminacion</td>
               <td>{{ plantaClicada?.iluminacion }}</td>
             </tr>
             <tr>
-              <td>Localizacion</td>
+              <td class="text-success">Localizacion</td>
               <td>{{ plantaClicada?.localizacion }}</td>
             </tr>
             <tr>
-              <td>Riego</td>
+              <td class="text-success">Riego</td>
               <td>{{ plantaClicada?.riego }}</td>
             </tr>
             <tr>
-              <td>Temperatura</td>
+              <td class="text-success">Temperatura</td>
               <td>{{ plantaClicada?.temperatura }}</td>
             </tr>
             <tr>
-              <td>Toxicidad</td>
+              <td class="text-success">Toxicidad</td>
               <td>{{ plantaClicada?.toxicidad }}</td>
             </tr>
           </table>
 
           <br>
           <hr>
-          <a class="botonCustom align-content-center">Anadir a mi lista</a>
+          <a class="botonCustom align-content-center">Añadir a mi lista
+
+          </a>
         </div>
       </div>
     </div>

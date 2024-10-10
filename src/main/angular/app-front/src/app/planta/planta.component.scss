@@ -6,6 +6,8 @@
   color: #006F42;
 
 
+
+
 }
 .botonCustom:hover{
   color: #FE6D98;
@@ -38,6 +40,10 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 2%;
 
+  h6{
+    color: #FE6D98;
+  }
+
   .card-text{
     text-align: justify;
   }
@@ -46,12 +52,14 @@
     border-collapse: collapse;
     width: 100%;
 
-    tr, td {
+    tr, td{
       border: 1px solid #006F42;
       padding: 8px;
       text-align: left;
 
     }
+
+
   }
 
   a{
