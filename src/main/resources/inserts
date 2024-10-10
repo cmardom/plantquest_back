@@ -1,22 +1,41 @@
 
 use plantquest_back;
--- Insertar PLANTAS
-INSERT INTO plantas (abono, caracteristicas, humedad, iluminacion, image_path, localización, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
-VALUES ("una vez al año",
-"La cinta es una de las plantas de interior más populares y por buenas razones. Su resistencia y facilidad de cuidado la convierten en la elección perfecta para aquellos que se inician en el mundo de la jardinería o que no tienen mucho tiempo para dedicarle a sus plantas.
-Soporta una amplia variedad de condiciones de luz y temperatura, desde lugares muy luminosos hasta zonas con poca luz. Es muy tolerante a la sequía gracias a sus raíces gruesas que almacenan agua.
-Se multiplica rápidamente por hijuelos, lo que te permitirá tener más plantas sin mucho esfuerzo y además, ayuda a mejorar la calidad del aire al absorber toxinas.",
- "media-baja", luz indirecta brillante, ".jpg", "exterior en sombra o interior muy iluminado", "Chlorophytum comosum", "Cinta", "cuando el sustrato esté seco", "entre -2º y 30º", "no");
+INSERT INTO plantas (abono, info, humedad, iluminacion, image_path, localizacion, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
+VALUES ('En verano',
+        'La cinta es una de las plantas de interior más populares y por buenas razones. Su resistencia y facilidad de cuidado la convierten en la elección perfecta para aquellos que se inician en el mundo de la jardinería o que no tienen mucho tiempo para dedicarle a sus plantas.
+        Soporta una amplia variedad de condiciones de luz y temperatura, desde lugares muy luminosos hasta zonas con poca luz. Es muy tolerante a la sequía gracias a sus raíces gruesas que almacenan agua.
+        Se multiplica rápidamente por hijuelos, lo que te permitirá tener más plantas sin mucho esfuerzo y además, ayuda a mejorar la calidad del aire al absorber toxinas.',
+        'Media-baja', 'Luz indirecta brillante', '.jpg', 'exterior en sombra o interior muy iluminado', 'Chlorophytum comosum', 'Cinta', 'Cuando el sustrato esté seco y las hojas arrugadas', 'Entre -2º y 30º', 'Ninguna');
+
+INSERT INTO plantas (abono, info, humedad, iluminacion, image_path, localizacion, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
+VALUES ('En primavera y verano, usa un fertilizante líquido para plantas de interior.',
+        'El Ficus Tineke, con sus hojas de un verde intenso salpicadas de crema, es una planta de interior que ha conquistado los corazones de muchos amantes de la jardinería. Su belleza exótica y su relativa facilidad de cuidado la convierten en una excelente opción para decorar cualquier espacio.
+        Aunque aprecia la luz brillante, evita la exposición directa al sol durante las horas más calurosas del día, ya que puede quemar sus hojas. Un lugar cerca de una ventana orientada al este o al oeste suele ser ideal.
+        El riego debe ser moderado, permitiendo que el sustrato se seque ligeramente entre riegos. Evita el encharcamiento, ya que puede provocar la pudrición de las raíces. Al ser originario de zonas tropicales, el Ficus Tineke agradece un ambiente húmedo. Puedes aumentar la humedad ambiental pulverizando sus hojas con agua regularmente o utilizando un humidificador.
+        Utiliza un sustrato bien drenado y rico en nutrientes. Puedes preparar una mezcla casera con turba, perlita y corteza de pino.',
+        'Media-alta', 'Luz indirecta brillante', '.jpg', 'Interior, sin luz directa', 'Ficus Tineke', 'Árbol de caucho', 'Moderado, cuando el sustrato esté seco', 'Más de 15º', 'Sí, para mascotas y personas');
 
 
-INSERT INTO plantas (nombre_comun, nombre_cientifico, humedad, iluminacion, toxicidad)
-VALUES ('Rosa', 'Rosa rubiginosa', 'Alta', 'Sol directo', 'Leve');
+INSERT INTO plantas (abono, info, humedad, iluminacion, image_path, localizacion, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
+VALUES ('En primavera y verano, usa un fertilizante líquido para plantas de interior.',
+        'El poto es una planta de interior muy popular gracias a su resistencia y belleza. Sus hojas en forma de corazón y su rápido crecimiento la convierten en una opción ideal para principiantes y amantes de la jardinería.Prefiere la luz indirecta brillante, pero tolera la sombra parcial. Evita la exposición directa al sol, especialmente durante las horas más calurosas del día.
+        El riego debe ser moderado, permitiendo que el sustrato se seque ligeramente entre riegos. Evita el encharcamiento, ya que puede provocar la pudrición de las raíces. Aunque se adapta a diferentes niveles de humedad, agradece un ambiente ligeramente húmedo. Puedes aumentar la humedad ambiental pulverizando sus hojas con agua regularmente.
+        Utiliza un sustrato bien drenado y rico en nutrientes. Una mezcla de turba, perlita y corteza de pino es ideal.
+        Realiza podas regulares para controlar su crecimiento y estimular la ramificación y trasplántala a una maceta ligeramente más grande cada 2-3 años',
+        'Media-alta', 'Luz indirecta brillante', '.jpg', 'Interior, sin luz directa', 'Epipremnum Aureum', 'Potos, photos golden', 'Moderado, cuando el sustrato esté seco', 'Más de 15º', 'Sí, para mascotas');
 
-INSERT INTO plantas (nombre_comun, nombre_cientifico, caracteristicas, image_path, localización, riego, temperatura)
-VALUES ('Cactus', 'Opuntia microdasys', 'Planta suculenta con espinas pequeñas', '/imagenes/cactus.jpg', 'Interior', 'Esporádico', 'Cálido');
 
-INSERT INTO plantas (abono, caracteristicas, humedad, iluminacion, image_path, localización, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
-VALUES ('Orgánico mensual', 'Arbusto con flores blancas', 'Media', 'Sombra parcial', '/imagenes/arbusto.jpg', 'Exterior', 'Gardenia jasminoides', 'Gardenia', 'Regular', 'Templado', 'No');
+INSERT INTO plantas (abono, info, humedad, iluminacion, image_path, localizacion, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
+VALUES ('En primavera y verano, usa un fertilizante líquido para plantas de interior.',
+        'El caladium es una planta tropical que destaca por la belleza y variedad de colores de sus hojas. Originario de las selvas sudamericanas, esta planta puede convertirse en el centro de atención de cualquier espacio interior. Requiere luz brillante e indirecta. Evita la luz solar directa, ya que puede quemar sus hojas.
+        Necesita alta humedad ambiental. Puedes aumentar la humedad colocando la maceta sobre un plato con agua o utilizando un humidificador. Mantén el sustrato ligeramente húmedo, pero evita el encharcamiento. Riega con agua a temperatura ambiente y no mojes las hojas.
+        En otoño e invierno, el caladium entra en reposo. Durante esta época, reduce el riego y guarda el bulbo en un lugar fresco y oscuro. Trasplántalo cada año a principios de primavera, utilizando una maceta ligeramente más grande.
+        Los caladium son plantas que requieren unos cuidados muy específicos, por lo que no se recomiendan para principiantes.
+        ',
+        'Alta', 'Luz indirecta brillante', '.jpg', 'Interior, sin luz directa o exterior, con sombra', 'Caladium', 'Caladio', 'Abundante', 'Más de 15º', 'Sí, para mascotas');
+
+
+
 
 --Insertar usuarios
 INSERT INTO usuarios (email, nombre, password, rol)
