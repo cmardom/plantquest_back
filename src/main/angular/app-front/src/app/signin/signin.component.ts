@@ -34,6 +34,11 @@ export class SigninComponent implements OnInit{
 
   ngOnInit():
     void {
+    if (localStorage.getItem('username') != null){
+      this.usuario.nombre = <string>localStorage.getItem('username');
+      this.usuario.password = <string>localStorage.getItem('password');
+
+    }
   }
 
   openModal() {
@@ -58,6 +63,8 @@ export class SigninComponent implements OnInit{
 
         next: (response) => {
           this.router.navigate(['/perfil']);
+          this.usuarioService.storeUserData(response);
+
           this.closeModal();
 
         },

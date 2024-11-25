@@ -3,8 +3,12 @@ package es.plantquest.back.service;
 import es.plantquest.back.domain.Rol;
 import es.plantquest.back.domain.Usuario;
 import es.plantquest.back.repository.UsuarioRepository;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Optional;
@@ -78,4 +82,19 @@ public class UsuarioService {
         return usuarioRepository.findById(id).map(u ->
             (id.equals(usuario.getID()) ? usuarioRepository.save(usuario) : null))
             .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));}
+
+
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+
+        }
+        return ResponseEntity.ok("Logout successful");
+    }
+
+
+
 }

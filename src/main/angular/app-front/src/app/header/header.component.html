@@ -7,8 +7,8 @@
       <li class="nav-item"><a [routerLink]="['/blog']" href="#blog" class="nav-link link-dark px-2">Blog</a></li>
       <li class="nav-item"><a [routerLink]="['/faq']" href="#faq" class="nav-link link-dark px-2">Preguntas frecuentes</a></li>
     </ul>
-    <ul class="nav">
-      <button type="button" class="btn" (click)="open(content)">Inicia sesión</button>
+    <ul class="nav" *ngIf="!usuario.nombre">
+      <button  type="button" class="btn" (click)="open(content)">Inicia sesión</button>
       <ng-template #content let-modal>
         <app-login #modal></app-login>
       </ng-template>
@@ -20,8 +20,18 @@
         <app-signin #modal2></app-signin>
       </ng-template>
 
+    </ul>
+    <ul class="nav" *ngIf="usuario.nombre">
+
+        <li class="nav-item"><a [routerLink]="['/perfil']" href="#perfil" class="nav-link link-dark px-2">Tu perfil</a></li>
+      <!-- NO ES CLICKABLE -->
+      <li class="nav-item" (click)="logout()"> <a class="nav-link link-dark px-2" >Cerrar sesion</a></li>
 
     </ul>
+
+
+
+
   </div>
 </nav>
 <header class="py-3 mb-4 border-bottom">

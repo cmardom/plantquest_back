@@ -11,6 +11,8 @@ export class UsuarioService {
   private baseUrl: string = environment.apiUrl;
   private apiUrl: string =  this.baseUrl + '/usuarios';
 
+
+
   constructor(private http: HttpClient) {}
 
   login(usuario: Usuario): Observable<Usuario> {
@@ -21,5 +23,24 @@ export class UsuarioService {
   signin(usuario: Usuario): Observable<Usuario> {
     // @ts-ignore
     return this.http.post(this.apiUrl + "/signin", usuario);
+  }
+
+  storeUserData(usuario: Usuario){
+    localStorage.setItem('username', usuario.nombre);
+    localStorage.setItem('password', usuario.password);
+  }
+
+  getUserData() {
+    const username= localStorage.getItem('username');
+    const password= localStorage.getItem('password');
+
+  }
+
+
+  logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+
+    return this.http.post('/logout', {});
   }
 }

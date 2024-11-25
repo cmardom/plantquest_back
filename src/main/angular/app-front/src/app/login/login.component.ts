@@ -42,8 +42,15 @@ export class LoginComponent implements OnInit
   }
 
 
-  ngOnInit():
-    void {
+  ngOnInit(): void {
+
+    if (localStorage.getItem('username') != null){
+      this.usuario.nombre = <string>localStorage.getItem('username');
+      this.usuario.password = <string>localStorage.getItem('password');
+
+    }
+
+
   }
 
 
@@ -80,6 +87,9 @@ export class LoginComponent implements OnInit
         this.usuario.email = data.email;
         this.usuario.password = data.password;
         this.usuario.rol = data.rol?.toString();
+
+        //localStorage
+        this.usuarioService.storeUserData(data);
 
         this.router.navigate(['/perfil']);
         this.closeModal();
