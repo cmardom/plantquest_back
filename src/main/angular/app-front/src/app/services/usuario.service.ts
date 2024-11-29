@@ -28,6 +28,7 @@ export class UsuarioService {
   storeUserData(usuario: Usuario){
     localStorage.setItem('username', usuario.nombre);
     localStorage.setItem('password', usuario.password);
+    console.log(usuario);
   }
 
   getUserData() {

@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit
 
 
   ngOnInit(): void {
-
+//hay que setear el item
     if (localStorage.getItem('username') != null){
       this.usuario.nombre = <string>localStorage.getItem('username');
       this.usuario.password = <string>localStorage.getItem('password');

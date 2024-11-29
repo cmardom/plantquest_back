@@ -36,12 +36,13 @@ export class HeaderComponent implements OnInit{
 
 
 
-
   constructor(private modalService: NgbModal, private usuarioService : UsuarioService,) {}
 
 
   ngOnInit(): void {
 
+    // @ts-ignore
+    localStorage = document.defaultView?.localStorage;
     if (localStorage.getItem('username') != null){
       this.usuario.nombre = <string>localStorage.getItem('username');
       this.usuario.password = <string>localStorage.getItem('password');
@@ -59,6 +60,6 @@ export class HeaderComponent implements OnInit{
   logout(){
     this.usuarioService.logout();
   }
-
+//navegar al home despues de logout
 
 }
