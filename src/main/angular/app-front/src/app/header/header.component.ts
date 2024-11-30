@@ -32,7 +32,8 @@ export class HeaderComponent implements OnInit{
     email: "",
     nombre: "",
     password: "",
-    rol: undefined
+    rol: undefined,
+    colecciones: undefined
   };
 
 

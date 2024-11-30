@@ -1,5 +1,5 @@
 import {Inject, Injectable, PLATFORM_ID} from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../enviroments/enviroment";
 import {Usuario} from "../interfaces/usuario";
@@ -17,8 +17,15 @@ export class UsuarioService {
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   login(usuario: Usuario): Observable<Usuario> {
+
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',  // Ensure we're sending JSON
+      'Accept': 'application/json',         // Ensure we expect JSON back
+    });
     // @ts-ignore
-    return this.http.post(this.apiUrl + "/login", usuario);
+    return this.http.post<Usuario>(this.apiUrl + '/login', usuario, { headers });
+    //return this.http.post(this.apiUrl + "/login", usuario);
   }
 
   signin(usuario: Usuario): Observable<Usuario> {
@@ -29,7 +36,7 @@ export class UsuarioService {
   storeUserData(usuario: Usuario){
 
     const key = 'userData';
-    const value = JSON.stringify({ nombre: usuario.nombre, password: usuario.password });
+    const value = JSON.stringify({ nombre: usuario.nombre, password: usuario.password, email: usuario.email });
     localStorage.setItem(key, value);
 
     console.log(usuario);
@@ -65,9 +72,23 @@ export class UsuarioService {
 
     if (storedValue) {
       const user = JSON.stringify(storedValue); // Parse the stringified object
-      const pass = storedValue.password; // Access the 'name' property
+      const pass = storedValue.password;
       console.log('User pass:', pass);
       return (pass);
+    } else {
+      console.log('No data found in localStorage for key:', 'userData');
+    }
+  }
+
+
+  getEmailFromLocalStorage():string|void{
+    const storedValue = this.getUserData();
+
+    if (storedValue) {
+      const user = JSON.stringify(storedValue); // Parse the stringified object
+      const email = storedValue.email;
+      console.log('User email:', email);
+      return (email);
     } else {
       console.log('No data found in localStorage for key:', 'userData');
     }

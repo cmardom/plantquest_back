@@ -1,6 +1,9 @@
 package es.plantquest.back.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@JsonIgnoreProperties({"colecciones"})
 public class Usuario {
 
     @Id
@@ -29,7 +33,7 @@ public class Usuario {
     private Rol rol;
 
 
-    @JsonBackReference
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     private List<Coleccion> colecciones;
 

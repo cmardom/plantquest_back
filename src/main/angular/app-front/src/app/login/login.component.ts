@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit
     email: "",
     nombre: "",
     password: "",
-    rol: undefined
+    rol: undefined,
+    colecciones: undefined
+
   };
   modal: NgbModalRef | undefined;
 
@@ -81,7 +83,6 @@ export class LoginComponent implements OnInit
     } else {
 
 
-      console.log(this.usuario)
       this.usuarioService.login(this.usuario).subscribe({
 
         next: (data) => {
@@ -91,6 +92,8 @@ export class LoginComponent implements OnInit
           this.usuario.email = data.email;
           this.usuario.password = data.password;
           this.usuario.rol = data.rol?.toString();
+          this.usuario.colecciones = data.colecciones;
+
 
           //localStorage
           this.usuarioService.storeUserData(data);

@@ -6,6 +6,7 @@ import es.plantquest.back.repository.UsuarioRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,22 +33,33 @@ public class UsuarioService {
         return usuario;
     }
 
-    public Usuario login (Usuario usuarioLgin) {
-        //declara usuario como usuariofindbyemail
-        //devolver token
-        //redirigir al landing
+//    public Usuario login (Usuario usuarioLgin) {
+//        //declara usuario como usuariofindbyemail
+//        //devolver token
+//        //redirigir al landing
+//
+//        System.out.println("usuario que llega en back > " + usuarioLgin);
+//
+//        Usuario usuario = findByEmail(usuarioLgin.getEmail());
+//
+//        if (usuario !=  null && usuario.getPassword().equals(usuarioLgin.getPassword())){
+//            System.out.println("usuario: " + usuario);
+//
+//            return usuario;
+//        }
+//        return null;
+//    }
 
-        System.out.println("usuario que llega en back > " + usuarioLgin);
 
+    public ResponseEntity<Usuario> login(Usuario usuarioLgin) {
         Usuario usuario = findByEmail(usuarioLgin.getEmail());
-
-        if (usuario !=  null && usuario.getPassword().equals(usuarioLgin.getPassword())){
-            System.out.println("usuario: " + usuario);
-
-            return usuario;
+        if (usuario != null && usuario.getPassword().equals(usuarioLgin.getPassword())) {
+            return ResponseEntity.ok(usuario);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         }
-        return null;
     }
+
 
 
 

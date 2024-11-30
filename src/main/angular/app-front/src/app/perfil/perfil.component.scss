@@ -16,3 +16,7 @@
   color: #FE6D98;
 }
 
+.mask-password {
+  -webkit-text-security: disc; /* Mask the password with a dot, works in WebKit browsers */
+  text-security: disc;  /* For other browsers (not widely supported yet) */
+}

@@ -31,7 +31,7 @@ public class UsuarioController {
 
     @PostMapping("/login")
     public Usuario login(@RequestBody Usuario usuario) {
-        return usuarioService.login(usuario);
+        return usuarioService.login(usuario).getBody();
     }
 
     @PostMapping("/signin")

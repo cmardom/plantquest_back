@@ -1,3 +1,5 @@
+import {Coleccion} from "./coleccion";
+
 export interface Usuario {
   dtype: string | undefined;
   id: number | undefined;
@@ -5,4 +7,5 @@ export interface Usuario {
   nombre: string;
   password: string;
   rol: string | undefined;
+  colecciones: Coleccion[] | undefined // Array of Coleccion objects
 }
