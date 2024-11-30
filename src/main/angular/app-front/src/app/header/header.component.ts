@@ -1,4 +1,4 @@
-import {Component, NgModule, OnInit} from '@angular/core';
+import {Component, NgModule, OnInit, TemplateRef} from '@angular/core';
 import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "../login/login.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
@@ -14,7 +14,6 @@ import {NgIf} from "@angular/common";
   standalone: true,
   imports: [
     RouterLink,
-    RouterOutlet,
     LoginComponent,
     SigninComponent,
     NgIf
@@ -24,59 +23,15 @@ import {NgIf} from "@angular/common";
 })
 
 
-
-export class HeaderComponent implements OnInit{
-  usuario: Usuario = {
-    dtype: undefined,
-    id: 0,
-    email: "",
-    nombre: "",
-    password: "",
-    rol: undefined,
-    colecciones: []
-  };
-
-
+export class HeaderComponent /*implements OnInit*/{
 
   constructor(private modalService: NgbModal,
-              private usuarioService : UsuarioService,
-              private router: Router ) {}
+              public usuarioService : UsuarioService,
+              private router: Router
+  ) {}
 
-
-  ngOnInit(): void {
-
-    // @ts-ignore
-    if (this.usuarioService.getUserData()){
-      // @ts-ignore
-      this.usuario.nombre = this.usuarioService.getNameFromLocalStorage();
-      // @ts-ignore
-      this.usuario.password = this.usuarioService.getPasswordFromLocalStorage();
-
-      this.usuarioService.login(this.usuario);
-
-      console.log('variable usuario en header:')
-      console.log(this.usuario);
-
-    }
-
-
-  }
-
-  reload(){
-    window.location.reload();
-  }
-
-  open(content: any)
+  openModal(modalRef: TemplateRef<any>)
   {
-    this.modalService.open(content);
+    this.modalService.open(modalRef);
   }
-
-  logout(){
-    this.usuarioService.logout();
-    this.router.navigate(['/home']); // Navigate to the 'home' route
-  }
-
-
-
-
 }

@@ -3,6 +3,9 @@ import {FormsModule, NgForm} from "@angular/forms";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
 import {Router} from "@angular/router";
+import {Usuario} from "../interfaces/usuario";
+
+export type SignInDataType = Pick<Usuario, "nombre" | "email" | "password">;
 
 @Component({
   selector: 'app-signin',
@@ -13,18 +16,13 @@ import {Router} from "@angular/router";
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
-export class SigninComponent implements OnInit{
+export class SigninComponent{
 
-  // @ts-ignore
-  usuario: Usuario = {
-    dtype: undefined,
-    id: undefined,
-    email: "",
-    nombre: "",
-    password: "",
-    rol: undefined
+  usuario: SignInDataType = {
+    nombre: '',
+    email: '',
+    password: ''
   };
-  modal: NgbModalRef | undefined;
 
   constructor(private modalService: NgbModal,
               private usuarioService : UsuarioService,
@@ -32,21 +30,7 @@ export class SigninComponent implements OnInit{
 
   }
 
-  ngOnInit():
-    void {
-    if (localStorage.getItem('username') != null){
-      this.usuario.nombre = <string>localStorage.getItem('username');
-      this.usuario.password = <string>localStorage.getItem('password');
-
-    }
-  }
-
-  openModal() {
-    this.modal = this.modalService.open(TemplateRef);
-  }
-
   closeModal() {
-
     this.modalService.dismissAll();
   }
 
@@ -55,24 +39,7 @@ export class SigninComponent implements OnInit{
     if (!loginForm.valid) {
       return;
     } else {
-
-      console.log(this.usuario)
-
-      this.usuarioService.signin(this.usuario).subscribe({
-
-
-        next: (response) => {
-          this.router.navigate(['/perfil']);
-          this.usuarioService.storeUserData(response);
-
-          this.closeModal();
-
-        },
-        error: (error) => {
-
-          console.error(error);
-        }
-      });
+      this.usuarioService.signin(this.usuario);
     }
   }
 }

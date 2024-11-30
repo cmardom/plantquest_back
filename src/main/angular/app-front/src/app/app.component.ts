@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {FormsModule} from "@angular/forms";
 import {HeaderComponent} from "./header/header.component";
 import { FooterComponent } from './footer/footer.component';
+import {UsuarioService} from "./services/usuario.service";
 
 
 @Component({
@@ -14,8 +15,13 @@ import { FooterComponent } from './footer/footer.component';
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app-front';
 
+  constructor(public usuarioService: UsuarioService) {
+  }
 
+  ngOnInit() {
+    this.usuarioService.setUserFromLocalStorage();
+  }
 }
