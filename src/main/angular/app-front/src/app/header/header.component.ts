@@ -8,6 +8,7 @@ import {UsuarioService} from "../services/usuario.service";
 import {NgIf} from "@angular/common";
 
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -36,20 +37,31 @@ export class HeaderComponent implements OnInit{
 
 
 
-  constructor(private modalService: NgbModal, private usuarioService : UsuarioService,) {}
+  constructor(private modalService: NgbModal, private usuarioService : UsuarioService) {}
 
 
   ngOnInit(): void {
 
+
     // @ts-ignore
-    localStorage = document.defaultView?.localStorage;
-    if (localStorage.getItem('username') != null){
-      this.usuario.nombre = <string>localStorage.getItem('username');
-      this.usuario.password = <string>localStorage.getItem('password');
+    if (this.usuarioService.getUserData()){
+      // @ts-ignore
+      this.usuario.nombre = this.usuarioService.getNameFromLocalStorage();
+      // @ts-ignore
+      this.usuario.password = this.usuarioService.getPasswordFromLocalStorage();
+
+      this.usuarioService.login(this.usuario);
+
+      console.log('variable usuario en header:')
+      console.log(this.usuario);
 
     }
 
 
+  }
+
+  reload(){
+    window.location.reload();
   }
 
   open(content: any)
@@ -59,7 +71,10 @@ export class HeaderComponent implements OnInit{
 
   logout(){
     this.usuarioService.logout();
+    this.reload();
   }
-//navegar al home despues de logout
+
+
+
 
 }

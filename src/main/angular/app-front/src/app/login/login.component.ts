@@ -44,10 +44,13 @@ export class LoginComponent implements OnInit
 
   ngOnInit(): void {
 //hay que setear el item
-    if (localStorage.getItem('username') != null){
-      this.usuario.nombre = <string>localStorage.getItem('username');
-      this.usuario.password = <string>localStorage.getItem('password');
-
+    if (this.usuarioService.getUserData()){
+      // @ts-ignore
+      this.usuario.nombre = this.usuarioService.getNameFromLocalStorage();
+      // @ts-ignore
+      this.usuario.password = this.usuarioService.getPasswordFromLocalStorage();
+      console.log('login correcto en login component');
+      console.log(this.usuario);
     }
 
 
@@ -68,7 +71,8 @@ export class LoginComponent implements OnInit
 
   login() {
 
-    console.log("login correcto")
+
+    this.usuarioService.login(this.usuario);
   }
 
   onSubmit(loginForm: NgForm) {
@@ -77,29 +81,29 @@ export class LoginComponent implements OnInit
     } else {
 
 
-    console.log(this.usuario)
-    this.usuarioService.login(this.usuario).subscribe({
+      console.log(this.usuario)
+      this.usuarioService.login(this.usuario).subscribe({
 
-      next: (data) => {
-        console.log(data + " > despues de next");
-        this.usuario.dtype = data.dtype;
-        this.usuario.id = data.id;
-        this.usuario.email = data.email;
-        this.usuario.password = data.password;
-        this.usuario.rol = data.rol?.toString();
+        next: (data) => {
+          console.log(data + " > despues de next");
+          this.usuario.dtype = data.dtype;
+          this.usuario.id = data.id;
+          this.usuario.email = data.email;
+          this.usuario.password = data.password;
+          this.usuario.rol = data.rol?.toString();
 
-        //localStorage
-        this.usuarioService.storeUserData(data);
+          //localStorage
+          this.usuarioService.storeUserData(data);
 
-        this.router.navigate(['/perfil']);
-        this.closeModal();
+          this.router.navigate(['/perfil']);
+          this.closeModal();
 
-      },
-      error: (error) => {
+        },
+        error: (error) => {
 
-        console.error(error);
-      }
-    });
+          console.error(error);
+        }
+      });
     }
 
   }

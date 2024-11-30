@@ -21,11 +21,13 @@
       </ng-template>
 
     </ul>
+
+    <!-- NO CAMBIA-->
+
     <ul class="nav" *ngIf="usuario.nombre">
 
-        <li class="nav-item"><a [routerLink]="['/perfil']" href="#perfil" class="nav-link link-dark px-2">Tu perfil</a></li>
-      <!-- NO ES CLICKABLE -->
-      <li class="nav-item" (click)="logout()"> <a class="nav-link link-dark px-2" >Cerrar sesion</a></li>
+      <li class="nav-item"><a [routerLink]="['/perfil']" href="#perfil" class="nav-link link-dark px-2">Tu perfil</a></li>
+      <li class="nav-item"> <a [routerLink]="['/home']"  href="#home" class="nav-link link-dark px-2" (click)="logout()">Cerrar sesion</a></li>
 
     </ul>
 
