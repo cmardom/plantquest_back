@@ -1,79 +1,43 @@
 
-<div class="container mb80 align-content-lg-start">
-  <h3>Blog</h3>
 
-  <div class="page-timeline">
-    <div class="vtimeline-point">
+  <div class="page-timeline container">
+    <h3 class="mb-4">Blog</h3>
 
-      <div class="vtimeline-icon">
-        <i class="fa fa-image"></i>
-      </div>
-      <div class="vtimeline-block">
-        <span class="vtimeline-date">June 25, 2020</span><div class="vtimeline-content">
-        <a href="#"><img src="https://via.placeholder.com/700x400" alt="" class="img-fluid mb20"></a>
-        <a href="#"><h2>Standard post title</h2></a>
-        <ul class="post-meta list-inline">
+    <app-vertical-timeline
+      title="Cómo cuidar tus suculentas en invierno"
+      date="November 20, 2024"
+      description="Las suculentas son resistentes, pero en invierno necesitan cuidados especiales. Aprende cómo evitar el riego excesivo y protegerlas del frío."
+      [tags]="[
+        { title: 'Cuidado de Plantas', url: '#' },
+        { title: 'Suculentas', url: '#' }
+      ]"
+    />
+    <app-vertical-timeline
+      title="5 plantas que purifican el aire de tu hogar"
+      date="October 15, 2024"
+      description="Descubre cuáles son las plantas más efectivas para mejorar la calidad del aire en tu casa y cómo cuidarlas fácilmente."
+      [tags]="[
+        { title: 'Curiosidades', url: '#' },
+        { title: 'Plantas de Interior', url: '#' }
+      ]"
+    />
+    <app-vertical-timeline
+      title="El misterio de las plantas carnívoras"
+      date="September 10, 2024"
+      description="¿Sabías que las plantas carnívoras atraen a sus presas con un aroma único? Aprende cómo cuidarlas y qué necesitan para sobrevivir."
+      [tags]="[
+        { title: 'Curiosidades', url: '#' },
+        { title: 'Plantas Exóticas', url: '#' }
+      ]"
+    />
 
-          <li class="list-inline-item">
-            <i class="fa fa-calendar-o"></i> <a class="botonCustom" href="#">25 June 2020</a>
-          </li>
-          <li class="list-inline-item">
-            <i class="fa fa-tags"></i> <a class="botonCustom" href="#">Bootstrap4</a>
-          </li>
-        </ul>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-        </p><br>
-        <a href="#" class="btn btn-outline-success btn-sm">Read More</a>
-      </div>
-      </div>
-    </div>
-
-    <div class="vtimeline-point">
-      <div class="vtimeline-icon">
-        <i class="fa fa-image"></i>
-      </div>
-      <div class="vtimeline-block">
-        <span class="vtimeline-date">June 25, 2020</span><div class="vtimeline-content">
-
-        <a href="#"><h2>Standard post title</h2></a>
-        <ul class="post-meta list-inline">
-          <li class="list-inline-item">
-            <i class="fa fa-calendar-o"></i> <a class="botonCustom" href="#">25 June 2020</a>
-          </li>
-          <li class="list-inline-item">
-            <i class="fa fa-tags"></i> <a class="botonCustom" href="#">Bootstrap4</a>
-          </li>
-        </ul>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-        </p><br>
-        <a href="#" class="btn btn-outline-success btn-sm">Read More</a>
-      </div>
-      </div>
-    </div>
-    <div class="vtimeline-point">
-      <div class="vtimeline-icon">
-        <i class="fa fa-image"></i>
-      </div>
-      <div class="vtimeline-block">
-        <span class="vtimeline-date">June 25, 2020</span><div class="vtimeline-content">
-        <a href="#"><img src="https://via.placeholder.com/700x400" alt="" class="img-fluid mb20"></a>
-        <a href="#"><h2>Standard post title</h2></a>
-        <ul class="post-meta list-inline">
-          <li class="list-inline-item">
-            <i class="fa fa-calendar-o"></i> <a class="botonCustom" href="#">25 June 2020</a>
-          </li>
-          <li class="list-inline-item">
-            <i class="fa fa-tags"></i> <a class="botonCustom" href="#">Bootstrap4</a>
-          </li>
-        </ul>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-        </p><br>
-        <a href="#" class="btn btn-outline-success btn-sm">Read More</a>
-      </div>
-      </div>
-    </div>
+    <app-vertical-timeline
+      title="Cómo crear un jardín vertical en casa"
+      date="August 5, 2024"
+      description="Los jardines verticales son ideales para aprovechar espacios pequeños. Te explicamos paso a paso cómo construir el tuyo."
+      [tags]="[
+        { title: 'Decoración', url: '#' },
+        { title: 'DIY', url: '#' }
+      ]"
+    />
   </div>
-</div>

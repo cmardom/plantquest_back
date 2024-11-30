@@ -1,17 +1,3 @@
-*{
-  font-family: "DM Sans", sans-serif;
-}
-
-.botonCustom{
-  font-family: Courier;
-  color: #006F42;
-
-
-}
-.botonCustom:hover{
-  color: #FE6D98;
-}
-
 .row{
 
 
@@ -21,8 +7,6 @@
     flex-grow: 1;
 
     .card{
-
-
 
       .card-body{
         display: flex;
@@ -36,6 +20,7 @@
         .card-text{
           display: -webkit-box;
           -webkit-line-clamp: 4; /* ajustar el numero de líneas  */
+          line-clamp: 4;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;

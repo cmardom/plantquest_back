@@ -58,20 +58,19 @@ export class LoginComponent implements OnInit
 
 
 
-  open(content: any)
+  registerLinkClick(event: Event, content: any)
   {
+    event.preventDefault();
+    this.closeModal();
     this.modalService.open(content);
   }
 
   closeModal() {
-
     this.modalService.dismissAll();
   }
 
 
   login() {
-
-
     this.usuarioService.login(this.usuario);
   }
 
