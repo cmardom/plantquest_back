@@ -1,0 +1,44 @@
+<div class="vtimeline-point d-flex gap-3 position-relative">
+  
+  <div class="d-none d-sm-flex gap-3">
+    <div class="vtimeline-date">{{ date }}</div>
+
+    <div class="vtimeline-stripe flex-shrink-0border-primary d-flex flex-column justify-content-center align-items-center">
+
+      <div class="calendar-icon flex-shrink-0 d-flex justify-content-center align-items-center bg-primary rounded-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" fill="white"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z"/></svg>
+      </div>
+
+      <div class="vline bg-primary h-100"></div>
+      
+    </div>
+  </div>
+
+  <div class="vtimeline-content mb-4 p-4 rounded-1 flex-grow-1">
+    <a href="#">
+      <img src="https://via.placeholder.com/700x400" alt="" class="img-fluid mb-4">
+    </a>
+    
+    <a href="#" class="text-dark font-base wrapper-link">
+      <h2 class="fw-bold fs-4">{{ title }}</h2>
+    </a>
+
+    <ul class="list-inline mt-3 mb-4">
+      <li class="list-inline-item">
+        <i class="fa fa-calendar-o"></i> <a href="#">{{ cleanDate() }}</a>
+      </li>
+
+      <li *ngFor="let tag of tags" class="list-inline-item">
+        <i class="fa fa-tags"></i> <a href="{{ tag.url }}">{{ tag.title }}</a>
+      </li>
+    </ul>
+    
+    <p class="mb-4">
+      {{ description }}
+    </p>
+
+    <button class="btn btn-outline-success btn-sm">Read More</button>
+
+  </div>
+
+</div>

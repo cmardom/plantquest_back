@@ -1,21 +1,3 @@
-*{
-  font-family: "DM Sans";
-}
-
-
-.botonCustom{
-  font-family: Courier;
-  color: #006F42;
-  background: none;
-  border: none;
-
-
-
-}
-.botonCustom:hover{
-  color: #FE6D98;
-}
-
 .mask-password {
   -webkit-text-security: disc; /* Mask the password with a dot, works in WebKit browsers */
   text-security: disc;  /* For other browsers (not widely supported yet) */

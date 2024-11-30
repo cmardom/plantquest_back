@@ -23,7 +23,7 @@
   </div>
   <div class="modal-body">
     ¿No tienes cuenta?
-    <button type="button" class="botonCustom" (click)="closeModal()" (click)="open(content2) ">Regístrate aquí</button>
+    <a (click)="registerLinkClick($event, content2)" href="#">Regístrate aquí</a>
     <ng-template #content2 let-modal2>
       <app-signin #modal2></app-signin>
     </ng-template>

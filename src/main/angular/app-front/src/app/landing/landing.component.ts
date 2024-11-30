@@ -12,7 +12,7 @@ import {NgForOf} from "@angular/common";
     BlogComponent,
     RouterLink,
     NgForOf
-  ],
+],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
