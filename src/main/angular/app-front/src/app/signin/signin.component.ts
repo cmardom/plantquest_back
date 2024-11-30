@@ -22,7 +22,8 @@ export class SigninComponent implements OnInit{
     email: "",
     nombre: "",
     password: "",
-    rol: undefined
+    rol: undefined,
+    colecciones: []
   };
   modal: NgbModalRef | undefined;
 
@@ -62,8 +63,14 @@ export class SigninComponent implements OnInit{
 
 
         next: (response) => {
-          this.router.navigate(['/perfil']);
+          console.log("RESPONSE EN SIGNIGN")
+
+          console.log(response);
           this.usuarioService.storeUserData(response);
+
+          this.usuario = { ...response };
+          this.router.navigate(['/perfil']);
+
 
           this.closeModal();
 

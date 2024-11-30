@@ -32,9 +32,14 @@ export class UsuarioService {
 
 
   signin(usuario: Usuario): Observable<Usuario> {
-    // @ts-ignore
-    return this.http.post(this.apiUrl + "/signin", usuario);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    });
+
+    return this.http.post<Usuario>(this.apiUrl + "/signin", usuario, { headers });
   }
+
 
   storeUserData(usuario: Usuario){
 
@@ -42,7 +47,6 @@ export class UsuarioService {
     const value = JSON.stringify({ nombre: usuario.nombre, password: usuario.password, email: usuario.email });
     localStorage.setItem(key, value);
 
-    console.log(usuario);
   }
 
   getUserData():any {
