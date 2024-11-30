@@ -28,12 +28,12 @@ import {NgIf} from "@angular/common";
 export class HeaderComponent implements OnInit{
   usuario: Usuario = {
     dtype: undefined,
-    id: undefined,
+    id: 0,
     email: "",
     nombre: "",
     password: "",
     rol: undefined,
-    colecciones: undefined
+    colecciones: []
   };
 
 

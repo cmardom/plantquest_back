@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit
   // @ts-ignore
   usuario: Usuario = {
     dtype: undefined,
-    id: undefined,
+    id: 0,
     email: "",
     nombre: "",
     password: "",
     rol: undefined,
-    colecciones: undefined
+    colecciones: []
 
   };
   modal: NgbModalRef | undefined;

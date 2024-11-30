@@ -27,8 +27,7 @@ public class Coleccion {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
-    @OneToMany
-    @JoinColumn(name = "coleccion_id")
+    @OneToMany (mappedBy = "coleccion", cascade = CascadeType.ALL)
     private List<Planta> plantas;
 
 }

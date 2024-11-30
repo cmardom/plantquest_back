@@ -2,10 +2,10 @@ import {Coleccion} from "./coleccion";
 
 export interface Usuario {
   dtype: string | undefined;
-  id: number | undefined;
+  id: number;
   email: string;
   nombre: string;
   password: string;
   rol: string | undefined;
-  colecciones: Coleccion[] | undefined // Array of Coleccion objects
+  colecciones: Coleccion[]; // Array of Coleccion objects
 }

@@ -1,3 +1,5 @@
+import {Planta} from "./planta-interface";
+
 export interface Coleccion{
   id: number | undefined;
   nombre: string;

@@ -1,5 +1,6 @@
 package es.plantquest.back.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,6 +35,7 @@ public class Planta {
     private String imagePath;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "coleccion_id", nullable = true)
     private Coleccion coleccion;
 }

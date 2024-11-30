@@ -73,79 +73,27 @@
 </div>
 
 
-    <div class="cartas">
-      <div class="row">
-        <h6> Nombre coleccion</h6>
-        <div class="col-sm-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Planta</h5>
-              <img class="card-img" src="assets/logo.png">
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-            </div>
-          </div>
-        </div>
 
-
-
-
-      </div>
-    </div>
-    </div>
 
 <br>
-  <div class="cartas">
-    <div class="row">
-      <h6> Nombre coleccion</h6>
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Planta</h5>
-            <img class="card-img" src="assets/logo.png">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-          </div>
+
+    <div *ngFor="let coleccion of usuario.colecciones; let i = index" class="col-sm-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ coleccion.nombre }}</h5>
+          <img class="card-img" src="assets/logo.png" alt="Imagen de la coleccion">
+          <p class="card-text">Colección creada por: {{ usuario.nombre }}</p>
+          <a href="#" class="botonCustom" data-mdb-ripple-init>Ver colección</a>
         </div>
       </div>
-
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Planta</h5>
-            <img class="card-img" src="assets/logo.png">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Planta</h5>
-            <img class="card-img" src="assets/logo.png">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Planta</h5>
-            <img class="card-img" src="assets/logo.png">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="botonCustom" data-mdb-ripple-init>Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-
     </div>
+
+
+
+
   </div>
 </div>
+
 
 
 

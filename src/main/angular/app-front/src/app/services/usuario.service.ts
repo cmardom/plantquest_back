@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {environment} from "../../enviroments/enviroment";
 import {Usuario} from "../interfaces/usuario";
 import {isPlatformBrowser} from "@angular/common";
+import {Coleccion} from "../interfaces/coleccion";
 
 @Injectable({
   providedIn: "root",
@@ -27,6 +28,8 @@ export class UsuarioService {
     return this.http.post<Usuario>(this.apiUrl + '/login', usuario, { headers });
     //return this.http.post(this.apiUrl + "/login", usuario);
   }
+
+
 
   signin(usuario: Usuario): Observable<Usuario> {
     // @ts-ignore
