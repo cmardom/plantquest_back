@@ -74,13 +74,11 @@ public class UsuarioService {
 
             usuarioRepository.save(usuarioLgin);
 
-            return usuario;
+            return usuarioLgin;
         } else {
             System.out.println("el usuario existe");
+            return null;
         }
-
-        return null;
-
     }
 
 
