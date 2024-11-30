@@ -2,37 +2,29 @@
 <nav class="py-2 bg-light border-bottom">
   <div class="container d-flex flex-wrap">
     <ul class="nav me-auto">
-      <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active">Inicio</a></li>
+      <li class="nav-item"><a [routerLink]="['/home']" class="nav-link link-dark px-2 active">Inicio</a></li>
       <li class="nav-item"><a [routerLink]="['/guia']" href="#guia" class="nav-link link-dark px-2">Guía botánica</a></li>
       <li class="nav-item"><a [routerLink]="['/blog']" href="#blog" class="nav-link link-dark px-2">Blog</a></li>
       <li class="nav-item"><a [routerLink]="['/faq']" href="#faq" class="nav-link link-dark px-2">Preguntas frecuentes</a></li>
     </ul>
-    <ul class="nav" *ngIf="!usuario.nombre">
-      <button  type="button" class="btn" (click)="open(content)">Inicia sesión</button>
+    <ul class="nav" *ngIf="!usuarioService.usuario">
+      <button  type="button" class="btn" (click)="openModal(content)">Inicia sesión</button>
       <ng-template #content let-modal>
         <app-login #modal></app-login>
       </ng-template>
 
       <li class="nav-item"><a href="#" class="nav-link link-dark px-2"></a></li>
 
-      <button type="button" class="btn" (click)="open(content2)">Regístrate</button>
+      <button type="button" class="btn" (click)="openModal(content2)">Regístrate</button>
       <ng-template #content2 let-modal2>
         <app-signin #modal2></app-signin>
       </ng-template>
-
     </ul>
 
-
-
-    <ul class="nav" *ngIf="usuario.nombre">
-
-      <li class="nav-item"><a [routerLink]="['/perfil']" href="#perfil" class="nav-link link-dark px-2">Tu perfil</a></li>
-      <li class="nav-item"> <a [routerLink]="['/home']"  href="#home" class="nav-link link-dark px-2" (click)="logout()">Cerrar sesion</a></li>
-
+    <ul class="nav" *ngIf="usuarioService.usuario">
+      <li class="nav-item"><button [routerLink]="['/perfil']" class="nav-link link-dark px-2">{{ usuarioService.usuario.nombre || 'Tu perfil' }}</button></li>
+      <li class="nav-item"><button [routerLink]="['/home']"  class="nav-link link-dark px-2" (click)="usuarioService.logout()">Cerrar sesión</button></li>
     </ul>
-
-
-
 
   </div>
 </nav>

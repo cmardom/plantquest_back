@@ -1,10 +1,10 @@
 import {Inject, Injectable, PLATFORM_ID} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
 import {environment} from "../../enviroments/enviroment";
 import {Usuario} from "../interfaces/usuario";
-import {isPlatformBrowser} from "@angular/common";
-import {Coleccion} from "../interfaces/coleccion";
+import {Router} from "@angular/router";
+import {SignInDataType} from "../signin/signin.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Injectable({
   providedIn: "root",
@@ -12,103 +12,78 @@ import {Coleccion} from "../interfaces/coleccion";
 export class UsuarioService {
   private baseUrl: string = environment.apiUrl;
   private apiUrl: string =  this.baseUrl + '/usuarios';
+  private localStorageKey: string = 'userData';
+
+  public usuario: Usuario | undefined = undefined;
 
 
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router : Router,
+    private modalService: NgbModal,
+  ) {
+  }
 
-  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
+  private setUser(usuario: Usuario){
+    this.usuario = usuario;
+    localStorage.setItem(this.localStorageKey, JSON.stringify(usuario));
+  }
 
-  login(usuario: Usuario): Observable<Usuario> {
+  setUserFromLocalStorage(){
+    const user = localStorage.getItem(this.localStorageKey);
+    if(user){
+      this.usuario = JSON.parse(user);
+    }
+  }
 
-
+  login(loginData: { email: string, password: string }) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',  // Ensure we're sending JSON
       'Accept': 'application/json',         // Ensure we expect JSON back
     });
+    return this.http.post<Usuario>(this.apiUrl + '/login', loginData, { headers })
+      .subscribe({
+        next: (usuario) => {
+          this.setUser(usuario);
+        },
+        error: (error) => {
+          //Error de login
+          // console.error(error);
+        }});
+  }
+
+  get(key?: keyof Usuario) {
+    if (key) {
+      return this.usuario?.[key];
+    }
+    return this.usuario;
+  }
+
+  async signin(signinData: SignInDataType){
     // @ts-ignore
-    return this.http.post<Usuario>(this.apiUrl + '/login', usuario, { headers });
-    //return this.http.post(this.apiUrl + "/login", usuario);
-  }
-
-
-
-  signin(usuario: Usuario): Observable<Usuario> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
+    return this.http.post<Usuario>(this.apiUrl + "/signin", signinData).subscribe({
+      next: async (usuario: Usuario) =>
+      {
+        if(usuario){
+          this.setUser(usuario);
+          this.modalService.dismissAll();
+          await this.router.navigate(['/perfil']);
+        }
+      },
+      error: (error) => {
+        console.error(error);
+      }
     });
-
-    return this.http.post<Usuario>(this.apiUrl + "/signin", usuario, { headers });
   }
 
-
-  storeUserData(usuario: Usuario){
-
-    const key = 'userData';
-    const value = JSON.stringify({ nombre: usuario.nombre, password: usuario.password, email: usuario.email });
-    localStorage.setItem(key, value);
-
-  }
-
-  getUserData():any {
-    //necesario para paginas renderizadas en navegador
-    if (typeof window !== 'undefined' && window.localStorage){
-      const user= localStorage.getItem('userData');
-      return user ? JSON.parse(user) : null;
-
-    } else{
-      return null;
-    }
-
-  }
-
-  getNameFromLocalStorage():string|void{
-    const storedValue = this.getUserData();
-
-    if (storedValue) {
-      const user = JSON.stringify(storedValue); // Parse the stringified object
-      const name = storedValue.nombre; // Access the 'name' property
-      console.log('User Name:', name);
-      return(name);
-    } else {
-      console.log('No data found in localStorage for key:', 'userData');
-    }
-  }
-
-  getPasswordFromLocalStorage():string|void{
-    const storedValue = this.getUserData();
-
-    if (storedValue) {
-      const user = JSON.stringify(storedValue); // Parse the stringified object
-      const pass = storedValue.password;
-      console.log('User pass:', pass);
-      return (pass);
-    } else {
-      console.log('No data found in localStorage for key:', 'userData');
-    }
-  }
-
-
-  getEmailFromLocalStorage():string|void{
-    const storedValue = this.getUserData();
-
-    if (storedValue) {
-      const user = JSON.stringify(storedValue); // Parse the stringified object
-      const email = storedValue.email;
-      console.log('User email:', email);
-      return (email);
-    } else {
-      console.log('No data found in localStorage for key:', 'userData');
-    }
-  }
-
-
-  logout() {
+  async logout() {
     localStorage.clear();
-
-    return this.http.post('/logout', {});
+    this.usuario = undefined;
+    const result = this.http.post('/logout', {});
+    await this.router.navigate(['/home']);
+    return result;
   }
-
-
 
   // isBrowser(): boolean {
   //   return isPlatformBrowser(this.platformId);
