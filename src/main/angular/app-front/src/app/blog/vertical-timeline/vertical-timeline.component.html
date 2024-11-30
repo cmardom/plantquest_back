@@ -1,7 +1,7 @@
 <div class="vtimeline-point d-flex gap-3 position-relative">
-  
+
   <div class="d-none d-sm-flex gap-3">
-    <div class="vtimeline-date">{{ date }}</div>
+    <div class="vtimeline-date text-capitalize">{{ textDate() }}</div>
 
     <div class="vtimeline-stripe flex-shrink-0border-primary d-flex flex-column justify-content-center align-items-center">
 
@@ -10,7 +10,7 @@
       </div>
 
       <div class="vline bg-primary h-100"></div>
-      
+
     </div>
   </div>
 
@@ -18,21 +18,21 @@
     <a href="#">
       <img src="https://via.placeholder.com/700x400" alt="" class="img-fluid mb-4">
     </a>
-    
+
     <a href="#" class="text-dark font-base wrapper-link">
       <h2 class="fw-bold fs-4">{{ title }}</h2>
     </a>
 
     <ul class="list-inline mt-3 mb-4">
       <li class="list-inline-item">
-        <i class="fa fa-calendar-o"></i> <a href="#">{{ cleanDate() }}</a>
+        <i class="fa fa-calendar-o"></i> <a href="#" class="text-capitalize">{{ textDate() }}</a>
       </li>
 
       <li *ngFor="let tag of tags" class="list-inline-item">
         <i class="fa fa-tags"></i> <a href="{{ tag.url }}">{{ tag.title }}</a>
       </li>
     </ul>
-    
+
     <p class="mb-4">
       {{ description }}
     </p>

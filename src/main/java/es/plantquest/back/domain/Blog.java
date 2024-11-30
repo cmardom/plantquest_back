@@ -43,11 +43,6 @@ public class Blog {
     @Column(name = "date", nullable = true)
     private LocalDate date;
 
-    @PrePersist
-    public void prePersist() {
-        if (date == null) {  // Set the default value only if it's not already set
-            this.date = LocalDate.now();
-        }
-    }
+
 
 }
