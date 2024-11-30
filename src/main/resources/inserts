@@ -44,3 +44,7 @@ VALUES ('juan@email.com', "juan", "123", "ROL_USER");
 
 INSERT INTO usuarios (email, nombre, password, rol)
 VALUES ('carmen@email.com', "carmen", "123", "ROL_ADMIN");
+
+
+--Insertar colecciones
+INSERT INTO colecciones (usuario_id, nombre) VALUES (1, 'My First Collection');

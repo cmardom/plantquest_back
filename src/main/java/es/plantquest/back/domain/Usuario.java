@@ -1,7 +1,10 @@
 package es.plantquest.back.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="usuarios")
@@ -26,10 +29,13 @@ public class Usuario {
     private Rol rol;
 
 
+    @JsonBackReference
+    @OneToMany(mappedBy = "usuario")
+    private List<Coleccion> colecciones;
 
 
-     /*@OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+}
+/*@OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonIgnore
     @ToString.Exclude
     private List<Coleccion> colecciones*/
-}

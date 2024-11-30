@@ -32,4 +32,8 @@ public class Planta {
 
     @Lob
     private String imagePath;
+
+    @ManyToOne
+    @JoinColumn(name = "coleccion_id", nullable = true)
+    private Coleccion coleccion;
 }
