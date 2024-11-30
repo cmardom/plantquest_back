@@ -22,9 +22,7 @@ export class PlantaComponent implements OnInit{
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.idPlanta = +params['id']; // Convertir el parámetro a número
-      // Ahora puedes usar plantaId para obtener los datos de la planta
-      // ...
+      this.idPlanta = +params['id'];
     });
 
     this.plantaService.getOnePlanta(this.idPlanta)

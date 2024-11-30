@@ -5,6 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {BlogService} from "../services/blog.service";
 import {Blog} from "../interfaces/blog";
 import {NgForOf} from "@angular/common";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-blog',
@@ -16,13 +17,13 @@ import {NgForOf} from "@angular/common";
 export class BlogComponent implements OnInit{
 
   blogs: Blog[] = [];
+  blog: Blog | undefined;
   constructor(private blogService: BlogService) {  }
 
   ngOnInit(){
 
     this.blogService.getBlogs().subscribe(data=>{
       this.blogs = data;
-      console.log(data)
     })
 
   }
@@ -33,5 +34,22 @@ export class BlogComponent implements OnInit{
       url: '#'  // You can adjust the URL if needed
     }));
   }
+
+  getBlogById(id:number){
+    this.blogService.getBlogById(id).subscribe( data => {
+      this.blog=data;
+
+
+    })
+  }
+
+  // getBlogsByTags(tags:string){
+  //   this.blogService.getBlogsByTags(tags).subscribe(data=>{
+  //     this.blogs = data;
+  //   })
+  //
+  // }
+
+
 
 }

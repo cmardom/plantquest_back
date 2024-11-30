@@ -18,10 +18,13 @@
         <div *ngFor="let planta of plantas; let i = index" class="card ">
           <div class="card-body">
             <h5 class="card-title">{{ planta.nombre_comun }}</h5>
-            <img class="card-img" src="assets/logo.png">
+            <div>
+              <img class="card-img" [src]=[planta.imagePath]>
+            </div>
+
             <p class="card-text">{{ planta.info }}</p>
             <a [routerLink]="['/planta', planta.id]" href="#planta"
-               data-mdb-ripple-init>Ver más</a>
+               data-mdb-ripple-init class="text-center">Ver más</a>
           </div>
         </div>
       </div>

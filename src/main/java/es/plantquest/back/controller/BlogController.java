@@ -45,4 +45,9 @@ public class BlogController {
         return blogService.findByTag(tag);
     }
 
+    @GetMapping("/{id}")
+    public Blog getBlogById(@PathVariable("id") Long id) {
+        return blogService.findById(id);
+    }
+
 }

@@ -23,4 +23,14 @@ export class BlogService {
 
   }
 
+  getBlogsByTags(tag:string):Observable<Blog[]>{
+    return this.http.get<Blog[]>(this.apiUrl + "/" + tag);
+
+  }
+
+
+  getBlogById(id:number):Observable<Blog>{
+    return this.http.get<Blog>(this.apiUrl + "/" + id);
+  }
+
 }

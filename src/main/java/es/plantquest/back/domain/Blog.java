@@ -43,6 +43,8 @@ public class Blog {
     @Column(name = "date", nullable = true)
     private LocalDate date;
 
+    private String imagePath;
+
 
 
 }

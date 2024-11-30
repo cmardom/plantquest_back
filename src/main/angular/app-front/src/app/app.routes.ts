@@ -16,6 +16,7 @@ export const routes: Routes = [
   {path: 'perfil', component: PerfilComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'faq', component: FaqComponent},
+  {path: 'blog/:id', component: BlogComponent},
 
   {path: 'planta', component: PlantaComponent},
   {path: 'planta/:id', component: PlantaComponent},

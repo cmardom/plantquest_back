@@ -1,22 +1,29 @@
-.row{
+.row {
 
-  .cartas{
+  .cartas {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
     flex-grow: 1;
+    justify-content: space-between;
 
-    .card{
+    .card {
+      flex: 1 1 23%;
+      max-width: 23%;
+      box-sizing: border-box;
 
-      .card-body{
+      .card-body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-        img{
-          width: 10rem;
+        .card-img {
+          width: 100%; /* Make the image responsive */
+          height: 100%; /* Maintain aspect ratio */
+          object-fit: cover; /* Ensures the image fills the container without distorting */
         }
 
-        .card-text{
+        .card-text {
           display: -webkit-box;
           -webkit-line-clamp: 2; /* ajustar el numero de líneas  */
           line-clamp: 2;
@@ -27,8 +34,22 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .card {
+        flex: 1 1 48%; /* 2 cards per row */
+        max-width: 48%;
+      }
+    }
 
+    /* For mobile screens */
+    @media (max-width: 480px) {
+      .card {
+        flex: 1 1 100%; /* 1 card per row */
+        max-width: 100%;
+      }
+
+
+    }
   }
+
 }
-
-

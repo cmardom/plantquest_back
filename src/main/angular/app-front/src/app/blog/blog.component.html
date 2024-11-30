@@ -3,13 +3,15 @@
 <div class="page-timeline container">
   <h3 class="mb-4">Blog</h3>
 
-  <!-- Use ngFor to loop over the blogs array -->
   <app-vertical-timeline
     *ngFor="let blog of blogs"
+    [idClicado]="blog.id"
     [title]="blog.titulo"
-    [description]="blog.texto"
+    [texto]="blog.texto"
     [date]="blog.date"
     [tags]="getTags(blog.tags)"
+    [imagePath]="blog.imagePath"
   />
 </div>
+
 

@@ -4,4 +4,5 @@ export interface Blog {
   texto: string;
   titulo: string;
   date: Date;
+  imagePath: string;
 }

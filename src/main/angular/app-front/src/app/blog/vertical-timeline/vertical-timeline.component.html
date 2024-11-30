@@ -16,7 +16,7 @@
 
   <div class="vtimeline-content mb-4 p-4 rounded-1 flex-grow-1">
     <a href="#">
-      <img src="https://via.placeholder.com/700x400" alt="" class="img-fluid mb-4">
+      <img [src]=[imagePath]  alt="" class="img-fluid mb-4">
     </a>
 
     <a href="#" class="text-dark font-base wrapper-link">
@@ -34,10 +34,11 @@
     </ul>
 
     <p class="mb-4">
-      {{ description }}
+      {{ texto }}
     </p>
 
-    <button class="btn btn-outline-success btn-sm">Read More</button>
+    <button class="btn btn-outline-success btn-sm" [routerLink]="['/blog', idClicado]">Leer mas</button>
+
 
   </div>
 

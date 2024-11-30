@@ -5,7 +5,7 @@ VALUES ('En verano',
         'La cinta es una de las plantas de interior más populares y por buenas razones. Su resistencia y facilidad de cuidado la convierten en la elección perfecta para aquellos que se inician en el mundo de la jardinería o que no tienen mucho tiempo para dedicarle a sus plantas.
         Soporta una amplia variedad de condiciones de luz y temperatura, desde lugares muy luminosos hasta zonas con poca luz. Es muy tolerante a la sequía gracias a sus raíces gruesas que almacenan agua.
         Se multiplica rápidamente por hijuelos, lo que te permitirá tener más plantas sin mucho esfuerzo y además, ayuda a mejorar la calidad del aire al absorber toxinas.',
-        'Media-baja', 'Luz indirecta brillante', '.jpg', 'exterior en sombra o interior muy iluminado', 'Chlorophytum comosum', 'Cinta', 'Cuando el sustrato esté seco y las hojas arrugadas', 'Entre -2º y 30º', 'Ninguna');
+        'Media-baja', 'Luz indirecta brillante', 'https://images.unsplash.com/photo-1647631703145-01e8bf7cd149?q=80&w=2565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'exterior en sombra o interior muy iluminado', 'Chlorophytum comosum', 'Cinta', 'Cuando el sustrato esté seco y las hojas arrugadas', 'Entre -2º y 30º', 'Ninguna');
 
 INSERT INTO plantas (abono, info, humedad, iluminacion, image_path, localizacion, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
 VALUES ('En primavera y verano, usa un fertilizante líquido para plantas de interior.',
@@ -13,7 +13,7 @@ VALUES ('En primavera y verano, usa un fertilizante líquido para plantas de int
         Aunque aprecia la luz brillante, evita la exposición directa al sol durante las horas más calurosas del día, ya que puede quemar sus hojas. Un lugar cerca de una ventana orientada al este o al oeste suele ser ideal.
         El riego debe ser moderado, permitiendo que el sustrato se seque ligeramente entre riegos. Evita el encharcamiento, ya que puede provocar la pudrición de las raíces. Al ser originario de zonas tropicales, el Ficus Tineke agradece un ambiente húmedo. Puedes aumentar la humedad ambiental pulverizando sus hojas con agua regularmente o utilizando un humidificador.
         Utiliza un sustrato bien drenado y rico en nutrientes. Puedes preparar una mezcla casera con turba, perlita y corteza de pino.',
-        'Media-alta', 'Luz indirecta brillante', '.jpg', 'Interior, sin luz directa', 'Ficus Tineke', 'Árbol de caucho', 'Moderado, cuando el sustrato esté seco', 'Más de 15º', 'Sí, para mascotas y personas');
+        'Media-alta', 'Luz indirecta brillante', 'https://images.unsplash.com/photo-1649445005423-4b964577b249?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmljdXMlMjB0aW5la2V8ZW58MHx8MHx8fDA%3D', 'Interior, sin luz directa', 'Ficus Tineke', 'Árbol de caucho', 'Moderado, cuando el sustrato esté seco', 'Más de 15º', 'Sí, para mascotas y personas');
 
 
 INSERT INTO plantas (abono, info, humedad, iluminacion, image_path, localizacion, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
@@ -22,7 +22,7 @@ VALUES ('En primavera y verano, usa un fertilizante líquido para plantas de int
         El riego debe ser moderado, permitiendo que el sustrato se seque ligeramente entre riegos. Evita el encharcamiento, ya que puede provocar la pudrición de las raíces. Aunque se adapta a diferentes niveles de humedad, agradece un ambiente ligeramente húmedo. Puedes aumentar la humedad ambiental pulverizando sus hojas con agua regularmente.
         Utiliza un sustrato bien drenado y rico en nutrientes. Una mezcla de turba, perlita y corteza de pino es ideal.
         Realiza podas regulares para controlar su crecimiento y estimular la ramificación y trasplántala a una maceta ligeramente más grande cada 2-3 años',
-        'Media-alta', 'Luz indirecta brillante', '.jpg', 'Interior, sin luz directa', 'Epipremnum Aureum', 'Potos, photos golden', 'Moderado, cuando el sustrato esté seco', 'Más de 15º', 'Sí, para mascotas');
+        'Media-alta', 'Luz indirecta brillante', 'https://plus.unsplash.com/premium_photo-1673969608398-18921179fa7d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG90aG9zfGVufDB8fDB8fHww', 'Interior, sin luz directa', 'Epipremnum Aureum', 'Potos, photos golden', 'Moderado, cuando el sustrato esté seco', 'Más de 15º', 'Sí, para mascotas');
 
 
 INSERT INTO plantas (abono, info, humedad, iluminacion, image_path, localizacion, nombre_cientifico, nombre_comun, riego, temperatura, toxicidad)
@@ -32,7 +32,7 @@ VALUES ('En primavera y verano, usa un fertilizante líquido para plantas de int
         En otoño e invierno, el caladium entra en reposo. Durante esta época, reduce el riego y guarda el bulbo en un lugar fresco y oscuro. Trasplántalo cada año a principios de primavera, utilizando una maceta ligeramente más grande.
         Los caladium son plantas que requieren unos cuidados muy específicos, por lo que no se recomiendan para principiantes.
         ',
-        'Alta', 'Luz indirecta brillante', '.jpg', 'Interior, sin luz directa o exterior, con sombra', 'Caladium', 'Caladio', 'Abundante', 'Más de 15º', 'Sí, para mascotas');
+        'Alta', 'Luz indirecta brillante', 'https://images.unsplash.com/photo-1714378132409-144d920bd0aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FsYWRpdW18ZW58MHx8MHx8fDA%3D', 'Interior, sin luz directa o exterior, con sombra', 'Caladium', 'Caladio', 'Abundante', 'Más de 15º', 'Sí, para mascotas');
 
 
 
@@ -52,7 +52,7 @@ INSERT INTO colecciones (usuario_id, nombre) VALUES (1, 'My First Collection');
 -- insertar plantas en colecciones
 -- insertar plantas en colecciones
 insert into coleccion_planta (coleccion_id, planta_id) values
-                                                           (1,1);
+    (1,1);
 insert into coleccion_planta (coleccion_id, planta_id) values
     (1,2);
 insert into coleccion_planta (coleccion_id, planta_id) values
@@ -61,15 +61,17 @@ insert into coleccion_planta (coleccion_id, planta_id) values
     (1,4);
 
 --inserts blog
-insert into blog (tags, texto, titulo, date) values (
-                                                  "suculentas, riego",
-                                                  "Las suculentas son resistentes, pero en invierno necesitan cuidados especiales. Aprende cómo evitar el riego excesivo y protegerlas del frío. ",
-                                                  "Como cuidar de las suculentas en invierno",
-                                                     CURRENT_DATE
-                                              );
-insert into blog (tags, texto, titulo, date) values (
-                                                  "suculentas, riego",
-                                                  "Las suculentas son resistentes, pero en invierno necesitan cuidados especiales. Aprende cómo evitar el riego excesivo y protegerlas del frío. ",
-                                                  "Como cuidar de las suculentas en invierno",
-                                                     CURRENT_DATE
-                                              );
+insert into blog (tags, texto, titulo, date, image_path) values (
+                                                                    "suculentas, riego",
+                                                                    "Las suculentas son resistentes, pero en invierno necesitan cuidados especiales. Aprende cómo evitar el riego excesivo y protegerlas del frío. ",
+                                                                    "Como cuidar de las suculentas en invierno",
+                                                                    CURRENT_DATE,
+                                                                    "https://images.unsplash.com/photo-1668976387693-092bce814a61?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                                                );
+insert into blog (tags, texto, titulo, date, image_path) values (
+                                                                    "suculentas, riego",
+                                                                    "Las suculentas son resistentes, pero en invierno necesitan cuidados especiales. Aprende cómo evitar el riego excesivo y protegerlas del frío. ",
+                                                                    "Como cuidar de las suculentas en invierno",
+                                                                    CURRENT_DATE,
+                                                                    "https://images.unsplash.com/photo-1668976387693-092bce814a61?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                                                );
