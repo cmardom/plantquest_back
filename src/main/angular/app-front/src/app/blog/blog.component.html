@@ -6,9 +6,10 @@
   <!-- Use ngFor to loop over the blogs array -->
   <app-vertical-timeline
     *ngFor="let blog of blogs"
-  [title]="blog.titulo"
-  [description]="blog.texto"
-  [tags]="getTags(blog.tags)"
+    [title]="blog.titulo"
+    [description]="blog.texto"
+    [date]="blog.date"
+    [tags]="getTags(blog.tags)"
   />
 </div>
 

@@ -4,6 +4,7 @@ package es.plantquest.back.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -38,4 +39,15 @@ public class Blog {
     @Lob
     @Column (columnDefinition = "LONGTEXT")
     private String texto;
+
+    @Column(name = "date", nullable = true)
+    private LocalDate date;
+
+    @PrePersist
+    public void prePersist() {
+        if (date == null) {  // Set the default value only if it's not already set
+            this.date = LocalDate.now();
+        }
+    }
+
 }

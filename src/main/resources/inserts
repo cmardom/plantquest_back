@@ -61,8 +61,15 @@ insert into coleccion_planta (coleccion_id, planta_id) values
     (1,4);
 
 --inserts blog
-insert into blog (tags, texto, titulo) values (
+insert into blog (tags, texto, titulo, date) values (
                                                   "suculentas, riego",
                                                   "Las suculentas son resistentes, pero en invierno necesitan cuidados especiales. Aprende cómo evitar el riego excesivo y protegerlas del frío. ",
-                                                  "Como cuidar de las suculentas en invierno"
+                                                  "Como cuidar de las suculentas en invierno",
+                                                     CURRENT_DATE
+                                              );
+insert into blog (tags, texto, titulo, date) values (
+                                                  "suculentas, riego",
+                                                  "Las suculentas son resistentes, pero en invierno necesitan cuidados especiales. Aprende cómo evitar el riego excesivo y protegerlas del frío. ",
+                                                  "Como cuidar de las suculentas en invierno",
+                                                     CURRENT_DATE
                                               );

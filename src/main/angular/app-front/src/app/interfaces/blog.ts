@@ -3,4 +3,5 @@ export interface Blog {
   tags : string;
   texto: string;
   titulo: string;
+  date: string;
 }

@@ -12,10 +12,10 @@ import { Component, computed, Input } from '@angular/core';
 export class VerticalTimelineComponent {
   @Input() title!: string;
   @Input() description!: string;
-  //@Input() date!: string;
+  @Input() date!: string;
   @Input() tags: Link[] = [];
 
-  //cleanDate = computed(() => this.date.replace(',', ''));
+  cleanDate = computed(() => this.date.replace(',', ''));
 }
 
 type Link = {
