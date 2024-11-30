@@ -24,7 +24,6 @@ public class Coleccion {
 
 
     @ManyToOne
-    @JsonManagedReference //evita recursion infinita en el json
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
