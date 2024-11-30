@@ -2,6 +2,7 @@ package es.plantquest.back.controller;
 
 
 import es.plantquest.back.domain.Planta;
+import es.plantquest.back.service.ColeccionService;
 import es.plantquest.back.service.PlantaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class PlantaController {
 
     @Autowired
     private PlantaService plantaService;
+    private ColeccionService coleccionService;
 
     @GetMapping({"","/"})
     public List<Planta> getPlantas() {
@@ -49,6 +51,22 @@ public class PlantaController {
     @DeleteMapping("/{id}")
     public void deletePlanta(@PathVariable("id") Long id) {
         plantaService.delete(id);
+    }
+
+
+    @GetMapping("/coleccion/{coleccionId}")
+    public List<Planta> getPlantasForColeccion(@PathVariable("coleccionId") Long coleccionId) {
+        log.info("Fetching plantas for coleccion with ID: " + coleccionId);
+
+        List<Planta> plantas = plantaService.getPlantasForColeccion(coleccionId);  // Call to the service method
+
+        if (plantas.isEmpty()) {
+            log.info("No plantas found for coleccion with ID: " + coleccionId);
+        } else {
+            log.info("Found " + plantas.size() + " plantas for coleccion with ID: " + coleccionId);
+        }
+
+        return plantas;  // Return the list of plantas for the coleccion
     }
 
 

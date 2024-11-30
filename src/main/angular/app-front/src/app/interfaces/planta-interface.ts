@@ -12,4 +12,5 @@ export interface Planta {
   abono: string;
   info: string;
   imagePath: string;
+  coleccion_id: number | undefined;
 }

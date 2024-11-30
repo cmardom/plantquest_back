@@ -21,6 +21,10 @@ export class PlantaService {
     return this.http.get<Planta>(this.apiUrl + '/' + id);
   }
 
+  getPlantasFromColeccionID(id: number){
+    return this.http.get<Planta[]>(this.apiUrl + '/coleccion' + id)
+  }
+
 }
 
 

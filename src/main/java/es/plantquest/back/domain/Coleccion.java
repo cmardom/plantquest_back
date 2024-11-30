@@ -1,5 +1,7 @@
 package es.plantquest.back.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -25,9 +27,27 @@ public class Coleccion {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
+    @JsonBackReference
+    @JsonIgnore  // Prevent recursion in serialization
     private Usuario usuario;
 
-    @OneToMany (mappedBy = "coleccion", cascade = CascadeType.ALL)
+    // Managed side of the relationship
+    @ManyToMany
+    @JoinTable(
+            name = "coleccion_planta",
+            joinColumns = @JoinColumn(name = "coleccion_id"),
+            inverseJoinColumns = @JoinColumn(name = "planta_id")
+    )
+    @JsonManagedReference
     private List<Planta> plantas;
 
+
+
+    @Override
+    public String toString() {
+        return "Coleccion{" +
+                "id=" + ID +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

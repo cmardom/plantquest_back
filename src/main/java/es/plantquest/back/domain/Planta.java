@@ -1,8 +1,11 @@
 package es.plantquest.back.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="plantas")
@@ -34,8 +37,8 @@ public class Planta {
     @Lob
     private String imagePath;
 
-    @ManyToOne
+    @ManyToMany(mappedBy = "plantas")
     @JsonBackReference
-    @JoinColumn(name = "coleccion_id", nullable = true)
-    private Coleccion coleccion;
+    @JsonIgnore  // Prevent recursion in serialization
+    private List<Coleccion> colecciones;
 }

@@ -33,10 +33,9 @@ public class Usuario {
     private Rol rol;
 
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Coleccion> colecciones;
-
 
 }
 /*@OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)

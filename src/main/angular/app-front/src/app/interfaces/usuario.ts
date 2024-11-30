@@ -7,5 +7,5 @@ export interface Usuario {
   nombre: string;
   password: string;
   rol: string | undefined;
-  colecciones: Coleccion[]; // Array of Coleccion objects
+  colecciones: Coleccion[ ]; // Array of Coleccion objects
 }

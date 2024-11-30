@@ -1,5 +1,5 @@
 import {Component, NgModule, OnInit} from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "../login/login.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {SigninComponent} from "../signin/signin.component";
@@ -38,11 +38,12 @@ export class HeaderComponent implements OnInit{
 
 
 
-  constructor(private modalService: NgbModal, private usuarioService : UsuarioService) {}
+  constructor(private modalService: NgbModal,
+              private usuarioService : UsuarioService,
+              private router: Router ) {}
 
 
   ngOnInit(): void {
-
 
     // @ts-ignore
     if (this.usuarioService.getUserData()){
@@ -72,7 +73,7 @@ export class HeaderComponent implements OnInit{
 
   logout(){
     this.usuarioService.logout();
-    this.reload();
+    this.router.navigate(['/home']); // Navigate to the 'home' route
   }
 
 

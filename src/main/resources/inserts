@@ -50,7 +50,12 @@ VALUES ('carmen@email.com', "carmen", "123", "ROL_ADMIN");
 INSERT INTO colecciones (usuario_id, nombre) VALUES (1, 'My First Collection');
 
 -- insertar plantas en colecciones
-update plantas set coleccion_id = 1 where plantas.id=1;
-update plantas set coleccion_id = 1 where plantas.id=2;
-update plantas set coleccion_id = 1 where plantas.id=3;
-update plantas set coleccion_id = 1 where plantas.id=4;
+-- insertar plantas en colecciones
+insert into coleccion_planta (coleccion_id, planta_id) values
+                                                           (1,1);
+insert into coleccion_planta (coleccion_id, planta_id) values
+    (1,2);
+insert into coleccion_planta (coleccion_id, planta_id) values
+    (1,3);
+insert into coleccion_planta (coleccion_id, planta_id) values
+    (1,4);

@@ -81,9 +81,13 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{ coleccion.nombre }}</h5>
-          <img class="card-img" src="assets/logo.png" alt="Imagen de la coleccion">
-          <p class="card-text">Colección creada por: {{ usuario.nombre }}</p>
-          <a href="#" class="botonCustom" data-mdb-ripple-init>Ver colección</a>
+          <div *ngFor="let planta of coleccion.plantas; let x = index">
+            <p> {{coleccion.plantas}}</p>
+
+          </div>
+
+
+
         </div>
       </div>
     </div>

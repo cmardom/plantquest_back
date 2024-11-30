@@ -1,10 +1,13 @@
 package es.plantquest.back.service;
 
+import es.plantquest.back.domain.Coleccion;
 import es.plantquest.back.domain.Planta;
+import es.plantquest.back.repository.ColeccionRepository;
 import es.plantquest.back.repository.PlantaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +15,11 @@ import java.util.Optional;
 public class PlantaService {
     @Autowired
     private PlantaRepository plantaRepository;
+    private ColeccionRepository coleccionRepository;
+
+    public PlantaService(ColeccionRepository coleccionRepository) {
+        this.coleccionRepository = coleccionRepository;
+    }
 
     public List<Planta> all(){return plantaRepository.findAll();}
 
@@ -35,6 +43,14 @@ public class PlantaService {
     }
 
 
+    public List<Planta> getPlantasForColeccion(Long coleccionId) {
+        Optional<Coleccion> coleccionOpt = coleccionRepository.findById(coleccionId);
+        System.out.println("coleccion encontrada en planta service: "+coleccionOpt);
+        if (coleccionOpt.isPresent()) {
+            return coleccionOpt.get().getPlantas();
+        }
+        return Collections.emptyList();
+    }
 
 
 

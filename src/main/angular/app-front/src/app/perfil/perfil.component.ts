@@ -3,6 +3,7 @@ import { Usuario } from "../interfaces/usuario";
 import { NgForOf, NgIf } from "@angular/common";
 import { UsuarioService } from "../services/usuario.service";
 import { ColeccionService } from "../services/coleccion.service";
+import {PlantaService} from "../services/planta.service";
 
 @Component({
   selector: 'app-perfil',
@@ -23,10 +24,12 @@ export class PerfilComponent implements OnInit {
     nombre: "",
     password: "",
     rol: undefined,
-    colecciones: []  // Initially an empty array
+    colecciones: []
   };
 
-  constructor(private usuarioService: UsuarioService, private coleccionService: ColeccionService) { }
+  constructor(private usuarioService: UsuarioService,
+              private coleccionService: ColeccionService,
+              private plantaService: PlantaService) { }
 
   ngOnInit(): void {
     if (this.usuarioService.getUserData()) {
@@ -59,12 +62,27 @@ export class PerfilComponent implements OnInit {
                 console.error('Expected colecciones to be an array or a valid object, but got:', colecciones);
                 this.usuario.colecciones = [];  // Fallback to an empty array
               }
+
+
+
+
+
+              ///POPULAR PLANTAS DE LA LISTA
+
+
+
+
             },
             error: (error) => {
               console.error('Error fetching colecciones:', error);
               this.usuario.colecciones = [];
             }
           });
+
+
+
+
+
         },
         error: (error) => {
           console.error('Error logging in:', error);
