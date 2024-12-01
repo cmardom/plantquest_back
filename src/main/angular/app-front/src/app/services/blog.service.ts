@@ -22,15 +22,21 @@ export class BlogService {
 
 
   }
+  //
+  // getBlogsByTags(tag:string):Observable<Blog[]>{
+  //   return this.http.get<Blog[]>(this.apiUrl + "/" + tag);
+  //
+  // }
 
-  getBlogsByTags(tag:string):Observable<Blog[]>{
-    return this.http.get<Blog[]>(this.apiUrl + "/" + tag);
+  //
+  // getBlogById(id:number):Observable<Blog>{
+  //   return this.http.get<Blog>(this.baseUrl + "/blogs?id=/" + id);
+  // }
 
+
+  getBlogById(id: number): Observable<Blog> {
+    return this.http.get<Blog>(`${this.apiUrl}/${id}`);
   }
 
-
-  getBlogById(id:number):Observable<Blog>{
-    return this.http.get<Blog>(this.apiUrl + "/" + id);
-  }
 
 }

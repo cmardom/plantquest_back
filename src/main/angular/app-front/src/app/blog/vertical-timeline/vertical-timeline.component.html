@@ -37,7 +37,7 @@
       {{ texto }}
     </p>
 
-    <button class="btn btn-outline-success btn-sm" [routerLink]="['/blog', idClicado]">Leer mas</button>
+    <button class="btn btn-outline-success btn-sm" [routerLink]="['/blogs']" [queryParams]="{ id: idClicado }">Leer más</button>
 
 
   </div>

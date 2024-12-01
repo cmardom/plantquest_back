@@ -7,6 +7,7 @@ import {PerfilComponent} from "./perfil/perfil.component";
 import {BlogComponent} from "./blog/blog.component";
 import {FaqComponent} from "./faq/faq.component";
 import {PlantaComponent} from "./planta/planta.component";
+import {BlogpostComponent} from "./blog/blogpost/blogpost.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -16,15 +17,18 @@ export const routes: Routes = [
   {path: 'perfil', component: PerfilComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'faq', component: FaqComponent},
-  {path: 'blog/:id', component: BlogComponent},
+  { path: 'blogs/:id', component: BlogpostComponent },
+  { path: 'blogs', component: BlogComponent },
 
   {path: 'planta', component: PlantaComponent},
   {path: 'planta/:id', component: PlantaComponent},
 
+  //http://localhost:8080/v1/api/blogs?id=1
 
 
 
-  //{path:'campings/nuevo', component: CampingsFormularioComponent},
+
+//{path:'campings/nuevo', component: CampingsFormularioComponent},
   //{path:'campings/:id', component: CampingsFormularioComponent},
   {path:'**', pathMatch:'full', redirectTo: 'home'}
 ];
