@@ -5,6 +5,7 @@ import {Usuario} from "../interfaces/usuario";
 import {Router} from "@angular/router";
 import {SignInDataType} from "../signin/signin.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {isPlatformBrowser} from "@angular/common";
 
 @Injectable({
   providedIn: "root",
@@ -26,14 +27,18 @@ export class UsuarioService {
   }
 
   private setUser(usuario: Usuario){
-    this.usuario = usuario;
-    localStorage.setItem(this.localStorageKey, JSON.stringify(usuario));
+    if(isPlatformBrowser(this.platformId)){
+      this.usuario = usuario;
+      document.defaultView?.localStorage.setItem(this.localStorageKey, JSON.stringify(usuario));
+      }
   }
 
   setUserFromLocalStorage(){
-    const user = localStorage.getItem(this.localStorageKey);
-    if(user){
-      this.usuario = JSON.parse(user);
+    if(isPlatformBrowser(this.platformId)){
+      const user = localStorage.getItem(this.localStorageKey);
+      if(user){
+        this.usuario = JSON.parse(user);
+      }
     }
   }
 
@@ -47,10 +52,7 @@ export class UsuarioService {
         next: (usuario) => {
           this.setUser(usuario);
         },
-        error: (error) => {
-          //Error de login
-          // console.error(error);
-        }});
+      });
   }
 
   get(key?: keyof Usuario) {
