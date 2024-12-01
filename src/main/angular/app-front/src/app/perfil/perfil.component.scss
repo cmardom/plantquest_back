@@ -2,3 +2,21 @@
   -webkit-text-security: disc; /* Mask the password with a dot, works in WebKit browsers */
   text-security: disc;  /* For other browsers (not widely supported yet) */
 }
+
+.usuario-form{
+  input[type=text] {
+    display: none;
+  }
+  span{
+    display: inline;
+  }
+
+  &.editando{
+    input[type=text] {
+      display: block;
+    }
+    span{
+      display: none;
+    }
+  }
+}

@@ -19,46 +19,49 @@
       <div class="col-md-8">
         <div class="card mb-3">
           <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Nombre</h6>
+            <form class="form-control usuario-form">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Nombre</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <span>{{ usuarioService.get('nombre') }}</span>
+                  <input type="text" value="{{ usuarioService.get('nombre') }}"/>
+                </div>
               </div>
-              <div class="col-sm-9 text-secondary">
-                {{ usuarioService.get('nombre') }}
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{ usuarioService.get('email') }}
+                </div>
               </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Email</h6>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Contrase&ntilde;a</h6>
+                </div>
+                <div class="col-sm-9 text-secondary mask-password">
+                  {{ usuarioService.get('password') }}
+                </div>
               </div>
-              <div class="col-sm-9 text-secondary">
-                {{ usuarioService.get('email') }}
+              <hr>
+              <div class="row">
+                <div class="col d-flex justify-content-end gap-3">
+                  <button class="btn btn-outline-success" (click)="toggleEdit()" type="button">
+                    Editar campos
+                  </button>
+                  <button class="btn btn-outline-warning" (click)="cerrarSession()" type="button">
+                    Cerrar sesión
+                  </button>
+                  <button class="btn btn-outline-danger" type="button">
+                    Borrar cuenta
+                  </button>
+                </div>
               </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Contrasena</h6>
-              </div>
-              <div class="col-sm-9 text-secondary mask-password">
-                {{ usuarioService.get('password') }}
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col d-flex justify-content-end gap-3">
-                <button class="btn btn-outline-success">
-                  Editar campos
-                </button>
-                <button class="btn btn-outline-warning" (click)="cerrarSession()">
-                  Cerrar sesión
-                </button>
-                <button class="btn btn-outline-danger ">
-                  Borrar cuenta
-                </button>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
