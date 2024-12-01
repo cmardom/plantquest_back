@@ -8,6 +8,7 @@ import {BlogComponent} from "./blog/blog.component";
 import {FaqComponent} from "./faq/faq.component";
 import {PlantaComponent} from "./planta/planta.component";
 import {BlogpostComponent} from "./blog/blogpost/blogpost.component";
+import {GestionDeContenidoComponent} from "./gestion-de-contenido/gestion-de-contenido.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -19,6 +20,7 @@ export const routes: Routes = [
   {path: 'faq', component: FaqComponent},
   { path: 'blogs/:id', component: BlogpostComponent },
   { path: 'blogs', component: BlogComponent },
+  { path: 'gestion-de-contenido', component: GestionDeContenidoComponent },
 
   {path: 'planta', component: PlantaComponent},
   {path: 'planta/:id', component: PlantaComponent},

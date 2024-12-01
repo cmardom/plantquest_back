@@ -87,6 +87,10 @@ export class UsuarioService {
     return result;
   }
 
+  isAdmin() {
+    return this.usuario?.rol === "ROL_ADMIN";
+  }
+
   // isBrowser(): boolean {
   //   return isPlatformBrowser(this.platformId);
   // }

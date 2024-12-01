@@ -21,9 +21,17 @@
       </ng-template>
     </ul>
 
-    <ul class="nav" *ngIf="usuarioService.usuario">
-      <li class="nav-item"><button [routerLink]="['/perfil']" class="nav-link link-dark px-2">{{ usuarioService.usuario.nombre || 'Tu perfil' }}</button></li>
-      <li class="nav-item"><button [routerLink]="['/home']"  class="nav-link link-dark px-2" (click)="usuarioService.logout()">Cerrar sesión</button></li>
+    <ul class="nav text-dark" *ngIf="usuarioService.usuario">
+      <li
+        *ngIf="usuarioService.isAdmin()"
+        class="nav-item"
+      >
+        <button [routerLink]="['/gestion-de-contenido']" class="nav-link text-secondary px-2">
+          Gestión de contenido
+        </button>
+      </li>
+      <li class="nav-item"><button [routerLink]="['/perfil']" class="nav-link px-2">{{ usuarioService.usuario.nombre || 'Tu perfil' }}</button></li>
+      <li class="nav-item"><button [routerLink]="['/home']"  class="nav-link px-2" (click)="usuarioService.logout()">Cerrar sesión</button></li>
     </ul>
 
   </div>

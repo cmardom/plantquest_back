@@ -35,13 +35,6 @@ export class LoginComponent implements OnInit
 
 
   ngOnInit(): void {
-//hay que establecer el item
-    /*if (this.usuarioService.usuario){
-      this.usuario.nombre = this.usuarioService.getNameFromLocalStorage();
-      this.usuario.password = this.usuarioService.getPasswordFromLocalStorage();
-      console.log('login correcto en login component');
-      console.log(this.usuario);
-    }*/
   }
 
 
@@ -57,17 +50,12 @@ export class LoginComponent implements OnInit
     this.modalService.dismissAll();
   }
 
-
-  /*login() {
-    this.usuarioService.login(this.usuario);
-  }*/
-
   async onSubmit(loginForm: NgForm) {
     if (!loginForm.valid) {
       return;
     } else {
       this.usuarioService.login(this.formUser);
-      await this.router.navigate(['/perfil']);
+      // await this.router.navigate(['/perfil']);
       this.closeAllModals();
     }
 
