@@ -2,8 +2,6 @@ package es.plantquest.back.controller;
 
 
 import es.plantquest.back.domain.Blog;
-import es.plantquest.back.domain.Coleccion;
-import es.plantquest.back.domain.Usuario;
 import es.plantquest.back.service.BlogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,15 +37,15 @@ public class BlogController {
         blogService.delete(id);
     }
 
-
-    @GetMapping("/{tag}")
+    @GetMapping("/tag/{tag}")
     public List<Blog> getBlogsByTagPathVariable(@PathVariable String tag) {
         return blogService.findByTag(tag);
     }
 
     @GetMapping("/{id}")
     public Blog getBlogById(@PathVariable("id") Long id) {
+        log.info("getBlogs by id" + id);
+
         return blogService.findById(id);
     }
-
 }
