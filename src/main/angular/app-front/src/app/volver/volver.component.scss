@@ -1,0 +1,13 @@
+#flecha{
+  display: inline-flex;
+  align-items: start;
+  cursor: pointer;
+
+  span {
+    font-size: 17pt;
+    padding-right: 5px;
+  }
+  p{
+    font-size: 16pt;
+  }
+}

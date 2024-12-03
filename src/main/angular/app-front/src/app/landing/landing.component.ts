@@ -3,7 +3,7 @@ import {BlogComponent} from "../blog/blog.component";
 import {RouterLink} from "@angular/router";
 import {Planta} from "../interfaces/planta-interface";
 import {PlantaService} from "../services/planta.service";
-import {NgForOf} from "@angular/common";
+import {NgForOf, SlicePipe} from "@angular/common";
 
 @Component({
   selector: 'app-landing',
@@ -11,8 +11,9 @@ import {NgForOf} from "@angular/common";
   imports: [
     BlogComponent,
     RouterLink,
-    NgForOf
-],
+    NgForOf,
+    SlicePipe
+  ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })

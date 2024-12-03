@@ -2,11 +2,14 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Blog} from "../../interfaces/blog";
 import {BlogService} from "../../services/blog.service";
 import {ActivatedRoute} from "@angular/router";
+import {VolverComponent} from "../../volver/volver.component";
 
 @Component({
   selector: 'app-blogpost',
   standalone: true,
-  imports: [],
+  imports: [
+    VolverComponent
+  ],
   templateUrl: './blogpost.component.html',
   styleUrl: './blogpost.component.scss'
 })
@@ -25,7 +28,6 @@ export class BlogpostComponent implements OnInit {
     if (id) {
       this.blogService.getBlogById(+id).subscribe(blogpost => {
         this.blog = blogpost;
-        console.log('Blog retrieved: ', this.blog);
       });
     }
 

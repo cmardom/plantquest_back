@@ -1,13 +1,16 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PlantaService} from "../services/planta.service";
 import {Planta} from "../interfaces/planta-interface";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs";
+import {VolverComponent} from "../volver/volver.component";
 
 @Component({
   selector: 'app-planta',
   standalone: true,
-  imports: [],
+  imports: [
+    VolverComponent
+  ],
   templateUrl: './planta.component.html',
   styleUrl: './planta.component.scss'
 })

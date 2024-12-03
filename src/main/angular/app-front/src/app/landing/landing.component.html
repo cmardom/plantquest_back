@@ -11,11 +11,11 @@
 
   <div>
     <hr>
-    <h3>Plantas más buscadas</h3>
+    <h3>Las plantas del momento</h3>
 
     <div class="row">
       <div class="col cartas">
-        <div *ngFor="let planta of plantas; let i = index" class="card ">
+        <div *ngFor="let planta of plantas | slice:0:8; let i = index" class="card">
           <div class="card-body">
             <h5 class="card-title">{{ planta.nombre_comun }}</h5>
             <div>
