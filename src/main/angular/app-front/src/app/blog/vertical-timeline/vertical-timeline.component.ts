@@ -19,6 +19,8 @@ export class VerticalTimelineComponent {
 
   @Input() idClicado! : number | undefined;
 
+
+
   textDate = computed(() => {
     return Intl.DateTimeFormat('es', {
       day: "numeric",

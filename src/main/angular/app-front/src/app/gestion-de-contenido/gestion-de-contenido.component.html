@@ -11,31 +11,23 @@
     <table class="table">
       <thead>
       <tr>
-          <th>Titulo</th>
-          <th>Autor</th>
-          <th>Fecha</th>
-          <th>Acciones</th>
-        </tr>
+        <th>Titulo</th>
+        <th>Fecha</th>
+        <th>Texto</th>
+        <th>Acciones</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Post 1</td>
-          <td>Carmen</td>
-          <td>2024-01-01</td>
-          <td>
-            <button class="btn btn-primary me-1">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Post 1</td>
-          <td>Carmen</td>
-          <td>2024-01-01</td>
-          <td>
-            <button class="btn btn-primary me-1">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
-          </td>
-        </tr>
+      <tr *ngFor="let blog of blogs">
+        <td>{{ blog.titulo | slice:0:20 }}{{ blog.titulo.length > 20 ? '...' : '' }}</td>
+        <td>{{ blog.date.toLocaleString() | slice:0:20 }}{{ blog.date.toLocaleString().length > 20 ? '...' : '' }}</td>
+        <td>{{ blog.texto | slice:0:50 }}{{ blog.texto.length > 50 ? '...' : '' }}</td> <!-- Replace with the appropriate date or info -->
+        <td>
+          <!-- (click)="editPlanta(planta.id)" -->
+          <button  class="btn btn-primary me-1">Editar</button>
+          <button  class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
       </tbody>
     </table>
   </section>
@@ -44,42 +36,39 @@
     <div class="d-flex justify-content-between">
       <h3>Plantas</h3>
       <button class="btn btn-primary btn-sm">
-        <svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-        Crear post
+        <svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/>
+        </svg>
+        Crear planta
       </button>
     </div>
 
+
+    <!-- Show table once data is loaded -->
     <table class="table">
       <thead>
       <tr>
-        <th>Titulo</th>
-        <th>Autor</th>
-        <th>Fecha</th>
+        <th>Nombre comun</th>
+        <th>Imagen</th>
+        <th>Info</th>
         <th>Acciones</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Post 1</td>
-        <td>Carmen</td>
-        <td>2024-01-01</td>
+      <tr *ngFor="let planta of plantas">
+        <td>{{ planta.nombre_comun | slice:0:20 }}{{ planta.nombre_comun.length > 20 ? '...' : '' }}</td>
+        <td>{{ planta.imagePath | slice:0:20 }}{{ planta.nombre_comun.length > 20 ? '...' : '' }}</td>
+        <td>{{ planta.info | slice:0:50 }}{{ planta.info.length > 50 ? '...' : '' }}</td> <!-- Replace with the appropriate date or info -->
         <td>
-          <button class="btn btn-primary me-1">Editar</button>
-          <button class="btn btn-danger">Eliminar</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Post 1</td>
-        <td>Carmen</td>
-        <td>2024-01-01</td>
-        <td>
-          <button class="btn btn-primary me-1">Editar</button>
-          <button class="btn btn-danger">Eliminar</button>
+          <!-- (click)="editPlanta(planta.id)" -->
+          <button  class="btn btn-primary me-1">Editar</button>
+          <button  class="btn btn-danger">Eliminar</button>
         </td>
       </tr>
       </tbody>
     </table>
   </section>
+
 </div>
 
 <ng-template #noAutorizado>

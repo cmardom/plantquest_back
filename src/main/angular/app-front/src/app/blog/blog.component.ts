@@ -4,13 +4,13 @@ import {PlantaService} from "../services/planta.service";
 import {ActivatedRoute} from "@angular/router";
 import {BlogService} from "../services/blog.service";
 import {Blog} from "../interfaces/blog";
-import {NgForOf} from "@angular/common";
+import {NgForOf, SlicePipe} from "@angular/common";
 import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [VerticalTimelineComponent, NgForOf],
+  imports: [VerticalTimelineComponent, NgForOf, SlicePipe],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
 })

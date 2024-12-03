@@ -16,6 +16,7 @@ export class UsuarioService {
   private localStorageKey: string = 'userData';
 
   public usuario: Usuario | undefined = undefined;
+  public usuarios: Usuario[] | undefined = undefined;
 
 
   constructor(
@@ -53,6 +54,17 @@ export class UsuarioService {
           this.setUser(usuario);
         },
       });
+  }
+
+  getUsuarios() {
+    return this.http.get<Usuario[]>(this.apiUrl).subscribe({
+      next: (usuarios) => {
+        this.usuarios = usuarios;
+      },
+      error: (error) => {
+        console.error('Error fetching users:', error);
+      },
+    });
   }
 
   get(key?: keyof Usuario) {
