@@ -14,10 +14,8 @@
 
   </header>
   <!-- Post Content-->
-  <article class="mb-4">
-
-          <p>{{blog?.texto}}</p>
-
+  <article>
+    <hr>
+    <div [innerHTML]="formatText(blog?.texto)"></div>
   </article>
-
 </div>

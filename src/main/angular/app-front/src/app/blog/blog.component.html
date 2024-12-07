@@ -7,7 +7,7 @@
     *ngFor="let blog of blogs "
     [idClicado]="blog.id"
     [title]="blog.titulo"
-    [texto]="blog.texto"
+    [texto]="blog.texto.substring(0, 150) + '...'"
     [date]="blog.date"
     [tags]="getTags(blog.tags)"
     [imagePath]="blog.imagePath"

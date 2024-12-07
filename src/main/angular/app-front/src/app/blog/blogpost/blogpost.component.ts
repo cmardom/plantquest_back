@@ -35,6 +35,11 @@ export class BlogpostComponent implements OnInit {
 
   }
 
+  formatText(text: string | undefined): string {
+    if (!text) return '';
+    return text.replace(/\n/g, '<br>');
+  }
+
 }
 
 

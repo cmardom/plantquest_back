@@ -6,7 +6,7 @@ import {PlantaService} from "../services/planta.service";
 import {Planta} from "../interfaces/planta-interface";
 import {BlogService} from "../services/blog.service";
 import {Blog} from "../interfaces/blog";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-gestion-de-contenido',
@@ -22,7 +22,8 @@ export class GestionDeContenidoComponent implements OnInit{
 
   constructor(public usuarioService: UsuarioService,
               public plantaService: PlantaService,
-              public blogService: BlogService) {}
+              public blogService: BlogService,
+              private router: Router) {}
 
   ngOnInit() {
     this.loadPlantas();
@@ -56,6 +57,26 @@ export class GestionDeContenidoComponent implements OnInit{
     });
   }
 
+  deleteBlog(id: number) {
+
+    const confirmed = window.confirm('Are you sure you want to delete this blog?');
+
+    if (confirmed) {
+      // If confirmed, call the deleteBlog method from the service
+      this.blogService.deleteBlog(id).subscribe(
+        () => {
+          console.log('Blog deleted successfully');
+          this.router.navigate(['/gestion-de-contenido']).then(() => {
+            window.location.reload();  // Reload the page
+          });
+        },
+        (error) => {
+          console.error('Error deleting blog:', error);
+          // Handle any errors, e.g., show an error message to the user.
+        }
+      );
+    }
+  }
 
 
 

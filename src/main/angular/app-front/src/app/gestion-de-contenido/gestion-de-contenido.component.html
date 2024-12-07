@@ -24,7 +24,7 @@
         <td>{{ blog.texto | slice:0:50 }}{{ blog.texto.length > 50 ? '...' : '' }}</td> <!-- Replace with the appropriate date or info -->
         <td>
           <!-- (click)="editPlanta(planta.id)" -->
-          <button [routerLink]="['/gestion-de-contenido/edit-blog', blog.id]" class="btn btn-primary me-1">Editar</button>          <button  class="btn btn-danger">Eliminar</button>
+          <button [routerLink]="['/gestion-de-contenido/edit-blog', blog.id]" class="btn btn-primary me-1">Editar</button>          <button (click)="deleteBlog(blog.id!)" class="btn btn-danger">Eliminar</button>
         </td>
       </tr>
       </tbody>
