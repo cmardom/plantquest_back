@@ -23,9 +23,7 @@ export const routes: Routes = [
   { path: 'blogs', component: BlogComponent },
   { path: 'gestion-de-contenido', component: GestionDeContenidoComponent },
   { path: 'gestion-de-contenido/create-blog', component: EditBlogComponent },
-  { path: 'gestion-de-contenido/edit-blog/:id', component: EditBlogComponent },  // :id is a dynamic parameter
-// other routes...
-
+  { path: 'gestion-de-contenido/edit-blog/:id', component: EditBlogComponent },
   {path: 'planta', component: PlantaComponent},
   {path: 'planta/:id', component: PlantaComponent},
 
