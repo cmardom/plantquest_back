@@ -41,8 +41,9 @@ public class PlantaController {
     }
 
     @PutMapping("/{id}")
-    public Planta replacePlanta(@PathVariable("id") Long id, @RequestBody Planta planta) {
-        return plantaService.replace(id, planta);
+    public Planta savePlanta(@PathVariable("id") Long id, @RequestBody Planta planta) {
+        planta.setID(id);
+        return plantaService.save(planta);
     }
 
 

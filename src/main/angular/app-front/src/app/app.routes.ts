@@ -13,6 +13,9 @@ import {EditBlogComponent} from "./gestion-de-contenido/gestion-de-blog/edit-blo
 import {
   CreateBlogComponent
 } from "./gestion-de-contenido/gestion-de-blog/create-blog/create-blog/create-blog.component";
+import {
+  EditPlantaComponent
+} from "./gestion-de-contenido/gestion-de-planta/edit-planta/edit-planta/edit-planta.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -29,6 +32,8 @@ export const routes: Routes = [
   { path: 'gestion-de-contenido/edit-blog/:id', component: EditBlogComponent },
   {path: 'planta', component: PlantaComponent},
   {path: 'planta/:id', component: PlantaComponent},
+  { path: 'gestion-de-contenido/edit-planta/:id', component: EditPlantaComponent },
+
 
   //http://localhost:8080/v1/api/blogs?id=1
 

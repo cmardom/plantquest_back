@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
+
+<div class="container">
+  <app-volver></app-volver>
+  <h2>Editar Blog</h2>
+
+  <form #plantaForm="ngForm" (ngSubmit)="onSubmit(plantaForm)">
+    <div class="form-group">
+      <div>
+        <label for="nombre-cientifico">Nombre científico</label>
+        <input class="form-control" type="text" id="nombre-cientifico" [(ngModel)]="planta.nombre_cientifico" name="nombre-cientifico" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="nombre-comun">Nombre común</label>
+        <textarea  class="form-control" type="text" id="nombre-comun" [(ngModel)]="planta.nombre_comun" name="nombre-comun" required></textarea>
+      </div>
+      <br>
+
+      <div>
+        <label for="imagen">Imagen</label>
+        <textarea class="form-control" type="text"  id="imagen" [(ngModel)]="planta.imagePath" name="imagen" required></textarea>
+      </div>
+      <br>
+
+      <div>
+        <label for="abono">Abono</label>
+        <input class="form-control" type="text" id="abono" [(ngModel)]="planta.abono" name="abono" required>
+      </div>
+      <br>
+      <div>
+        <label for="humedad">Abono</label>
+        <input class="form-control" type="text" id="humedad" [(ngModel)]="planta.humedad" name="humedad" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="iluminacion">Iluminación</label>
+        <input class="form-control" type="text" id="iluminacion" [(ngModel)]="planta.iluminacion" name="iluminacion" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="localizacion">Localización</label>
+        <input class="form-control" type="text" id="localizacion" [(ngModel)]="planta.localizacion" name="localizacion" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="riego">Riego</label>
+        <input class="form-control" type="text" id="riego" [(ngModel)]="planta.riego" name="riego" required>
+      </div>
+      <br>
+
+
+      <div>
+        <label for="temperatura">Temperatura</label>
+        <input class="form-control" type="text" id="temperatura" [(ngModel)]="planta.temperatura" name="temperatura" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="toxicidad">Toxicidad</label>
+        <input class="form-control" type="text" id="toxicidad" [(ngModel)]="planta.toxicidad" name="toxicidad" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="info">Información</label>
+        <input class="form-control" type="text" id="info" [(ngModel)]="planta.toxicidad" name="info" required>
+      </div>
+      <br>
+
+
+      <button class="btn btn-primary me-1" type="submit">Editar Planta</button>
+    </div>
+
+  </form>
+</div>
