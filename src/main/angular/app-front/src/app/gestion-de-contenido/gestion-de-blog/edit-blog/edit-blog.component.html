@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
+
+<div class="container">
+  <app-volver></app-volver>
+  <h2>Editar Blog</h2>
+
+  <form #blogForm="ngForm" (ngSubmit)="onSubmit(blogForm)">
+    <div class="form-group">
+      <div>
+        <label for="titulo">Titulo</label>
+        <input class="form-control" type="text" id="titulo" [(ngModel)]="blog.titulo" name="titulo" required>
+      </div>
+      <br>
+
+      <div>
+        <label for="texto">Texto</label>
+        <textarea  class="form-control" type="text" id="texto" [(ngModel)]="blog.texto" name="texto" required></textarea>
+      </div>
+      <br>
+
+      <div>
+        <label for="imagen">Imagen</label>
+        <textarea class="form-control" type="text"  id="imagen" [(ngModel)]="blog.imagePath" name="imagen" required></textarea>
+      </div>
+      <br>
+
+      <div>
+        <label for="tags">Tags</label>
+        <input class="form-control" type="text" id="tags" [(ngModel)]="blog.tags" name="tags" required>
+        <small>Separa los tags con comas</small>
+      </div>
+
+      <br>
+      <button class="btn btn-primary me-1" type="submit">Editar Blog</button>
+    </div>
+
+  </form>
+</div>

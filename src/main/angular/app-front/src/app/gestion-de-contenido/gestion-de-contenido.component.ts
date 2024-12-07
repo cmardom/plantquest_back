@@ -6,11 +6,12 @@ import {PlantaService} from "../services/planta.service";
 import {Planta} from "../interfaces/planta-interface";
 import {BlogService} from "../services/blog.service";
 import {Blog} from "../interfaces/blog";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-gestion-de-contenido',
   standalone: true,
-  imports: [NgIf, NgForOf, SlicePipe],
+  imports: [NgIf, NgForOf, SlicePipe, RouterLink],
   templateUrl: './gestion-de-contenido.component.html',
   styleUrl: './gestion-de-contenido.component.scss'
 })

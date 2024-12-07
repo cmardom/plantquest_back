@@ -38,5 +38,18 @@ export class BlogService {
     return this.http.get<Blog>(`${this.apiUrl}/${id}`);
   }
 
+  // saveBlog(blog: Blog): Observable<Blog> {
+  //   return this.http.post<Blog>(this.apiUrl, blog);  // POST request for both create and update
+  // }
+
+  saveBlog(blog: Blog): Observable<Blog> {
+    if (blog.id && blog.id > 0) {
+      // Use PUT for updating an existing blog
+      return this.http.put<Blog>(`${this.apiUrl}/${blog.id}`, blog);  // Update request
+    } else {
+      // Use POST for creating a new blog
+      return this.http.post<Blog>(this.apiUrl, blog);  // Create request
+    }
+  }
 
 }

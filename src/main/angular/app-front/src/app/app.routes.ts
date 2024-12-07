@@ -9,6 +9,7 @@ import {FaqComponent} from "./faq/faq.component";
 import {PlantaComponent} from "./planta/planta.component";
 import {BlogpostComponent} from "./blog/blogpost/blogpost.component";
 import {GestionDeContenidoComponent} from "./gestion-de-contenido/gestion-de-contenido.component";
+import {EditBlogComponent} from "./gestion-de-contenido/gestion-de-blog/edit-blog/edit-blog.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -21,6 +22,9 @@ export const routes: Routes = [
   { path: 'blogs/:id', component: BlogpostComponent },
   { path: 'blogs', component: BlogComponent },
   { path: 'gestion-de-contenido', component: GestionDeContenidoComponent },
+  { path: 'gestion-de-contenido/create-blog', component: EditBlogComponent },
+  { path: 'gestion-de-contenido/edit-blog/:id', component: EditBlogComponent },  // :id is a dynamic parameter
+// other routes...
 
   {path: 'planta', component: PlantaComponent},
   {path: 'planta/:id', component: PlantaComponent},
