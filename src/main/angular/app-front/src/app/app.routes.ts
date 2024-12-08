@@ -16,6 +16,7 @@ import {
 import {
   EditPlantaComponent
 } from "./gestion-de-contenido/gestion-de-planta/edit-planta/edit-planta/edit-planta.component";
+import {CreatePlantaComponent} from "./gestion-de-contenido/gestion-de-planta/create-planta/create-planta.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -33,6 +34,8 @@ export const routes: Routes = [
   {path: 'planta', component: PlantaComponent},
   {path: 'planta/:id', component: PlantaComponent},
   { path: 'gestion-de-contenido/edit-planta/:id', component: EditPlantaComponent },
+  { path: 'gestion-de-contenido/create-planta', component: CreatePlantaComponent },
+
 
 
   //http://localhost:8080/v1/api/blogs?id=1

@@ -59,7 +59,7 @@ export class GestionDeContenidoComponent implements OnInit{
 
   deleteBlog(id: number) {
 
-    const confirmed = window.confirm('Are you sure you want to delete this blog?');
+    const confirmed = window.confirm('¿Estás seguro de borrar este blog?');
 
     if (confirmed) {
       // If confirmed, call the deleteBlog method from the service
@@ -78,6 +78,26 @@ export class GestionDeContenidoComponent implements OnInit{
     }
   }
 
+  deletePlanta(id: number) {
+
+    const confirmed = window.confirm('¿Estás seguro de borrar esta planta?');
+
+    if (confirmed) {
+      // If confirmed, call the deleteBlog method from the service
+      this.plantaService.deletePlanta(id).subscribe(
+        () => {
+          console.log('Planta deleted successfully');
+          this.router.navigate(['/gestion-de-contenido']).then(() => {
+            window.location.reload();  // Reload the page
+          });
+        },
+        (error) => {
+          console.error('Error deleting planta:', error);
+          // Handle any errors, e.g., show an error message to the user.
+        }
+      );
+    }
+  }
 
 
 }

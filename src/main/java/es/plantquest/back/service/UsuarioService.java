@@ -20,8 +20,6 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    //metodos para las colecciones
-
     public List<Usuario> all(){return usuarioRepository.findAll();}
 
     public Usuario one(Long id) {return usuarioRepository.findById(id).get();}
@@ -32,23 +30,6 @@ public class UsuarioService {
 
         return usuario;
     }
-
-//    public Usuario login (Usuario usuarioLgin) {
-//        //declara usuario como usuariofindbyemail
-//        //devolver token
-//        //redirigir al landing
-//
-//        System.out.println("usuario que llega en back > " + usuarioLgin);
-//
-//        Usuario usuario = findByEmail(usuarioLgin.getEmail());
-//
-//        if (usuario !=  null && usuario.getPassword().equals(usuarioLgin.getPassword())){
-//            System.out.println("usuario: " + usuario);
-//
-//            return usuario;
-//        }
-//        return null;
-//    }
 
 
     public ResponseEntity<Usuario> login(Usuario usuarioLgin) {

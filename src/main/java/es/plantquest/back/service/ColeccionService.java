@@ -39,7 +39,7 @@ public class ColeccionService {
 
     public Coleccion findById(Long id){ return coleccionRepository.findById(id).orElse(null); }
 
-    public Coleccion findColeccionByUserId(Long userId){
+    public Coleccion[] findColeccionByUserId(Long userId){
         if (usuarioRepository.findById(userId) != null){
             return coleccionRepository.findColeccionByUsuarioID(userId);
 

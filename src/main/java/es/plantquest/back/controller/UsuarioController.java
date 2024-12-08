@@ -23,6 +23,11 @@ public class UsuarioController {
         log.info("getUsuarios");
         return this.usuarioService.all();
     }
+    @GetMapping("/{id}")
+    public Usuario getUsuario(@PathVariable("id") Long id, @RequestBody Usuario usuario) {
+        log.info("getUsuario");
+        return this.usuarioService.one(id);
+    }
 
     @PostMapping({"","/"})
     public Usuario nuevoUsuario(@RequestBody Usuario usuario) {

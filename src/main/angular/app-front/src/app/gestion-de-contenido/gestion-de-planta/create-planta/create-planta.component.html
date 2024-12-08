@@ -2,7 +2,7 @@
 
 <div class="container">
   <app-volver></app-volver>
-  <h2>Editar Planta</h2>
+  <h2>Crear Planta</h2>
 
   <form #plantaForm="ngForm" (ngSubmit)="onSubmit(plantaForm)">
     <div class="form-group">
@@ -30,7 +30,7 @@
       </div>
       <br>
       <div>
-        <label for="humedad">Abono</label>
+        <label for="humedad">Humedad</label>
         <input class="form-control" type="text" id="humedad" [(ngModel)]="planta.humedad" name="humedad" required>
       </div>
       <br>
@@ -73,7 +73,7 @@
       <br>
 
 
-      <button class="btn btn-primary me-1" type="submit">Editar Planta</button>
+      <button class="btn btn-primary me-1" type="submit">Crear Planta</button>
     </div>
 
   </form>

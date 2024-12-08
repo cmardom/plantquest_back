@@ -57,7 +57,7 @@ public class ColeccionController {
 
 
     @GetMapping("/usuario")
-    public Optional<Coleccion> getColeccionByUserId(@RequestParam("id") Long id) {
+    public Optional<Coleccion[]> getColeccionByUserId(@RequestParam("id") Long id) {
         log.info("get coleccion con user id> " + id);
 
         if (usuarioService.one(id) != null) {

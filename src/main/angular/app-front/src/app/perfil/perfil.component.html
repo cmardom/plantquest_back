@@ -5,12 +5,10 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
-              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+              <img src="https://images.unsplash.com/photo-1691670353221-a19e5dba8774?q=80&w=2575&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Admin" class="rounded-circle"
                    width="150">
               <div class="mt-3">
                 <h4>{{ usuarioService.get('nombre') }}</h4>
-                <p class="text-secondary mb-1">Activo desde: </p>
-                <p class="text-muted font-size-sm">23/25/2012 </p>
               </div>
             </div>
           </div>
@@ -48,9 +46,6 @@
             <hr>
             <div class="row">
               <div class="col d-flex justify-content-end gap-3">
-                <button class="btn btn-outline-success">
-                  Editar campos
-                </button>
                 <button class="btn btn-outline-warning" (click)="cerrarSession()">
                   Cerrar sesión
                 </button>
@@ -63,16 +58,17 @@
         </div>
       </div>
     </div>
-    <div class="cartas">
+    <div class="cartas" *ngFor="let coleccion of colecciones; let i = index">
       <div class="row">
-        <h6> Nombre coleccion</h6>
-        <div class="col-sm-2">
+        <h6> {{coleccion.nombre}} </h6>
+        <div class="col-sm-2" *ngFor="let plantas of coleccion.plantas ">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Planta</h5>
-              <img class="card-img" src="assets/logo.png">
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" data-mdb-ripple-init>Go somewhere</a>
+            <div class="card-body" >
+              <h5 class="card-title">{{ plantas.nombre_comun }}</h5>
+              <img class="card-img" [src]="plantas.imagePath">
+              <p class="card-text">{{ plantas.info | slice:0:50 }}{{ plantas.info.length > 50 ? '...' : '' }}</p>
+              <a [routerLink]="['/planta', plantas.id]" href="#planta"
+                 data-mdb-ripple-init class="text-center">Ver más</a>
             </div>
           </div>
         </div>

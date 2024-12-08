@@ -27,7 +27,7 @@ export class UsuarioService {
   ) {
   }
 
-  private setUser(usuario: Usuario){
+  public setUser(usuario: Usuario){
     if(isPlatformBrowser(this.platformId)){
       this.usuario = usuario;
       document.defaultView?.localStorage.setItem(this.localStorageKey, JSON.stringify(usuario));
@@ -102,6 +102,20 @@ export class UsuarioService {
   isAdmin() {
     return this.usuario?.rol === "ROL_ADMIN";
   }
+
+  getUsuarioById(id: number) {
+    return this.http.get<Usuario>(`${this.apiUrl}/${id}`).subscribe({
+      next: (usuario) => {
+        this.usuario = usuario;  // Optionally store the fetched user
+        console.log('Fetched user:', usuario);
+      },
+      error: (error) => {
+        console.error('Error fetching user by ID:', error);
+      },
+    });
+  }
+
+
 
   // isBrowser(): boolean {
   //   return isPlatformBrowser(this.platformId);

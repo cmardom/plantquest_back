@@ -17,7 +17,7 @@ export class ColeccionService {
 
 
   // @ts-ignore
-  getColecciones(usuario:Usuario): Observable<Coleccion>{
+  getColecciones(usuario:Usuario): Observable<Coleccion[]>{
 
     console.log('usuario id en getcolecciones en coleccion service: ' + usuario.id)
     if (usuario){

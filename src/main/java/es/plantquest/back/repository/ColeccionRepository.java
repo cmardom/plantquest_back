@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ColeccionRepository extends JpaRepository<Coleccion, Long> {
 
-    public Coleccion findColeccionByUsuarioID(Long id);
+    public Coleccion[] findColeccionByUsuarioID(Long id);
 }

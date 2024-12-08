@@ -33,7 +33,7 @@
   <section>
     <div class="d-flex justify-content-between">
       <h3>Plantas</h3>
-      <button class="btn btn-secondary btn-sm">
+      <button class="btn btn-secondary btn-sm" [routerLink]="['/gestion-de-contenido/create-planta']">
         <svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/>
         </svg>
@@ -59,7 +59,7 @@
         <td>{{ planta.info | slice:0:50 }}{{ planta.info.length > 50 ? '...' : '' }}</td> <!-- Replace with the appropriate date or info -->
         <td>
 
-          <button [routerLink]="['/gestion-de-contenido/edit-planta', planta.id]" class="btn btn-primary me-1">Editar</button>           <button  class="btn btn-danger">Eliminar</button>
+          <button [routerLink]="['/gestion-de-contenido/edit-planta', planta.id]" class="btn btn-primary me-1">Editar</button>           <button (click)="deletePlanta(planta.id!)" class="btn btn-danger">Eliminar</button>
         </td>
       </tr>
       </tbody>
