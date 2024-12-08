@@ -4,10 +4,12 @@ import { ColeccionService } from '../services/coleccion.service';
 import { UsuarioService } from '../services/usuario.service';
 import { PlantaService } from '../services/planta.service';
 import { Coleccion } from '../interfaces/coleccion';
-import { Planta } from '../interfaces/planta-interface';
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-coleccion',
+  standalone: true,
+  imports: [NgForOf],
   templateUrl: './coleccion.component.html',
   styleUrls: ['./coleccion.component.scss'],
 })

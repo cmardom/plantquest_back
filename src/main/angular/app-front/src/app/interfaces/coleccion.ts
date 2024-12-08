@@ -1,8 +1,8 @@
 import {Planta} from "./planta-interface";
 
 export interface Coleccion{
-  id: number | undefined;
+  id: number;
   nombre: string;
-  usuario_id : number | undefined;
+  usuario_id : number;
   plantas: Planta[]
 }
