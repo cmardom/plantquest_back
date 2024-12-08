@@ -1,28 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ColeccionService } from '../services/coleccion.service';
 import { UsuarioService } from '../services/usuario.service';
 import { PlantaService } from '../services/planta.service';
 import { Coleccion } from '../interfaces/coleccion';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
+import {ActivatedRoute, Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
+import {VolverComponent} from "../volver/volver.component";
 
 @Component({
   selector: 'app-coleccion',
   standalone: true,
-  imports: [NgForOf],
+  imports: [NgForOf, NgIf, VolverComponent],
   templateUrl: './coleccion.component.html',
   styleUrls: ['./coleccion.component.scss'],
 })
 export class ColeccionComponent implements OnInit {
   colecciones: Coleccion[] = [];
-  selectedColeccionId: number =0;  // To store the selected Coleccion's ID
-  plantaId: number | null = null; // The Planta ID to be added
+  selectedColeccionId: number =0;
+  plantaId: number | null = null;
+  errorMessage: string = '';
 
   constructor(
     private coleccionService: ColeccionService,
     private usuarioService: UsuarioService,
     protected plantaService: PlantaService,
-    private modalService: NgbModal
+    private route: ActivatedRoute,
+    private router: Router// I
   ) {}
 
   ngOnInit() {
@@ -33,26 +37,35 @@ export class ColeccionComponent implements OnInit {
         console.log("COLECCIONES > "+colecciones)
       });
     }
+
+    // @ts-ignore
+    this.route.params.subscribe(params => {
+      this.plantaId = +params['id'];  // + converts string to number
+    });
   }
 
-  // Method to open the modal
-  open(content: any, coleccionId: number) {
-    this.selectedColeccionId = coleccionId;  // Set the selected coleccion
-    this.modalService.open(content);  // Open the modal
-  }
+  addPlantaToColeccion(coleccionId: number) {
+    console.log('Button clicked. coleccionId:', coleccionId); // Check if the method is called
+    this.errorMessage = '';  // Clear previous error messages
 
-  // Method to add a Planta to a Coleccion
-  addPlantaToColeccion() {
-    if (this.selectedColeccionId && this.plantaId) {
-      this.coleccionService.addPlantaToColeccion(this.selectedColeccionId, this.plantaId).subscribe({
+    if (coleccionId && this.plantaId) {
+      this.coleccionService.addPlantaToColeccion(coleccionId, this.plantaId).subscribe({
         next: (updatedColeccion) => {
           console.log('Planta added to Coleccion', updatedColeccion);
-          this.modalService.dismissAll();  // Close the modal after successful add
+          this.router.navigate(['/perfil']);
         },
         error: (err) => {
-          console.error('Error adding planta:', err);
+          console.error('Error, ya tienes esta planta en esta colección!', err.message);
+          this.errorMessage = 'Error, ya tienes esta planta en esta colección.';
         },
       });
+    } else {
+      console.log('Either coleccionId or plantaId is missing.');
     }
   }
+
+
+
+
+
 }

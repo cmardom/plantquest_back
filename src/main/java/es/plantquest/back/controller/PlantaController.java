@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Slf4j
 @RestController
@@ -34,7 +35,7 @@ public class PlantaController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Planta> one (@PathVariable("id") Long id) {
+    public Planta one (@PathVariable("id") Long id) {
         log.info("get planta con id> " + id);
 
         return plantaService.one(id);
@@ -56,10 +57,10 @@ public class PlantaController {
 
 
     @GetMapping("/coleccion/{coleccionId}")
-    public List<Planta> getPlantasForColeccion(@PathVariable("coleccionId") Long coleccionId) {
+    public Set<Planta> getPlantasForColeccion(@PathVariable("coleccionId") Long coleccionId) {
         log.info("Fetching plantas for coleccion with ID: " + coleccionId);
 
-        List<Planta> plantas = plantaService.getPlantasForColeccion(coleccionId);  // Call to the service method
+        Set<Planta> plantas = plantaService.getPlantasForColeccion(coleccionId);  // Call to the service method
 
         if (plantas.isEmpty()) {
             log.info("No plantas found for coleccion with ID: " + coleccionId);

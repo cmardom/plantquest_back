@@ -7,6 +7,7 @@ import es.plantquest.back.repository.PlantaRepository;
 import es.plantquest.back.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,11 +20,13 @@ public class ColeccionService {
     private PlantaRepository plantaRepository; // You need this to find and associate Plantas
 
 
-    public ColeccionService(UsuarioRepository usuarioRepository) {
+    public ColeccionService(UsuarioRepository usuarioRepository, PlantaRepository plantaRepository) {
         this.usuarioRepository = usuarioRepository;
+        this.plantaRepository = plantaRepository;
     }
 
 
+    @Transactional
     public Coleccion addPlantaToColeccion(Long coleccionId, Long plantaId) {
         Optional<Coleccion> coleccionOptional = coleccionRepository.findById(coleccionId);
         Optional<Planta> plantaOptional = plantaRepository.findById(plantaId);
@@ -34,6 +37,7 @@ public class ColeccionService {
 
             // Add planta to coleccion's plantas list
             coleccion.getPlantas().add(planta);
+
 
             // Save the updated coleccion
             return coleccionRepository.save(coleccion);

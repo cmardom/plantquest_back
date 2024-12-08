@@ -1,35 +1,31 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
 
 <!-- coleccion.component.html -->
 <div class="container">
-  <h3>Your Colecciones</h3>
+<app-volver></app-volver>
+  <h3>Elige qué colección quieres actualizar:  </h3>
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let coleccion of colecciones" class="card">
+        <div class="card-body">
+          <h5>{{ coleccion.nombre }}</h5>
+          <a class="btn btn-primary"  (click)="addPlantaToColeccion(coleccion.id)" >
+            Añadir planta
+          </a>
+        </div>
 
-  <div class="list-group">
-    <div *ngFor="let coleccion of colecciones" class="list-group-item">
-      <h5>{{ coleccion.nombre }}</h5>
-      <button class="btn btn-primary" (click)="open(content, coleccion.id)">
-        Add Planta
-      </button>
+      </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <div *ngIf="errorMessage" class="alert alert-danger card">
+          {{ errorMessage }}
+        </div>
+      </div>
+
+    </div>
+
+
   </div>
 
-  <!-- Modal -->
-  <ng-template #content let-modal>
-    <div class="modal-header">
-      <h5 class="modal-title">Add Planta to Coleccion</h5>
-      <button type="button" class="close" (click)="modal.dismiss()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-<!--    <div class="modal-body">-->
-<!--      <div class="form-group">-->
-<!--        <label for="plantaSelect">Select Planta</label>-->
-<!--        <select id="plantaSelect" class="form-control" [(ngModel)]="plantaId">-->
-<!--        </select>-->
-<!--      </div>-->
-<!--    </div>-->
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
-      <button type="button" class="btn btn-primary" (click)="addPlantaToColeccion()">Add Planta</button>
-    </div>
-  </ng-template>
 </div>

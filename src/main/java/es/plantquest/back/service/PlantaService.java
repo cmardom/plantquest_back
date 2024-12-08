@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class PlantaService {
@@ -23,8 +24,12 @@ public class PlantaService {
 
     public List<Planta> all(){return plantaRepository.findAll();}
 
-    public Optional<Planta> one(Long id){
-        return plantaRepository.findById(id);
+    public Planta one(Long id){
+        if (plantaRepository.findById(id).isPresent()){
+            return plantaRepository.findById(id).get();
+        } else {
+            return null;
+        }
     }
 
     public Planta save(Planta planta) {
@@ -43,13 +48,13 @@ public class PlantaService {
     }
 
 
-    public List<Planta> getPlantasForColeccion(Long coleccionId) {
+    public Set<Planta> getPlantasForColeccion(Long coleccionId) {
         Optional<Coleccion> coleccionOpt = coleccionRepository.findById(coleccionId);
         System.out.println("coleccion encontrada en planta service: "+coleccionOpt);
         if (coleccionOpt.isPresent()) {
             return coleccionOpt.get().getPlantas();
         }
-        return Collections.emptyList();
+        return Collections.emptySet();
     }
 
 

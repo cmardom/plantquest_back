@@ -5,10 +5,12 @@ import es.plantquest.back.domain.Coleccion;
 import es.plantquest.back.domain.Planta;
 import es.plantquest.back.domain.Usuario;
 import es.plantquest.back.service.ColeccionService;
+import es.plantquest.back.service.PlantaService;
 import es.plantquest.back.service.UsuarioService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +24,8 @@ public class ColeccionController {
     @Autowired
     private ColeccionService coleccionService;
     private UsuarioService usuarioService;
+    @Autowired
+    private PlantaService plantaService;
 
     public ColeccionController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
@@ -77,19 +81,30 @@ public class ColeccionController {
 
 
     @PutMapping("/{coleccionId}/plantas/{plantaId}")
-    public Coleccion addPlantaToColeccion(
+    public ResponseEntity<?> addPlantaToColeccion(
             @PathVariable("coleccionId") Long coleccionId,
             @PathVariable("plantaId") Long plantaId) {
         log.info("Adding planta " + plantaId + " to coleccion " + coleccionId);
 
         Coleccion updatedColeccion = coleccionService.addPlantaToColeccion(coleccionId, plantaId);
+        Planta planta = plantaService.one(plantaId);
+        if (updatedColeccion.getPlantas().contains(planta) ){
+            // Optionally throw an exception or return a specific message
+            throw new RuntimeException("Planta already exists in Coleccion");
+        }
+
+
 
         if (updatedColeccion != null) {
-            return updatedColeccion;
+            return ResponseEntity.ok(updatedColeccion); // This is returning a ResponseEntity<Coleccion>
         } else {
-            throw new RuntimeException("Could not add Planta to Coleccion. Either Coleccion or Planta not found.");
+            // Return a ResponseEntity with a String message
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Planta not found.");
         }
     }
+
+
 
 
 }

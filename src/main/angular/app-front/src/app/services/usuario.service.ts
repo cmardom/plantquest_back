@@ -116,12 +116,12 @@ export class UsuarioService {
     });
   }
 
-  addPlantaToColeccion(coleccionId: number, plantaId: number) {
-    return this.http.put<Coleccion>(
-      `${this.apiUrl}/${coleccionId}/plantas/${plantaId}`,
-      {}
-    );
-  }
+  // addPlantaToColeccion(coleccionId: number, plantaId: number) {
+  //   return this.http.put<Coleccion>(
+  //     `${this.apiUrl}/${coleccionId}/plantas/${plantaId}`,
+  //     {}
+  //   );
+  // }
 
 
 

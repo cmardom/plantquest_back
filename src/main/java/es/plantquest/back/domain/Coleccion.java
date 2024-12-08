@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "colecciones")
@@ -39,7 +40,7 @@ public class Coleccion {
             inverseJoinColumns = @JoinColumn(name = "planta_id")
     )
     @JsonManagedReference
-    private List<Planta> plantas;
+    private Set<Planta> plantas;
 
 
 
