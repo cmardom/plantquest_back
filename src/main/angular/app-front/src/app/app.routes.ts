@@ -17,6 +17,7 @@ import {
   EditPlantaComponent
 } from "./gestion-de-contenido/gestion-de-planta/edit-planta/edit-planta/edit-planta.component";
 import {CreatePlantaComponent} from "./gestion-de-contenido/gestion-de-planta/create-planta/create-planta.component";
+import {ColeccionComponent} from "./coleccion/coleccion.component";
 
 export const routes: Routes = [
   {path:'home', component: LandingComponent},
@@ -35,6 +36,8 @@ export const routes: Routes = [
   {path: 'planta/:id', component: PlantaComponent},
   { path: 'gestion-de-contenido/edit-planta/:id', component: EditPlantaComponent },
   { path: 'gestion-de-contenido/create-planta', component: CreatePlantaComponent },
+  { path: 'colecciones/:id', component:  ColeccionComponent},
+
 
 
 

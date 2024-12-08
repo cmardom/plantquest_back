@@ -3,6 +3,7 @@ package es.plantquest.back.service;
 import es.plantquest.back.domain.Coleccion;
 import es.plantquest.back.domain.Planta;
 import es.plantquest.back.repository.ColeccionRepository;
+import es.plantquest.back.repository.PlantaRepository;
 import es.plantquest.back.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,30 @@ public class ColeccionService {
     @Autowired
     private ColeccionRepository coleccionRepository;
     private UsuarioRepository usuarioRepository;
+    private PlantaRepository plantaRepository; // You need this to find and associate Plantas
+
 
     public ColeccionService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
+    }
+
+
+    public Coleccion addPlantaToColeccion(Long coleccionId, Long plantaId) {
+        Optional<Coleccion> coleccionOptional = coleccionRepository.findById(coleccionId);
+        Optional<Planta> plantaOptional = plantaRepository.findById(plantaId);
+
+        if (coleccionOptional.isPresent() && plantaOptional.isPresent()) {
+            Coleccion coleccion = coleccionOptional.get();
+            Planta planta = plantaOptional.get();
+
+            // Add planta to coleccion's plantas list
+            coleccion.getPlantas().add(planta);
+
+            // Save the updated coleccion
+            return coleccionRepository.save(coleccion);
+        }
+
+        return null; // Handle if either coleccion or planta is not found
     }
 
     public List<Coleccion> all(){return coleccionRepository.findAll();}

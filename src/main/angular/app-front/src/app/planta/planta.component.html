@@ -49,9 +49,10 @@
 
           <br>
           <hr>
-          <a class="align-content-center">
-            Añadir a mi lista
-          </a>
+          <a [routerLink]="['/colecciones', plantaClicada?.id]" href="#planta"
+             data-mdb-ripple-init class="text-center">Añadir a mis colecciones</a>
+
+
         </div>
       </div>
     </div>

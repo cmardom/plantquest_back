@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {SignInDataType} from "../signin/signin.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {isPlatformBrowser} from "@angular/common";
+import {Coleccion} from "../interfaces/coleccion";
 
 @Injectable({
   providedIn: "root",
@@ -113,6 +114,13 @@ export class UsuarioService {
         console.error('Error fetching user by ID:', error);
       },
     });
+  }
+
+  addPlantaToColeccion(coleccionId: number, plantaId: number) {
+    return this.http.put<Coleccion>(
+      `${this.apiUrl}/${coleccionId}/plantas/${plantaId}`,
+      {}
+    );
   }
 
 

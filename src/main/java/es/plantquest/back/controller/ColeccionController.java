@@ -76,4 +76,20 @@ public class ColeccionController {
     }
 
 
+    @PutMapping("/{coleccionId}/plantas/{plantaId}")
+    public Coleccion addPlantaToColeccion(
+            @PathVariable("coleccionId") Long coleccionId,
+            @PathVariable("plantaId") Long plantaId) {
+        log.info("Adding planta " + plantaId + " to coleccion " + coleccionId);
+
+        Coleccion updatedColeccion = coleccionService.addPlantaToColeccion(coleccionId, plantaId);
+
+        if (updatedColeccion != null) {
+            return updatedColeccion;
+        } else {
+            throw new RuntimeException("Could not add Planta to Coleccion. Either Coleccion or Planta not found.");
+        }
+    }
+
+
 }

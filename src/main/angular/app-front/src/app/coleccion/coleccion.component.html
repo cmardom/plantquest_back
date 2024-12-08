@@ -1,12 +1,35 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{{ coleccion.nombre }}</h5>
-    <div *ngFor="let planta of coleccion.plantas; let x = index">
-      <p> {{coleccion.plantas}}</p>
 
+<!-- coleccion.component.html -->
+<div class="container">
+  <h3>Your Colecciones</h3>
+
+  <div class="list-group">
+    <div *ngFor="let coleccion of colecciones" class="list-group-item">
+      <h5>{{ coleccion.nombre }}</h5>
+      <button class="btn btn-primary" (click)="open(content, coleccion.id)">
+        Add Planta
+      </button>
     </div>
-
-
-
   </div>
+
+  <!-- Modal -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">Add Planta to Coleccion</h5>
+      <button type="button" class="close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+<!--    <div class="modal-body">-->
+<!--      <div class="form-group">-->
+<!--        <label for="plantaSelect">Select Planta</label>-->
+<!--        <select id="plantaSelect" class="form-control" [(ngModel)]="plantaId">-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+      <button type="button" class="btn btn-primary" (click)="addPlantaToColeccion()">Add Planta</button>
+    </div>
+  </ng-template>
 </div>
