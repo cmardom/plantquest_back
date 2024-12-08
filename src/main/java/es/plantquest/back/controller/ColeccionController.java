@@ -40,12 +40,17 @@ public class ColeccionController {
 
     @PostMapping({"","/"})
     public Coleccion nuevaColeccion(@RequestBody Coleccion coleccion) {
+        log.info("entra en el post");
+
         Usuario usuario = usuarioService.one(coleccion.getUsuario().getID());
 
         if (usuario != null) {
-            coleccion.setUsuario(usuario); // Set the Usuario to the Coleccion
+            log.info("entra en el post");
+            coleccion.setUsuario(usuario);
             return coleccionService.save(coleccion);
         } else {
+            log.info("NO !! entra en el post");
+
             throw new RuntimeException("Usuario not found with ID " + coleccion.getUsuario().getID());
         }
     }

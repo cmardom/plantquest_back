@@ -1,6 +1,6 @@
 import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {environment} from "../../enviroments/enviroment";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Usuario} from "../interfaces/usuario";
 import {catchError, map, Observable, switchMap, throwError} from "rxjs";
 import {Coleccion} from "../interfaces/coleccion";
@@ -31,7 +31,6 @@ export class ColeccionService {
     return this.http.put<Coleccion>(`${this.apiUrl}/${coleccionId}/plantas/${plantaId}`, {})
       .pipe(
         catchError((error) => {
-          // Here you can format the error response however you like
           let errorMessage = 'An error occurred while adding the planta to the coleccion.';
           if (error.error && error.error.message) {
             errorMessage = error.error.message; // Assuming error response contains a message field
@@ -42,6 +41,13 @@ export class ColeccionService {
   }
 
 
+  createColeccion(coleccion: Coleccion) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',  // Ensure we're sending JSON
+      'Accept': 'application/json',         // Ensure we expect JSON back
+    });
+    return this.http.post<Coleccion>(this.apiUrl, coleccion, { headers });
+  }
 
 // @ts-ignore
   getColecciones(usuario:Usuario): Observable<Coleccion[]>{
