@@ -9,9 +9,12 @@
       <div *ngFor="let coleccion of colecciones" class="card">
         <div class="card-body">
           <h5>{{ coleccion.nombre }}</h5>
+          <a [routerLink]="['/perfil']" href="#perfil"> Ver en perfil </a>
+          <br>
           <a class="btn btn-primary"  (click)="addPlantaToColeccion(coleccion.id)" >
             Añadir planta
           </a>
+          <br>
         </div>
 
       </div>
@@ -29,3 +32,6 @@
   </div>
 
 </div>
+
+<!--<a [routerLink]="['/planta', plantas.id]" href="#planta"-->
+<!--   data-mdb-ripple-init class="text-center">Ver más</a>-->

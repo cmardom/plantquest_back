@@ -49,8 +49,11 @@
 
           <br>
           <hr>
-          <a [routerLink]="['/colecciones', plantaClicada?.id]" href="#planta"
-             data-mdb-ripple-init class="text-center">Añadir a mis colecciones</a>
+          <div *ngIf = usuarioService.usuario>
+            <a [routerLink]="['/colecciones', plantaClicada?.id]" href="#planta"
+               data-mdb-ripple-init class="text-center">Añadir a mis colecciones</a>
+
+          </div>
 
 
         </div>

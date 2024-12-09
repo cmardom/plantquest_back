@@ -1,4 +1,10 @@
 .mask-password {
-  -webkit-text-security: disc; /* Mask the password with a dot, works in WebKit browsers */
-  text-security: disc;  /* For other browsers (not widely supported yet) */
+  -webkit-text-security: disc;
+  text-security: disc;
+}
+
+.encabezado{
+  display: flex;
+  justify-content: space-between;
+  flex: 1 0 100%;
 }

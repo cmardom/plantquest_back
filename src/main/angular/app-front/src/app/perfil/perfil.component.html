@@ -67,7 +67,6 @@
           <div class="d-flex flex-column align-items-center text-center">
             <div class="mt-3">
               <form (ngSubmit)="onSubmit()" #coleccionForm="ngForm" class="w-100">
-                <!-- Input for nombrecoleccion -->
                 <div class="form-group">
                   <label for="nombrecoleccion">Nombre de la Colección</label>
                   <input
@@ -79,13 +78,11 @@
                     required
                     #nombrecoleccionInput="ngModel"
                   />
-                  <!-- Error message if input is invalid -->
-                  <div *ngIf="nombrecoleccionInput.invalid && nombrecoleccionInput.touched" class="text-danger">
+                  <div *ngIf="nombrecoleccionInput.invalid" class="text-danger">
                     El nombre de la colección es requerido.
                   </div>
                 </div>
 
-                <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary" [disabled]="coleccionForm.invalid">
                   Crear Colección
                 </button>
@@ -98,9 +95,13 @@
 
     <br>
     <div class="cartas" *ngFor="let coleccion of colecciones; let i = index">
+      <hr>
       <div class="row">
-        <h4> {{coleccion.nombre}}         <button class="btn btn-danger w-25 h-75 fw-light" (click)="deleteColeccion(coleccion.id)">Borrar colección</button>
-        </h4>
+        <div class="encabezado">
+          <h4> {{coleccion.nombre}}
+          </h4>
+          <button class="btn btn-secondary" (click)="deleteColeccion(coleccion.id)">Borrar colección</button>
+        </div>
 
         <div class="col-sm-2" *ngFor="let plantas of coleccion.plantas ">
           <div class="card">
@@ -110,10 +111,14 @@
               <p class="card-text">{{ plantas.info | slice:0:50 }}{{ plantas.info.length > 50 ? '...' : '' }}</p>
               <a [routerLink]="['/planta', plantas.id]" href="#planta"
                  data-mdb-ripple-init class="text-center">Ver más</a>
+              <br>
+              <hr>
+              <button  class="btn text-secondary border-secondary" (click)="removePlantaFromColeccion(coleccion.id, plantas.id)" >Eliminar de la colección </button>
             </div>
           </div>
         </div>
       </div>
+      <hr>
     </div>
 
 

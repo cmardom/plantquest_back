@@ -27,7 +27,7 @@ export class PlantaComponent implements OnInit{
 
   constructor(private plantaService: PlantaService,
               private route:ActivatedRoute,
-              private usuarioService: UsuarioService,
+              protected usuarioService: UsuarioService,
               private coleccionService: ColeccionService) {  }
 
 

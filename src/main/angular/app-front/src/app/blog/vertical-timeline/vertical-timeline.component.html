@@ -24,12 +24,14 @@
     </a>
 
     <ul class="list-inline mt-3 mb-4">
-      <li class="list-inline-item">
-        <i class="fa fa-calendar-o"></i> <a href="#" class="text-capitalize">{{ textDate() }}</a>
-      </li>
+<!--      <li class="list-inline-item">-->
+<!--        <i class="fa fa-calendar-o"></i> <a href="#" class="text-capitalize">{{ textDate() }}</a>-->
+<!--      </li>-->
+
+      Palabras clave:
 
       <li *ngFor="let tag of tags" class="list-inline-item">
-        <i class="fa fa-tags"></i> <a href="{{ tag.url }}">{{ tag.title }}</a>
+        <i class="fa fa-tags"></i> <p class="text-secondary">{{ tag.title }}</p>
       </li>
     </ul>
 

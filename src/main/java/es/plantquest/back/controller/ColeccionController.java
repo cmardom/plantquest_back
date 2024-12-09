@@ -121,6 +121,34 @@ public class ColeccionController {
     }
 
 
+    @ResponseBody
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/{coleccionId}/plantas/{plantaId}")
+    public void removePlantaFromColeccion(@PathVariable("coleccionId") Long coleccionId, @PathVariable("plantaId") Long plantaId) {
+        log.info("Removing planta " + plantaId + " from coleccion " + coleccionId);
+
+        Coleccion coleccion = coleccionService.findById(coleccionId);
+        Planta planta = plantaService.one(plantaId);
+
+        if (coleccion == null) {
+            throw new RuntimeException("Coleccion not found with ID " + coleccionId);
+        }
+        if (planta == null) {
+            throw new RuntimeException("Planta not found with ID " + plantaId);
+        }
+
+        if (coleccion.getPlantas().contains(planta)) {
+            coleccion.getPlantas().remove(planta);
+            coleccionService.save(coleccion);
+            log.info("Planta removed successfully from coleccion.");
+        } else {
+            throw new RuntimeException("Planta not found in the coleccion");
+        }
+    }
+
+
+
 
 
 }

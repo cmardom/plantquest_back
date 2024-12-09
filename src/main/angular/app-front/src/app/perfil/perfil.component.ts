@@ -89,13 +89,30 @@ export class PerfilComponent implements OnInit {
   }
 
   deleteColeccion(id: number | undefined): void {
-    this.coleccionService.deleteColeccion(id).subscribe(
+    const confirmed = window.confirm('¿Estás seguro de querer borrar toda la colección?');
+    if (confirmed){
+      this.coleccionService.deleteColeccion(id).subscribe(
+        () => {
+          console.log('Colección eliminada exitosamente');
+          window.location.reload();
+        },
+        (error) => {
+          console.error('Error al eliminar coleccion', error);
+        }
+      );
+    }
+
+  }
+
+  removePlantaFromColeccion(coleccionId: number | undefined, plantaId: number) {
+    this.coleccionService.removePlantaFromColeccion(coleccionId, plantaId).subscribe(
       () => {
-        console.log('Colección eliminada exitosamente');
+        console.log('Planta removed successfully');
         window.location.reload();
+
       },
       (error) => {
-        console.error('Error al eliminar coleccion', error);
+        console.error('Error removing planta:', error);
       }
     );
   }

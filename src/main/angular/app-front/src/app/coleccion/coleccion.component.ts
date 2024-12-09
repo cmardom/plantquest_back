@@ -4,14 +4,14 @@ import { UsuarioService } from '../services/usuario.service';
 import { PlantaService } from '../services/planta.service';
 import { Coleccion } from '../interfaces/coleccion';
 import {NgForOf, NgIf} from "@angular/common";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {NgForm} from "@angular/forms";
 import {VolverComponent} from "../volver/volver.component";
 
 @Component({
   selector: 'app-coleccion',
   standalone: true,
-  imports: [NgForOf, NgIf, VolverComponent],
+  imports: [NgForOf, NgIf, VolverComponent, RouterLink],
   templateUrl: './coleccion.component.html',
   styleUrls: ['./coleccion.component.scss'],
 })

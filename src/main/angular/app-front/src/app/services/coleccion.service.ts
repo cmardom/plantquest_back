@@ -66,4 +66,20 @@ export class ColeccionService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers });
   }
 
+  removePlantaFromColeccion(coleccionId: number | undefined, plantaId: number): Observable<void> {
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+    });
+
+    console.log("coleccion id > " + coleccionId);
+    console.log("planta id > " + plantaId)
+    return this.http.delete<void>(`${this.apiUrl}/${coleccionId}/plantas/${plantaId}`, { headers })
+      .pipe(
+        catchError((error) => {
+          let errorMessage = 'An error occurred while removing the planta from the coleccion.';
+
+          return throwError(() => new Error(errorMessage));
+        })
+      );
+  }
 }
