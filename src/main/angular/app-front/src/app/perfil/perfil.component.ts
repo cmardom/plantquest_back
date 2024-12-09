@@ -88,5 +88,17 @@ export class PerfilComponent implements OnInit {
 
   }
 
+  deleteColeccion(id: number | undefined): void {
+    this.coleccionService.deleteColeccion(id).subscribe(
+      () => {
+        console.log('Colección eliminada exitosamente');
+        window.location.reload();
+      },
+      (error) => {
+        console.error('Error al eliminar coleccion', error);
+      }
+    );
+  }
+
 
 }

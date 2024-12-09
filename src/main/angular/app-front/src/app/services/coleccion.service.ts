@@ -57,4 +57,13 @@ export class ColeccionService {
       return this.http.get<Coleccion[]>(`${this.apiUrl}/usuario?id=${usuario.id}`);    }
   }
 
+  deleteColeccion(id: number | undefined): Observable<void> {
+    const headers = new HttpHeaders({
+      'Accept': 'application/json', // Expect JSON response
+    });
+
+    // Use DELETE method to call the backend API with the `id` in the URL
+    return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers });
+  }
+
 }

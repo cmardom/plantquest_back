@@ -38,22 +38,6 @@ public class ColeccionController {
         return this.coleccionService.all();
     }
 
-//    @PostMapping({"","/"})
-//    public Coleccion nuevaColeccion(@RequestBody Coleccion coleccion) {
-//        log.info("entra en el post");
-//
-//        Usuario usuario = usuarioService.one(coleccion.getUsuario().getID());
-//
-//        if (usuario != null) {
-//            log.info("entra en el post");
-//            coleccion.setUsuario(usuario);
-//            return coleccionService.save(coleccion);
-//        } else {
-//            log.info("NO !! entra en el post");
-//
-//            throw new RuntimeException("Usuario not found with ID " + coleccion.getUsuario().getID());
-//        }
-//    }
 
     @GetMapping("/coleccion/{nombre}/{usuarioId}")
     public Coleccion nuevaColeccion(@PathVariable String nombre, @PathVariable Long usuarioId) {
@@ -100,6 +84,7 @@ public class ColeccionController {
 
     @ResponseBody
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/{id}")
     public void deleteColeccion(@PathVariable("id") Long id) {
         coleccionService.delete(id);
@@ -112,11 +97,16 @@ public class ColeccionController {
             @PathVariable("plantaId") Long plantaId) {
         log.info("Adding planta " + plantaId + " to coleccion " + coleccionId);
 
-        Coleccion updatedColeccion = coleccionService.addPlantaToColeccion(coleccionId, plantaId);
+        Coleccion coleccionSeleccionada = coleccionService.findById(coleccionId);
         Planta planta = plantaService.one(plantaId);
-        if (updatedColeccion.getPlantas().contains(planta) ){
-            // Optionally throw an exception or return a specific message
+        Coleccion updatedColeccion =  new Coleccion();
+
+        if (coleccionSeleccionada.getPlantas().contains(planta) ){
             throw new RuntimeException("Planta already exists in Coleccion");
+        } else {
+            updatedColeccion = coleccionService.addPlantaToColeccion(coleccionId, plantaId);
+
+
         }
 
 
