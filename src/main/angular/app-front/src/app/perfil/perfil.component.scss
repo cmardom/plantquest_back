@@ -8,3 +8,25 @@
   justify-content: space-between;
   flex: 1 0 100%;
 }
+
+/* Styles for the cards container */
+#colecciones {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 20px; /* Add space between the cards */
+  justify-content: flex-start; /* Align the cards to the left */
+  margin-top: 20px;
+
+  .card{
+
+    .card-body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+  }
+
+
+}
+
