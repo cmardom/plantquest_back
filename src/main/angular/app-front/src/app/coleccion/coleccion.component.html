@@ -5,29 +5,30 @@
 <app-volver></app-volver>
   <h3>Elige qué colección quieres actualizar:  </h3>
   <div class="row">
-    <div class="col">
-      <div *ngFor="let coleccion of colecciones" class="card">
+      <div>
+        <div *ngIf="errorMessage" class="alert alert-danger card">
+          {{ errorMessage }}
+        </div>
+      </div>
+
+    <div class="row">
+    <div class="d-flex col-4 gap-3">
+      <div *ngFor="let coleccion of colecciones" class="card w-50">
         <div class="card-body">
           <h5>{{ coleccion.nombre }}</h5>
           <a [routerLink]="['/perfil']" href="#perfil"> Ver en perfil </a>
+          <br>
           <br>
           <a class="btn btn-primary"  (click)="addPlantaToColeccion(coleccion.id)" >
             Añadir planta
           </a>
           <br>
         </div>
-
+        <br>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <div *ngIf="errorMessage" class="alert alert-danger card">
-          {{ errorMessage }}
-        </div>
-      </div>
 
     </div>
-
 
   </div>
 

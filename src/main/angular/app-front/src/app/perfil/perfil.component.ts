@@ -76,6 +76,8 @@ export class PerfilComponent implements OnInit {
             console.log('Colección creada:', createdColeccion);
             this.colecciones.push(createdColeccion);
             this.nombrecoleccion = '';
+            window.location.reload();
+
           },
           error: (error) => {
             console.error('Error creating Coleccion:', error);
@@ -105,21 +107,26 @@ export class PerfilComponent implements OnInit {
   }
 
   removePlantaFromColeccion(coleccionId: number | undefined, plantaId: number) {
-    this.coleccionService.removePlantaFromColeccion(coleccionId, plantaId).subscribe(
-      () => {
-        console.log('Planta removed successfully');
-        window.location.reload();
+    const confirmed = window.confirm('¿Estás seguro de querer borrar esta planta?');
+    if (confirmed){
+      this.coleccionService.removePlantaFromColeccion(coleccionId, plantaId).subscribe(
+        () => {
+          console.log('Planta removed successfully');
+          window.location.reload();
 
-      },
-      (error) => {
-        console.error('Error removing planta:', error);
-      }
-    );
+        },
+        (error) => {
+          console.error('Error removing planta:', error);
+        }
+      );
+    }
+
   }
 
   deleteUsuario(id: number | string | Coleccion[] | undefined | Usuario) {
     const numericId = Number(id);
-    if (id && numericId){
+    const confirmed = window.confirm('¿Estás seguro de querer borrar tu cuenta?');
+    if (id && numericId && confirmed){
       this.usuarioService.deleteUsuario(id).subscribe(
         () => {
           console.log('Usuario deleted successfully');
