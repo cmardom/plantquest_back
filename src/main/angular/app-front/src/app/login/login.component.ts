@@ -5,6 +5,7 @@ import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
 import {Router} from "@angular/router";
 import {SigninComponent} from "../signin/signin.component";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import {SigninComponent} from "../signin/signin.component";
   imports: [
     FormsModule,
     SigninComponent,
+    NgIf,
 
   ],
   styleUrls: ['./login.component.scss']

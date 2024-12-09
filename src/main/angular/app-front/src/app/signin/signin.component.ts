@@ -4,6 +4,7 @@ import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
 import {Router} from "@angular/router";
 import {Usuario} from "../interfaces/usuario";
+import {NgIf} from "@angular/common";
 
 export type SignInDataType = Pick<Usuario, "nombre" | "email" | "password">;
 
@@ -11,7 +12,8 @@ export type SignInDataType = Pick<Usuario, "nombre" | "email" | "password">;
   selector: 'app-signin',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    NgIf
   ],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
