@@ -7,6 +7,7 @@ import {SignInDataType} from "../signin/signin.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {isPlatformBrowser} from "@angular/common";
 import {Coleccion} from "../interfaces/coleccion";
+import {catchError, Observable, throwError} from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -107,7 +108,7 @@ export class UsuarioService {
   getUsuarioById(id: number) {
     return this.http.get<Usuario>(`${this.apiUrl}/${id}`).subscribe({
       next: (usuario) => {
-        this.usuario = usuario;  // Optionally store the fetched user
+        this.usuario = usuario;
         console.log('Fetched user:', usuario);
       },
       error: (error) => {
@@ -116,20 +117,23 @@ export class UsuarioService {
     });
   }
 
-  // addPlantaToColeccion(coleccionId: number, plantaId: number) {
-  //   return this.http.put<Coleccion>(
-  //     `${this.apiUrl}/${coleccionId}/plantas/${plantaId}`,
-  //     {}
-  //   );
-  // }
+  deleteUsuario(id: number | string | Coleccion[] | Usuario): Observable<void> {
+    const headers = new HttpHeaders({
+      'Accept': 'application/json', // Expect JSON response
+    });
+
+    return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers })
+      .pipe(
+        catchError((error) => {
+          let errorMessage = 'An error occurred while deleting the usuario.';
+          // if (error.error && error.error.message) {
+          //   errorMessage = error.error.message;
+          // }
+          return throwError(() => new Error(errorMessage));
+        })
+      );
+  }
 
 
 
-  // isBrowser(): boolean {
-  //   return isPlatformBrowser(this.platformId);
-  // }
-  //
-  // isServer(): boolean {
-  //   return !isPlatformBrowser(this.platformId);
-  // }
 }

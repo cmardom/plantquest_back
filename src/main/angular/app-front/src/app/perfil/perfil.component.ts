@@ -117,5 +117,23 @@ export class PerfilComponent implements OnInit {
     );
   }
 
+  deleteUsuario(id: number | string | Coleccion[] | undefined | Usuario) {
+    const numericId = Number(id);
+    if (id && numericId){
+      this.usuarioService.deleteUsuario(id).subscribe(
+        () => {
+          console.log('Usuario deleted successfully');
+          this.usuarioService.logout();
+          //this.router.navigate()
+        },
+        (error) => {
+          console.error('Error deleting usuario:', error);
+        }
+      );
+    }
+
+  }
+
+
 
 }

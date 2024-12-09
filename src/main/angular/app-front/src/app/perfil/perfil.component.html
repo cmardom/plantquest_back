@@ -50,7 +50,7 @@
                 <button class="btn btn-outline-warning" (click)="cerrarSession()">
                   Cerrar sesión
                 </button>
-                <button class="btn btn-outline-danger ">
+                <button class="btn btn-outline-danger" (click)="deleteUsuario(usuarioService.get('id'))">
                   Borrar cuenta
                 </button>
               </div>
@@ -94,6 +94,12 @@
     </div>
 
     <br>
+    <h3>Tus colecciones</h3>
+    <div *ngIf="colecciones.length === 0">
+
+      ¡No tienes colecciones!
+    </div>
+
     <div class="cartas" *ngFor="let coleccion of colecciones; let i = index">
       <hr>
       <div class="row">
@@ -102,6 +108,11 @@
           </h4>
           <button class="btn btn-secondary" (click)="deleteColeccion(coleccion.id)">Borrar colección</button>
         </div>
+        <div *ngIf="coleccion.plantas.length === 0">
+
+          ¡No tienes plantas añadidas! Descubre nuevas plantas en <a [routerLink]="'/guia'" class="link-primary">nuestra guía</a>
+        </div>
+
 
         <div class="col-sm-2" *ngFor="let plantas of coleccion.plantas ">
           <div class="card">
