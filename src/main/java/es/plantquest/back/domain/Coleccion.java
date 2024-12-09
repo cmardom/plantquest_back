@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -29,10 +28,9 @@ public class Coleccion {
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
     @JsonBackReference
-    @JsonIgnore  // Prevent recursion in serialization
+    @JsonIgnore
     private Usuario usuario;
 
-    // Managed side of the relationship
     @ManyToMany
     @JoinTable(
             name = "coleccion_planta",

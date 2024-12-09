@@ -71,12 +71,11 @@ export class PerfilComponent implements OnInit {
           plantas: [],
         };
 
-        // Call the service to create the new Coleccion
-        this.coleccionService.createColeccion(newColeccion).subscribe({
+        this.coleccionService.createColeccion(newColeccion.nombre, newColeccion.usuario_id).subscribe({
           next: (createdColeccion) => {
             console.log('Colección creada:', createdColeccion);
             this.colecciones.push(createdColeccion);
-            this.nombrecoleccion = ''; // Clear input field after submit
+            this.nombrecoleccion = '';
           },
           error: (error) => {
             console.error('Error creating Coleccion:', error);

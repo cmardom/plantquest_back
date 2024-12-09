@@ -39,6 +39,6 @@ public class Planta {
 
     @ManyToMany(mappedBy = "plantas")
     @JsonBackReference
-    @JsonIgnore  // Prevent recursion in serialization
+    @JsonIgnore
     private List<Coleccion> colecciones;
 }

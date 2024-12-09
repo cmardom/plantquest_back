@@ -63,7 +63,7 @@ public class ColeccionService {
         coleccionRepository.deleteById(id);
     }
 
-    public Coleccion findById(Long id){ return coleccionRepository.findById(id).orElse(null); }
+    public Coleccion findById(Long id){ return coleccionRepository.findById(id).get(); }
 
     public Coleccion[] findColeccionByUserId(Long userId){
         if (usuarioRepository.findById(userId) != null){

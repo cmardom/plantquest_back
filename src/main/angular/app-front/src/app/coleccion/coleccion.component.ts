@@ -44,7 +44,7 @@ export class ColeccionComponent implements OnInit {
     });
   }
 
-  addPlantaToColeccion(coleccionId: number) {
+  addPlantaToColeccion(coleccionId: number | undefined) {
     console.log('Button clicked. coleccionId:', coleccionId); // Check if the method is called
     this.errorMessage = '';  // Clear previous error messages
 

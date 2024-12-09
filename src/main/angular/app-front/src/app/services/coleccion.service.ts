@@ -5,8 +5,7 @@ import {Usuario} from "../interfaces/usuario";
 import {catchError, map, Observable, switchMap, throwError} from "rxjs";
 import {Coleccion} from "../interfaces/coleccion";
 import {UsuarioService} from "./usuario.service";
-import {Planta} from "../interfaces/planta-interface";
-import {isPlatformBrowser} from "@angular/common";
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,6 @@ export class ColeccionService {
 
   public coleccion: Coleccion | undefined = undefined;
   public colecciones: Coleccion[] | undefined = undefined;
-  private localStorageKey: string = 'coleccionesData';
 
 
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object,
@@ -41,13 +39,15 @@ export class ColeccionService {
   }
 
 
-  createColeccion(coleccion: Coleccion) {
+  createColeccion(nombre: string, usuarioId: number) {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',  // Ensure we're sending JSON
-      'Accept': 'application/json',         // Ensure we expect JSON back
+      'Accept': 'application/json', // Ensure we expect JSON back
     });
-    return this.http.post<Coleccion>(this.apiUrl, coleccion, { headers });
+
+    return this.http.get<Coleccion>(`${this.apiUrl}/coleccion/${nombre}/${usuarioId}`, { headers });
   }
+
+
 
 // @ts-ignore
   getColecciones(usuario:Usuario): Observable<Coleccion[]>{

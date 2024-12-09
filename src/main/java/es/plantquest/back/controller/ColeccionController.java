@@ -38,22 +38,43 @@ public class ColeccionController {
         return this.coleccionService.all();
     }
 
-    @PostMapping({"","/"})
-    public Coleccion nuevaColeccion(@RequestBody Coleccion coleccion) {
-        log.info("entra en el post");
+//    @PostMapping({"","/"})
+//    public Coleccion nuevaColeccion(@RequestBody Coleccion coleccion) {
+//        log.info("entra en el post");
+//
+//        Usuario usuario = usuarioService.one(coleccion.getUsuario().getID());
+//
+//        if (usuario != null) {
+//            log.info("entra en el post");
+//            coleccion.setUsuario(usuario);
+//            return coleccionService.save(coleccion);
+//        } else {
+//            log.info("NO !! entra en el post");
+//
+//            throw new RuntimeException("Usuario not found with ID " + coleccion.getUsuario().getID());
+//        }
+//    }
 
-        Usuario usuario = usuarioService.one(coleccion.getUsuario().getID());
+    @GetMapping("/coleccion/{nombre}/{usuarioId}")
+    public Coleccion nuevaColeccion(@PathVariable String nombre, @PathVariable Long usuarioId) {
+        log.info("entra en el GET con nombre: " + nombre + " y usuarioId: " + usuarioId);
 
+        Usuario usuario = usuarioService.one(usuarioId);
         if (usuario != null) {
-            log.info("entra en el post");
+            log.info("Usuario encontrado con ID: " + usuarioId);
+
+            Coleccion coleccion = new Coleccion();
+            coleccion.setNombre(nombre);
             coleccion.setUsuario(usuario);
+
             return coleccionService.save(coleccion);
         } else {
-            log.info("NO !! entra en el post");
-
-            throw new RuntimeException("Usuario not found with ID " + coleccion.getUsuario().getID());
+            log.info("Usuario no encontrado con ID: " + usuarioId);
+            throw new RuntimeException("Usuario not found with ID " + usuarioId);
         }
     }
+
+
 
 
     @GetMapping("/{id}")
