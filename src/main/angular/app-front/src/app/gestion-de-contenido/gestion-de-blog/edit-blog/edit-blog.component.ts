@@ -4,14 +4,16 @@ import { Blog } from "../../../interfaces/blog";
 import {FormsModule, NgForm} from "@angular/forms";
 import { Router } from "@angular/router";
 import { ActivatedRoute } from "@angular/router";
-import {VolverComponent} from "../../../volver/volver.component";  // To get route parameters
+import {VolverComponent} from "../../../volver/volver.component";
+import {NgIf} from "@angular/common";  // To get route parameters
 
 @Component({
   selector: 'app-edit-blog',
   standalone: true,
   imports: [
     FormsModule,
-    VolverComponent
+    VolverComponent,
+    NgIf
   ],
   templateUrl: './edit-blog.component.html',
   styleUrls: ['./edit-blog.component.scss']
