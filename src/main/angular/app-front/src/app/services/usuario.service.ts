@@ -51,11 +51,11 @@ export class UsuarioService {
       'Accept': 'application/json',         // Ensure we expect JSON back
     });
     return this.http.post<Usuario>(this.apiUrl + '/login', loginData, { headers })
-      .subscribe({
+      /*.subscribe({
         next: (usuario) => {
           this.setUser(usuario);
         },
-      });
+      })*/;
   }
 
   getUsuarios() {

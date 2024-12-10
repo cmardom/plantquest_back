@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +38,7 @@ public class UsuarioService {
         if (usuario != null && usuario.getPassword().equals(usuarioLgin.getPassword())) {
             return ResponseEntity.ok(usuario);
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
     }
 

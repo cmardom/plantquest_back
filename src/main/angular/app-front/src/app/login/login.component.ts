@@ -1,9 +1,8 @@
 
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormsModule, NgForm} from "@angular/forms";
-import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {UsuarioService} from "../services/usuario.service";
-import {Router} from "@angular/router";
 import {SigninComponent} from "../signin/signin.component";
 import {NgIf} from "@angular/common";
 
@@ -21,17 +20,15 @@ import {NgIf} from "@angular/common";
 })
 export class LoginComponent implements OnInit
 {
-  modal: NgbModalRef | undefined;
+  loginError = undefined;
 
   public formUser = {
     email: '',
     password: '',
   };
 
-
   constructor(private modalService: NgbModal,
-              private usuarioService : UsuarioService,
-              private router : Router) {
+              private usuarioService : UsuarioService) {
 
   }
 
@@ -53,12 +50,22 @@ export class LoginComponent implements OnInit
   }
 
   async onSubmit(loginForm: NgForm) {
+    // this.loginError = undefined;
+
+
     if (!loginForm.valid) {
       return;
     } else {
-      this.usuarioService.login(this.formUser);
-      // await this.router.navigate(['/perfil']);
-      this.closeAllModals();
+      this.usuarioService.login(this.formUser).subscribe({
+        next: (usuario) => {
+          this.usuarioService.setUser(usuario);
+          this.closeAllModals();
+        },
+        error: (error) => {
+          this.loginError = error;
+          loginForm.reset(); //Makes email and password "dirty" property false again
+        }
+      });
     }
 
   }
