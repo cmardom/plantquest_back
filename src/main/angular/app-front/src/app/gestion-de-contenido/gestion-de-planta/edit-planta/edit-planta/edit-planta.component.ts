@@ -2,17 +2,17 @@ import {Component, OnInit} from '@angular/core';
 import {FormsModule, NgForm} from "@angular/forms";
 import {VolverComponent} from "../../../../volver/volver.component";
 import {Planta} from "../../../../interfaces/planta-interface";
-import {BlogService} from "../../../../services/blog.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {PlantaService} from "../../../../services/planta.service";
-import {Blog} from "../../../../interfaces/blog";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-edit-planta',
   standalone: true,
   imports: [
     FormsModule,
-    VolverComponent
+    VolverComponent,
+    NgIf,
   ],
   templateUrl: './edit-planta.component.html',
   styleUrl: './edit-planta.component.scss'
