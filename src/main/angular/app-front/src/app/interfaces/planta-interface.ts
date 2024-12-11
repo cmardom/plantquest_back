@@ -1,4 +1,3 @@
-// planta.model.ts
 export interface Planta {
   id: number;
   nombre_cientifico: string;

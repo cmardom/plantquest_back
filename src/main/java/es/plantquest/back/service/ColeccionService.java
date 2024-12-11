@@ -34,28 +34,21 @@ public class ColeccionService {
         if (coleccionOptional.isPresent() && plantaOptional.isPresent()) {
             Coleccion coleccion = coleccionOptional.get();
             Planta planta = plantaOptional.get();
-
-            // Add planta to coleccion's plantas list
             coleccion.getPlantas().add(planta);
 
-
-            // Save the updated coleccion
             return coleccionRepository.save(coleccion);
         }
 
-        return null; // Handle if either coleccion or planta is not found
+        return null;
     }
 
     public List<Coleccion> all(){return coleccionRepository.findAll();}
 
     public Coleccion save (Coleccion coleccion){
 
-
-
         if (findColeccionByUserId(coleccion.getUsuario().getID()) != null) {
             return coleccionRepository.save(coleccion);
         }
-
         return null;
     }
 

@@ -29,9 +29,9 @@ export class PlantaService {
 
   savePlanta(planta:Planta): Observable<Planta> {
     if (planta.id && planta.id > 0) {
-      return this.http.put<Planta>(`${this.apiUrl}/${planta.id}`, planta);  // Update request
+      return this.http.put<Planta>(`${this.apiUrl}/${planta.id}`, planta);
     } else {
-      return this.http.post<Planta>(this.apiUrl, planta);  // Create request
+      return this.http.post<Planta>(this.apiUrl, planta);
     }
   }
 

@@ -31,7 +31,7 @@ export class ColeccionService {
         catchError((error) => {
           let errorMessage = 'An error occurred while adding the planta to the coleccion.';
           if (error.error && error.error.message) {
-            errorMessage = error.error.message; // Assuming error response contains a message field
+            errorMessage = error.error.message;
           }
           return throwError(() => new Error(errorMessage));
         })
@@ -62,7 +62,6 @@ export class ColeccionService {
       'Accept': 'application/json', // Expect JSON response
     });
 
-    // Use DELETE method to call the backend API with the `id` in the URL
     return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers });
   }
 
@@ -71,8 +70,6 @@ export class ColeccionService {
       'Accept': 'application/json',
     });
 
-    console.log("coleccion id > " + coleccionId);
-    console.log("planta id > " + plantaId)
     return this.http.delete<void>(`${this.apiUrl}/${coleccionId}/plantas/${plantaId}`, { headers })
       .pipe(
         catchError((error) => {

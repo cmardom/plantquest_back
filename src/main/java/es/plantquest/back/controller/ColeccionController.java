@@ -109,12 +109,9 @@ public class ColeccionController {
 
         }
 
-
-
         if (updatedColeccion != null) {
-            return ResponseEntity.ok(updatedColeccion); // This is returning a ResponseEntity<Coleccion>
+            return ResponseEntity.ok(updatedColeccion);
         } else {
-            // Return a ResponseEntity with a String message
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body("Planta not found.");
         }

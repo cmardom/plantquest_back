@@ -7,5 +7,5 @@ export interface Usuario {
   password: string;
   dtype?: string;
   rol?: string;
-  colecciones: Coleccion[]; // Array of Colección objects
+  colecciones: Coleccion[];
 }

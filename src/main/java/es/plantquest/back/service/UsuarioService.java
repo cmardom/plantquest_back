@@ -43,24 +43,21 @@ public class UsuarioService {
     }
 
 
-
-
-
-    public Usuario signin (Usuario usuarioLgin) {
-
+    public ResponseEntity<Usuario> signin (Usuario usuarioLgin) {
         Usuario usuario = findByEmail(usuarioLgin.getEmail());
-        System.out.println("usuario que se encuentra en singin por email > " + usuario);
-        if (usuario == null) {
-            usuarioLgin.setRol(Rol.ROL_USER);
-            System.out.println("usuario que se va a guardar: " + usuarioLgin);
+       try{
+           if (usuario == null) {
+               usuarioLgin.setRol(Rol.ROL_USER);
 
-            usuarioRepository.save(usuarioLgin);
+               Usuario nuevousuario = usuarioRepository.save(usuarioLgin);
 
-            return usuarioLgin;
-        } else {
-            System.out.println("el usuario existe");
-            return null;
-        }
+               return ResponseEntity.ok(nuevousuario);
+           }
+       }catch (Exception e) {
+
+           throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+       }
+        return ResponseEntity.badRequest().body(null);
     }
 
 

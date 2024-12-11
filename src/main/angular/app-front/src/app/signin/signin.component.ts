@@ -20,11 +20,13 @@ export type SignInDataType = Pick<Usuario, "nombre" | "email" | "password">;
 })
 export class SigninComponent{
 
-  usuario: SignInDataType = {
+  public usuario  = {
     nombre: '',
     email: '',
     password: ''
   };
+
+  signinError=undefined;
 
   constructor(private modalService: NgbModal,
               private usuarioService : UsuarioService,
@@ -37,11 +39,22 @@ export class SigninComponent{
   }
 
 
-  onSubmit(loginForm: NgForm) {
+  async onSubmit(loginForm: NgForm) {
     if (!loginForm.valid) {
       return;
     } else {
-      this.usuarioService.signin(this.usuario);
+      (await this.usuarioService.signin(this.usuario)).subscribe({
+        next: (usuario:Usuario)=>{
+
+          this.usuarioService.setUser(usuario);
+          this.closeModal();
+
+        },
+        error: (error: undefined)=>{
+          this.signinError=error;
+          loginForm.reset();
+        }
+      });
     }
   }
 }

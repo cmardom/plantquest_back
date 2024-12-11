@@ -50,15 +50,11 @@ public class PlantaService {
 
     public Set<Planta> getPlantasForColeccion(Long coleccionId) {
         Optional<Coleccion> coleccionOpt = coleccionRepository.findById(coleccionId);
-        System.out.println("coleccion encontrada en planta service: "+coleccionOpt);
         if (coleccionOpt.isPresent()) {
             return coleccionOpt.get().getPlantas();
         }
         return Collections.emptySet();
     }
-
-
-
 
 
 }

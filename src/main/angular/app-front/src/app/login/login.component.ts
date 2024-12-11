@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit
   async onSubmit(loginForm: NgForm) {
     // this.loginError = undefined;
 
-
     if (!loginForm.valid) {
       return;
     } else {
@@ -63,7 +62,7 @@ export class LoginComponent implements OnInit
         },
         error: (error) => {
           this.loginError = error;
-          loginForm.reset(); //Makes email and password "dirty" property false again
+          loginForm.reset();
         }
       });
     }

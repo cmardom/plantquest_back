@@ -7,7 +7,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PlantaRepository extends JpaRepository<Planta, Long> {
 
-    /*hacer metodo para buscar por nombre coloquial y cientifico O por cualquier texto en entidad
-     */
-
 }

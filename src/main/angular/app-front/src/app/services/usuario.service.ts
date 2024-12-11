@@ -47,15 +47,10 @@ export class UsuarioService {
 
   login(loginData: { email: string, password: string }) {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',  // Ensure we're sending JSON
-      'Accept': 'application/json',         // Ensure we expect JSON back
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
     });
-    return this.http.post<Usuario>(this.apiUrl + '/login', loginData, { headers })
-      /*.subscribe({
-        next: (usuario) => {
-          this.setUser(usuario);
-        },
-      })*/;
+    return this.http.post<Usuario>(this.apiUrl + '/login', loginData, { headers });
   }
 
   getUsuarios() {
@@ -78,19 +73,7 @@ export class UsuarioService {
 
   async signin(signinData: SignInDataType){
     // @ts-ignore
-    return this.http.post<Usuario>(this.apiUrl + "/signin", signinData).subscribe({
-      next: async (usuario: Usuario) =>
-      {
-        if(usuario){
-          this.setUser(usuario);
-          this.modalService.dismissAll();
-          await this.router.navigate(['/perfil']);
-        }
-      },
-      error: (error) => {
-        console.error(error);
-      }
-    });
+    return this.http.post<Usuario>(this.apiUrl + "/signin", signinData);
   }
 
   async logout() {

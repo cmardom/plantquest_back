@@ -41,7 +41,7 @@ public class UsuarioController {
 
     @PostMapping("/signin")
     public Usuario signin(@RequestBody Usuario usuario) {
-        return usuarioService.signin(usuario);
+        return usuarioService.signin(usuario).getBody();
     }
 
 
