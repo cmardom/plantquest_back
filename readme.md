@@ -57,5 +57,5 @@ Para ejecutar esta aplicación en tu máquina local, asegúrate de tener instala
    ng serve -o
 
 4. **Accede al frontend** ahora alimentado con los datos del back:
-```bash
+    ```bash
     http://localhost:4200
