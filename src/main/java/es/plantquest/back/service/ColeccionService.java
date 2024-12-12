@@ -17,7 +17,7 @@ public class ColeccionService {
     @Autowired
     private ColeccionRepository coleccionRepository;
     private UsuarioRepository usuarioRepository;
-    private PlantaRepository plantaRepository; // You need this to find and associate Plantas
+    private PlantaRepository plantaRepository;
 
 
     public ColeccionService(UsuarioRepository usuarioRepository, PlantaRepository plantaRepository) {

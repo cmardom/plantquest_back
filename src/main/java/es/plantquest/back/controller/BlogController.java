@@ -25,18 +25,12 @@ public class BlogController {
         return this.blogService.allBlogs();
     }
 
-//    @PostMapping({"","/"})
-//    public Blog nuevoBlog(@RequestBody Blog blog) {
-//        return blogService.save(blog);
-//    }
 
-    // Create a new blog
     @PostMapping
     public Blog createBlog(@RequestBody Blog blog) {
         return blogService.save(blog);  // Save and create a new blog
     }
 
-    // Update an existing blog
     @PutMapping("/{id}")
     public Blog updateBlog(@PathVariable Long id, @RequestBody Blog blog) {
         blog.setID(id);  // Ensure the blog has the correct ID for the update
