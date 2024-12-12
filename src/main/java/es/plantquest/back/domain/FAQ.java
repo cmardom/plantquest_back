@@ -17,5 +17,8 @@ public class FAQ {
     private Long ID;
 
     private String pregunta;
+
+    @Lob
+    @Column (columnDefinition = "LONGTEXT")
     private String respuesta;
 }

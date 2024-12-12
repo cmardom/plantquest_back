@@ -39,14 +39,5 @@ export const routes: Routes = [
   { path: 'colecciones/:id', component:  ColeccionComponent},
 
 
-
-
-  //http://localhost:8080/v1/api/blogs?id=1
-
-
-
-
-//{path:'campings/nuevo', component: CampingsFormularioComponent},
-  //{path:'campings/:id', component: CampingsFormularioComponent},
   {path:'**', pathMatch:'full', redirectTo: 'home'}
 ];

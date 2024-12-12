@@ -10,9 +10,6 @@
           <div class="card-body">
             <h5 class="card-title">{{ planta.nombre_comun }}</h5>
             <img class="card-img" [src]=[planta.imagePath]>
-<!--            <p class="card-text">{{ planta.info }}</p>-->
-<!--            <p class="card-text"> <span class="fw-bold">Iluminacion:</span>  {{planta.riego}}</p>-->
-<!--            <p class="card-text"> <span class="fw-bold">Riego:</span> {{planta.riego}}</p>-->
             <a [routerLink]="['/planta', planta.id]" href="#planta"
                data-mdb-ripple-init class="text-center">Ver más</a>
           </div>

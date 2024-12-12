@@ -1,10 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 $primary: #006F42;
 $secondary: #FE6D98;
 $link-hover-color: $secondary;
 $font-family-base: 'DM Sans', sans-serif;
 $font-family-serif: Courier, monospace;
-/* Importing Bootstrap SCSS file. */
+
 @import 'bootstrap/scss/bootstrap';
 
 a {

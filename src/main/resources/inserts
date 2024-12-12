@@ -129,3 +129,16 @@ INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
                                                                     CURRENT_DATE,
                                                                     "https://images.unsplash.com/photo-1601489333180-64796a70b1ea?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                                                 );
+
+--Preguntas
+insert into faq (pregunta, respuesta) values ("¿Cómo puedo crear una colección de plantas?",
+                                              "Para crear una colección, solo necesitas iniciar sesión en tu cuenta y dirigirte a la sección Mis colecciones. Allí encontrarás la opción de crear una nueva colección. Puedes asignarle un nombre, agregar una descripción y comenzar a añadir plantas desde nuestra base de datos o agregar tus propias plantas manualmente.");
+
+insert into faq (pregunta, respuesta) values ("¿Puedo tener varias colecciones de plantas?",
+                                              "¡Sí! Puedes crear tantas colecciones como desees. Cada colección puede estar enfocada en diferentes tipos de plantas, como Plantas de interior, Plantas suculentas, o incluso puedes organizar tus colecciones por temporada o por cuidados específicos. ¡Todo depende de tu creatividad!");
+
+insert into faq (pregunta, respuesta) values ("¿Puedo compartir mis colecciones de plantas con otros usuarios?",
+                                              "Actualmente, nuestras colecciones son privadas y solo accesibles para ti. Sin embargo, puedes compartir el enlace de tu colección con amigos o en redes sociales para que puedan ver las plantas que has añadido. ¡Estamos trabajando en opciones de colaboración para el futuro! ");
+
+
+
