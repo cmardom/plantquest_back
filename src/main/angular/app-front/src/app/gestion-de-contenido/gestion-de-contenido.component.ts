@@ -33,7 +33,7 @@ export class GestionDeContenidoComponent implements OnInit{
   loadPlantas() {
     this.plantaService.getPlantas().subscribe({
       next: (plantas: Planta[]) => {
-        this.plantas = plantas; // Store the data in plantas array
+        this.plantas = plantas;
 
       },
       error: (error) => {
@@ -47,7 +47,7 @@ export class GestionDeContenidoComponent implements OnInit{
   loadBlogs() {
     this.blogService.getBlogs().subscribe({
       next: (blogs: Blog[]) => {
-        this.blogs = blogs; // Store the data in plantas array
+        this.blogs = blogs;
 
       },
       error: (error) => {
@@ -62,17 +62,15 @@ export class GestionDeContenidoComponent implements OnInit{
     const confirmed = window.confirm('¿Estás seguro de borrar este blog?');
 
     if (confirmed) {
-      // If confirmed, call the deleteBlog method from the service
       this.blogService.deleteBlog(id).subscribe(
         () => {
           console.log('Blog deleted successfully');
           this.router.navigate(['/gestion-de-contenido']).then(() => {
-            window.location.reload();  // Reload the page
+            window.location.reload();
           });
         },
         (error) => {
           console.error('Error deleting blog:', error);
-          // Handle any errors, e.g., show an error message to the user.
         }
       );
     }
@@ -83,17 +81,15 @@ export class GestionDeContenidoComponent implements OnInit{
     const confirmed = window.confirm('¿Estás seguro de borrar esta planta?');
 
     if (confirmed) {
-      // If confirmed, call the deleteBlog method from the service
       this.plantaService.deletePlanta(id).subscribe(
         () => {
           console.log('Planta deleted successfully');
           this.router.navigate(['/gestion-de-contenido']).then(() => {
-            window.location.reload();  // Reload the page
+            window.location.reload();
           });
         },
         (error) => {
           console.error('Error deleting planta:', error);
-          // Handle any errors, e.g., show an error message to the user.
         }
       );
     }
