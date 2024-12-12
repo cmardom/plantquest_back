@@ -92,7 +92,40 @@ insert into coleccion_planta (coleccion_id, planta_id) values
 --inserts blog
 INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
                                                                     "plantas de interior, cuidado, consejos",
-                                                                    "Las plantas de interior se han convertido en una parte esencial de la decoración de muchos hogares. No solo aportan un toque natural y relajante, sino que también mejoran la calidad del aire. Sin embargo, cuidar de ellas no siempre es tan fácil como parece. Es importante entender sus necesidades específicas de luz, agua y temperatura. Algunas plantas como la sansevieria o la pothos son bastante resistentes, mientras que otras, como las orquídeas o las calatheas, requieren cuidados más delicados. En este artículo, te compartimos algunos consejos para mantener tus plantas de interior saludables y felices, desde la elección del lugar adecuado hasta la frecuencia de riego.",
+                                                                    "Cuidar las plantas de interior es una forma excelente de mejorar el ambiente de tu hogar, purificar el aire y añadir un toque de naturaleza a tu espacio. Sin embargo, mantenerlas saludables requiere atención y cuidado. Aquí te comparto algunos consejos esenciales para cuidar adecuadamente tus plantas de interior:
+
+1. Luz adecuada
+
+Las plantas de interior necesitan luz para realizar la fotosíntesis, pero la cantidad de luz varía según la especie. Algunas plantas, como las suculentas y cactus, requieren mucha luz directa, mientras que otras, como los helechos y las plantas de sombra, prosperan con luz indirecta o poca luz. Asegúrate de conocer las necesidades específicas de cada planta y colócala en un lugar donde reciba la cantidad de luz adecuada.
+
+2. Riego correcto
+
+El riego es una de las principales causas de problemas en las plantas de interior. Es importante no regar en exceso, ya que esto puede causar la pudrición de las raíces, ni dejar que la planta se seque completamente por mucho tiempo. Una regla general es dejar que el sustrato se seque ligeramente entre riegos, pero sin que llegue a estar completamente seco en el caso de plantas que requieren más humedad. Utiliza macetas con buen drenaje para evitar el estancamiento del agua.
+
+3. Humedad
+
+Las plantas de interior suelen necesitar una humedad más alta que la que hay comúnmente en las casas. Las plantas tropicales, en particular, prosperan en ambientes húmedos. Si vives en un lugar con aire seco, especialmente en invierno, puedes aumentar la humedad alrededor de tus plantas colocando un humidificador cerca o colocando las macetas sobre bandejas con piedras y agua. Evita que el agua toque directamente las raíces.
+
+4. Temperatura estable
+
+Las plantas de interior suelen preferir temperaturas entre 18°C y 24°C. Evita colocarlas cerca de fuentes de calor como radiadores, calefactores o aire acondicionado, ya que los cambios bruscos de temperatura pueden afectar su crecimiento. Además, las plantas pueden sufrir si se exponen a corrientes de aire frío.
+
+5. Fertilización
+
+Las plantas de interior también necesitan nutrientes, especialmente durante la temporada de crecimiento (primavera y verano). Puedes utilizar fertilizantes líquidos o en gránulos, pero siempre sigue las recomendaciones del producto para evitar la sobrealimentación. No es necesario fertilizar en invierno, cuando la mayoría de las plantas entran en un período de descanso.
+
+6. Poda y limpieza
+
+La poda es esencial para mantener tus plantas sanas y fomentar un crecimiento adecuado. Elimina las hojas secas, amarillas o muertas regularmente. Además, las hojas pueden acumular polvo, lo que dificulta la fotosíntesis. Limpia las hojas con un paño suave y húmedo para mantenerlas limpias y saludables.
+
+7. Revisión periódica
+
+Es fundamental revisar las plantas con regularidad en busca de plagas como ácaros, cochinillas o pulgones. Si detectas algún problema, trata las plantas con insecticidas naturales o, en casos graves, recurre a tratamientos más específicos. Asegúrate de aislar las plantas afectadas para evitar que las plagas se propaguen a otras plantas de tu hogar.
+
+8. Trasplante cuando sea necesario
+
+Con el tiempo, las plantas de interior pueden necesitar ser trasplantadas a una maceta más grande para dar espacio a sus raíces. Esto suele ser necesario cada 1-2 años, dependiendo del crecimiento de la planta. Al trasplantar, asegúrate de usar tierra fresca y macetas con buen drenaje para prevenir problemas de raíces.
+",
                                                                     "Guía completa para cuidar las plantas de interior",
                                                                     CURRENT_DATE,
                                                                     "https://images.unsplash.com/photo-1569350080887-dd38c27caad0?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -100,7 +133,52 @@ INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
 
 INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
                                                                     "abono, fertilización, plantas",
-                                                                    "El abono es esencial para el crecimiento saludable de las plantas. Sin embargo, no todas las plantas tienen los mismos requisitos nutricionales. Mientras que algunas necesitan abonos ricos en nitrógeno para fomentar el crecimiento de hojas, otras requieren fórmulas con más fósforo para favorecer la floración. En este artículo te explicamos cómo elegir el abono adecuado para tus plantas, qué tipos existen, cuándo aplicarlo y en qué cantidad. También te daremos algunos consejos sobre fertilizantes orgánicos que puedes utilizar en casa. No subestimes el poder de un buen abono: una planta bien nutrida es una planta feliz.",
+                                                                    "El abono es uno de los elementos clave en el cuidado de las plantas, ya que proporciona los nutrientes esenciales que estas necesitan para crecer de manera saludable. Sin un aporte adecuado de abono, las plantas pueden sufrir deficiencias nutricionales que afecten su desarrollo, su resistencia a enfermedades y su capacidad de florecer o dar frutos. A continuación, te explico por qué el abono es tan importante y cómo utilizarlo correctamente en el cuidado de tus plantas.
+
+1. Aporta nutrientes esenciales
+
+El abono es fundamental porque suministra a las plantas los nutrientes que necesitan para su metabolismo y crecimiento. Los tres nutrientes principales que contiene el abono son:
+
+    Nitrógeno (N): Es crucial para el desarrollo de las hojas y el crecimiento vegetativo. Un buen aporte de nitrógeno asegura que la planta tenga un follaje saludable y verde.
+    Fósforo (P): Estimula el desarrollo de las raíces y la floración. Es importante para una planta sana desde la base, ya que las raíces fuertes permiten una mejor absorción de agua y nutrientes.
+    Potasio (K): Ayuda en la formación de frutos, la resistencia a enfermedades y el fortalecimiento de las paredes celulares. También regula el intercambio de agua en las plantas, favoreciendo la absorción de otros nutrientes.
+
+Además de estos macronutrientes, el abono también contiene micronutrientes como hierro, manganeso, zinc y magnesio, que son igualmente vitales para el buen desarrollo de las plantas, aunque en cantidades mucho menores.
+
+2. Mejora la estructura del suelo
+
+El abono no solo alimenta a las plantas, sino que también mejora la calidad del suelo en el que crecen. Los abonos orgánicos, como el compost o el estiércol, enriquecen el suelo con materia orgánica que mejora su estructura. Esto facilita la retención de agua y nutrientes, promoviendo un mejor drenaje y aireación, lo cual es esencial para las raíces. Un suelo bien estructurado permite a las raíces crecer de manera más libre, evitando que se encharque y se genere pudrición.
+
+3. Fomenta el crecimiento y la floración
+
+Las plantas que reciben un abono adecuado crecen más rápido y de manera más saludable. Esto es particularmente importante para aquellas especies que tienen una temporada de crecimiento limitada o que necesitan un impulso extra durante la primavera y el verano. Un buen abono también favorece la floración y la fructificación, lo cual es crucial si tienes plantas ornamentales o huertos en casa. Al tener suficiente fósforo y potasio, las plantas pueden producir flores y frutos de mejor calidad.
+
+4. Previene deficiencias nutricionales
+
+Sin abono, las plantas pueden sufrir deficiencias de nutrientes, lo que se traduce en síntomas como hojas amarillas, crecimiento débil, caída prematura de hojas, poca producción de flores o frutos, y, en algunos casos, la muerte de la planta. El nitrógeno deficiente, por ejemplo, suele causar hojas amarillentas, mientras que la falta de fósforo puede resultar en plantas más pequeñas y sin flores. Usar abono regularmente ayuda a evitar estas deficiencias y a mantener las plantas saludables.
+
+5. Reduce la necesidad de pesticidas
+
+Las plantas bien nutridas son más fuertes y resistentes a plagas y enfermedades. Un abono adecuado fortalece su sistema inmunológico, lo que les permite defenderse mejor de ataques de insectos o infecciones. Esto puede reducir la necesidad de utilizar pesticidas químicos, lo que a su vez es más amigable con el medio ambiente y la salud humana.
+
+6. Tipos de abono y cómo elegir el adecuado
+
+Existen diferentes tipos de abono, y elegir el adecuado depende de las necesidades específicas de tus plantas:
+
+    Abonos orgánicos: Compost, estiércol, humus de lombriz, y otros materiales naturales. Son más suaves y liberan nutrientes de manera más gradual. Además, mejoran la estructura del suelo y son ecológicos.
+    Abonos químicos o sintéticos: Suelen ser más concentrados y proporcionan nutrientes rápidamente. Son útiles en situaciones donde las plantas requieren un impulso inmediato, pero deben usarse con precaución para evitar la sobrealimentación o la contaminación del suelo y el agua.
+    Abonos líquidos: Generalmente se diluyen en agua y se aplican directamente a las raíces o a través de riego. Son muy efectivos para una absorción rápida y son ideales para plantas de interior o macetas.
+    Abonos de liberación lenta: Se aplican una vez y liberan los nutrientes gradualmente durante un período de tiempo, lo que reduce la necesidad de fertilizar con frecuencia.
+
+7. Cuándo abonar tus plantas
+
+El momento de abonar depende de la especie y de la temporada. La mayoría de las plantas se benefician de una fertilización durante la primavera y el verano, cuando están en su fase activa de crecimiento. En otoño e invierno, cuando muchas plantas entran en un período de reposo, el abono no es necesario y puede incluso ser contraproducente.
+
+8. Cómo aplicar el abono correctamente
+
+    Sigue las recomendaciones: Es importante no excederse con la cantidad de abono, ya que esto puede dañar las raíces y las plantas. Sigue siempre las indicaciones del fabricante.
+    No aplicar sobre suelo seco: Es recomendable regar la planta antes de abonar para evitar que el abono queme las raíces.
+    Evita el contacto directo: En el caso de los abonos sólidos, asegúrate de que no entren en contacto directo con las hojas o el tronco de la planta.",
                                                                     "La importancia del abono en el cuidado de las plantas",
                                                                     CURRENT_DATE,
                                                                     "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -108,7 +186,54 @@ INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
 
 INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
                                                                     "jardinería, plantas exteriores, cuidados",
-                                                                    "Cuidar de las plantas de exterior puede ser una tarea desafiante, ya que deben enfrentar condiciones climáticas más extremas, como el viento, las lluvias intensas o el calor extremo. Sin embargo, con los cuidados adecuados, tus plantas pueden prosperar en tu jardín durante todo el año. En este artículo te ofrecemos algunos consejos para mantener tus plantas de exterior saludables, desde la elección de especies resistentes hasta cómo protegerlas durante el invierno. Además, te explicamos cómo preparar el suelo para que tus plantas crezcan fuertes y cómo aprovechar la temporada de crecimiento.",
+                                                                    "Cuidar las plantas de exterior durante todo el año puede ser un reto debido a las variaciones estacionales y los diferentes tipos de plantas que puedas tener en tu jardín. Sin embargo, con algunos cuidados y atenciones específicas para cada estación, podrás mantener tus plantas saludables y fuertes en todo momento. A continuación, te ofrezco una guía completa para cuidar tus plantas de exterior durante cada temporada.
+Primavera: El despertar de las plantas
+
+La primavera es una de las estaciones más cruciales para las plantas de exterior. Durante este período, las plantas comienzan su fase de crecimiento, aprovechando la mayor cantidad de luz y calor.
+Consejos para la primavera:
+
+    Riego adecuado: Con el aumento de la temperatura y el sol, las plantas de exterior necesitarán más agua. Sin embargo, ten cuidado de no exagerar, ya que el exceso de riego puede provocar pudrición de raíces. Asegúrate de que el suelo esté bien drenado.
+    Fertilización: La primavera es el momento ideal para abonar las plantas, ya que están comenzando su fase activa de crecimiento. Utiliza fertilizantes ricos en nitrógeno, que favorecen el desarrollo de las hojas y el crecimiento general.
+    Poda ligera: Realiza una poda suave de las plantas que lo necesiten, como arbustos y plantas perennes, para eliminar ramas muertas y fomentar un crecimiento saludable.
+    Control de plagas: Revisa con frecuencia tus plantas para detectar signos de plagas, como ácaros, pulgones o cochinillas. La primavera es cuando las plagas comienzan a ser más activas, por lo que es importante tomar medidas preventivas.
+
+Verano: El calor intenso
+
+El verano puede ser un desafío, especialmente con el calor extremo y las olas de calor que afectan a muchas regiones. Las plantas de exterior pueden sufrir estrés por calor, sequedad y una exposición excesiva al sol.
+Consejos para el verano:
+
+    Riego frecuente: Las altas temperaturas pueden secar rápidamente el suelo, por lo que es esencial regar de manera más frecuente. Lo mejor es regar por la mañana temprano o por la noche para evitar la evaporación rápida del agua y permitir que las plantas absorban lo necesario.
+    Mulching o acolchado: Coloca una capa de mulch (paja, corteza de árbol o compost) alrededor de la base de las plantas. Esto ayuda a conservar la humedad del suelo y mantiene las raíces frescas durante las olas de calor.
+    Protección contra el sol: Si tienes plantas sensibles al sol directo, considera crear sombra temporal con una tela o una estructura de sombreado, especialmente en las horas más calientes del día.
+    Fertilización moderada: En el verano, las plantas están en su pico de crecimiento, pero no es momento para abonos excesivos, ya que puede causar un crecimiento desmesurado y debilitar la planta. Utiliza fertilizantes equilibrados y en menor cantidad.
+    Control de plagas y enfermedades: Las altas temperaturas y la humedad pueden atraer a insectos y enfermedades fúngicas. Realiza inspecciones regulares y usa tratamientos naturales o productos específicos si es necesario.
+
+Otoño: Preparación para el frío
+
+El otoño es una época de transición en la que las plantas de exterior comienzan a prepararse para el frío. Muchas plantas empiezan a perder hojas y ralentizan su crecimiento.
+Consejos para el otoño:
+
+    Reducción de riego: A medida que las temperaturas bajan, las plantas requieren menos agua. Es importante reducir el riego para evitar el exceso de humedad, que puede favorecer enfermedades fúngicas.
+    Poda y limpieza: Retira las hojas secas y las ramas muertas. Esto no solo mejora la estética del jardín, sino que también previene la proliferación de plagas que se pueden alojar en material vegetal en descomposición.
+    Abono de preparación para el invierno: Durante el otoño, abona con fertilizantes ricos en potasio y fósforo para fortalecer las raíces y aumentar la resistencia de las plantas al frío.
+    Cubrir las plantas más sensibles: Si vives en una zona donde las heladas son comunes, cubre las plantas sensibles con telas especiales para protegerlas del frío. También puedes colocar cubresuelos o acolchado sobre las raíces para protegerlas de las bajas temperaturas.
+
+Invierno: Protección contra el frío extremo
+
+El invierno puede ser especialmente duro para las plantas de exterior, especialmente si las temperaturas bajan mucho. Las plantas perennes, arbustos y árboles pueden sobrevivir al invierno, pero necesitan una protección adecuada para no sufrir daños irreparables.
+Consejos para el invierno:
+
+    Protección contra las heladas: Si las temperaturas caen por debajo de 0°C, asegúrate de proteger las plantas más sensibles con cobertores o mantas térmicas. También puedes usar hojas secas o paja como protección adicional para las raíces.
+    Riego moderado: Aunque las plantas crecen poco en invierno, aún necesitan algo de agua. Evita que el suelo se seque completamente, pero asegúrate de que no esté demasiado húmedo, ya que la congelación del agua puede dañar las raíces.
+    Poda de invierno: Algunas plantas, como los árboles frutales, pueden necesitar una poda ligera en invierno para eliminar madera muerta o enferma. Sin embargo, no podas en exceso, ya que muchas plantas están en reposo vegetativo y no pueden responder a este tipo de intervenciones durante el frío.
+    Inspección de plagas: Aunque las plagas son menos activas en invierno, algunas pueden refugiarse en los troncos o en la parte inferior de las plantas. Revisa con regularidad para asegurarte de que no haya infestaciones de insectos.
+
+Consejos generales para todo el año:
+
+    Conoce las necesidades de tus plantas: Investiga las necesidades específicas de las plantas que tienes en tu jardín, ya que algunas son más resistentes al frío, mientras que otras necesitan más protección.
+    Elige plantas locales: Las plantas autóctonas están adaptadas a las condiciones climáticas locales y suelen requerir menos mantenimiento.
+    Mantén el suelo saludable: La salud del suelo es esencial para que las plantas crezcan de manera óptima. Añadir compost o materia orgánica cada temporada puede mejorar la calidad del suelo y la retención de nutrientes.
+    Rotación de cultivos: Si tienes un huerto, rota las plantas de un año a otro para evitar el agotamiento de nutrientes y la acumulación de plagas específicas.",
                                                                     "Cómo cuidar las plantas de exterior durante todo el año",
                                                                     CURRENT_DATE,
                                                                     "https://images.unsplash.com/photo-1607529107925-04e67ae44b09?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -116,7 +241,73 @@ INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
 
 INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
                                                                     "plantas suculentas, cuidados, luz",
-                                                                    "Las plantas suculentas son famosas por su capacidad de almacenar agua en sus hojas, lo que les permite sobrevivir en ambientes secos. Sin embargo, aunque son plantas resistentes, requieren ciertos cuidados específicos para prosperar. La luz es uno de los factores más importantes a tener en cuenta: la mayoría de las suculentas necesitan luz solar directa o al menos unas horas de luz indirecta brillante al día. También es crucial no excederse con el riego, ya que el exceso de agua puede pudrir las raíces. En este artículo te damos todos los consejos que necesitas para cuidar tus suculentas de manera adecuada, asegurando que se mantengan saludables y vibrantes.",
+                                                                    "Las suculentas son plantas que han ganado una gran popularidad debido a su resistencia y belleza. Estas plantas, adaptadas para sobrevivir en condiciones de sequía, requieren un cuidado especial que se diferencia de otras plantas. Aunque son relativamente fáciles de mantener, proporcionarles el ambiente y las condiciones adecuadas es esencial para que prosperen. Aquí te dejo una guía completa sobre cómo cuidar las suculentas y mantenerlas en su mejor forma.
+1. Ubicación: Mucha luz, pero no sol directo constante
+
+Las suculentas necesitan una buena cantidad de luz para crecer y mantenerse saludables. Sin embargo, no todas las suculentas toleran el sol directo todo el día, especialmente en climas cálidos, ya que pueden quemarse o deshidratarse.
+Consejos para la ubicación:
+
+    Coloca las suculentas en un lugar que reciba luz indirecta o filtrada, como cerca de una ventana orientada al sur o al oeste.
+    Si las tienes al aire libre, asegúrate de que no estén expuestas al sol más intenso, como al mediodía, para evitar quemaduras.
+    Si ves que las hojas se alargan, es una señal de que las suculentas están buscando más luz. En este caso, mueve las plantas a un lugar más soleado.
+
+2. Riego: Menos es más
+
+Una de las principales razones por las que las suculentas no sobreviven es el exceso de agua. Estas plantas tienen la capacidad de almacenar agua en sus hojas, lo que les permite resistir períodos de sequía. Regarlas en exceso puede causar que sus raíces se pudran.
+Consejos para el riego:
+
+    Riega solo cuando el sustrato esté seco: Las suculentas prefieren que el suelo se seque completamente entre riego y riego. Toca el suelo con el dedo para comprobar su humedad.
+    Riego profundo y ocasional: Cuando riegues, hazlo a fondo, asegurándote de que el agua llegue a las raíces. Evita mojar las hojas para prevenir enfermedades fúngicas.
+    Frecuencia de riego: En primavera y verano, las suculentas necesitarán más agua debido al aumento de la temperatura y la luz. En otoño e invierno, cuando la planta entra en un período de reposo, necesitarán mucho menos riego.
+
+3. Maceta adecuada: Buen drenaje
+
+El drenaje es clave para el cuidado de las suculentas. Usar una maceta con buen drenaje es esencial para evitar que el agua se acumule en el fondo, lo que puede provocar la pudrición de las raíces.
+Consejos para la maceta:
+
+    Elige macetas con agujeros de drenaje para permitir que el exceso de agua se escape. Las macetas de barro o terracota son ideales porque permiten que el agua se evapore más rápido.
+    Asegúrate de que el sustrato también sea adecuado. Un buen sustrato para suculentas debe ser poroso y bien aireado, como una mezcla de tierra para cactus o un sustrato específico para suculentas y plantas suculentas.
+
+4. Temperatura y humedad: Climas cálidos y secos
+
+Las suculentas prefieren ambientes cálidos y secos. Aunque pueden tolerar una ligera caída de temperatura, las heladas pueden dañarlas gravemente.
+Consejos sobre temperatura y humedad:
+
+    Las suculentas prosperan en temperaturas que varían entre 20°C y 30°C durante el día, y entre 10°C y 15°C por la noche. No expongas las suculentas a temperaturas por debajo de los 5°C.
+    Evita la humedad excesiva, ya que esto puede favorecer el desarrollo de hongos. Si vives en un clima húmedo, asegúrate de proporcionar una buena circulación de aire alrededor de las plantas.
+
+5. Fertilización: De forma moderada
+
+Aunque las suculentas no son muy exigentes en cuanto a nutrientes, una pequeña cantidad de fertilizante puede ayudar a fomentar un crecimiento saludable, especialmente durante su período de crecimiento activo en primavera y verano.
+Consejos sobre fertilización:
+
+    Fertiliza las suculentas una vez al mes con un fertilizante líquido diluido a la mitad de su concentración. Elige un fertilizante equilibrado (como 10-10-10) o uno específico para cactus y suculentas.
+    Durante el otoño e invierno, las suculentas entran en un período de reposo y no necesitarán fertilización.
+
+6. Poda: Mantén las suculentas saludables
+
+La poda no es estrictamente necesaria para todas las suculentas, pero puede ser útil para eliminar hojas secas o muertas, o si la planta está creciendo de manera desordenada.
+Consejos sobre poda:
+
+    Usa tijeras de podar limpias y afiladas para cortar las hojas o ramas muertas o dañadas.
+    Algunas suculentas pueden empezar a alargarse si no reciben suficiente luz. Si esto sucede, puedes podar las partes estiradas para fomentar un crecimiento más compacto y saludable.
+
+7. Problemas comunes y cómo resolverlos
+
+Aunque las suculentas son bastante resistentes, pueden enfrentar algunos problemas si no reciben el cuidado adecuado. A continuación, te detallo algunos de los problemas más comunes y cómo solucionarlos:
+
+    Hojas amarillas o blandas: Esto suele ser un signo de riego excesivo. Revisa el sustrato para asegurarte de que no esté encharcado y ajusta los intervalos de riego.
+    Hojas arrugadas: Si las hojas se ven arrugadas o arrugadas, es probable que la planta esté experimentando sequedad. Aumenta el riego, pero asegúrate de que el sustrato se seque entre riegos.
+    Manchas marrones o quemaduras solares: Si las hojas de la suculenta se ven quemadas o manchadas, es posible que esté expuesta a demasiada luz solar directa. Mueve la planta a un lugar con luz indirecta.
+    Plagas: Aunque las suculentas son resistentes a las plagas, a veces pueden verse afectadas por ácaros o cochinillas. Trata las plantas con productos naturales como jabón insecticida o alcohol isopropílico diluido para eliminar las plagas.
+
+8. Propagación: Multiplica tus suculentas
+
+Las suculentas son fáciles de propagar, lo que las convierte en una opción popular para quienes desean tener más plantas o compartirlas.
+Consejos para la propagación:
+
+    Por esquejes: Corta una hoja sana de la planta madre y deja que se seque durante unos días antes de colocarla en tierra o agua para que eche raíces.
+    Por división: Algunas suculentas pueden propagarse dividiendo la planta en varias secciones y plantándolas por separado.",
                                                                     "Cómo cuidar las plantas suculentas en tu hogar",
                                                                     CURRENT_DATE,
                                                                     "https://images.unsplash.com/photo-1728072780687-9157b5b132b6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -124,7 +315,62 @@ INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
 
 INSERT INTO blog (tags, texto, titulo, date, image_path) VALUES (
                                                                     "plagas, plantas, soluciones",
-                                                                    "Las plagas son uno de los mayores problemas que enfrentan los jardineros, tanto en jardines exteriores como en interiores. Las plagas pueden dañar las hojas, raíces y tallos de las plantas, e incluso destruirlas por completo si no se controlan a tiempo. En este artículo te ofrecemos una guía para identificar y tratar las plagas más comunes que pueden afectar a tus plantas, desde pulgones y ácaros hasta cochinillas y hongos. También te damos algunos consejos sobre cómo prevenir las infestaciones, utilizando productos naturales y remedios caseros para mantener a tus plantas sanas.",
+                                                                    "Las plagas son una de las principales amenazas para la salud de nuestras plantas, tanto de interior como de exterior. Insectos, ácaros y otras plagas pueden debilitar las plantas, afectando su crecimiento, la apariencia de las hojas y, en casos graves, la supervivencia de la planta. Sin embargo, existen varias formas efectivas de prevenir y controlar estas plagas sin recurrir necesariamente a productos químicos agresivos. Aquí te dejo una guía completa sobre cómo manejar este problema de manera natural y efectiva.
+1. Prevención: Lo primero es prevenir
+
+La prevención es la mejor estrategia para evitar que las plagas se conviertan en un problema grave. Si implementas prácticas de cuidado adecuadas desde el principio, disminuirás considerablemente las probabilidades de que las plagas invadan tus plantas.
+Consejos de prevención:
+
+    Inspección regular: Revisa tus plantas con frecuencia, al menos una vez a la semana, buscando señales de plagas como manchas en las hojas, telarañas, o pequeños insectos visibles. Detectar un problema a tiempo te permitirá actuar rápidamente.
+    Elige plantas saludables: Compra plantas sanas y libres de plagas. Si compras plantas en viveros o tiendas, asegúrate de revisarlas cuidadosamente antes de introducirlas en tu hogar o jardín.
+    Evita el hacinamiento: No plantes demasiado cerca unas de otras. Deja suficiente espacio entre las plantas para asegurar una buena circulación de aire. Un ambiente húmedo y cerrado favorece la proliferación de plagas como los ácaros y hongos.
+    Mantén el ambiente adecuado: Las plantas estresadas son más susceptibles a plagas. Asegúrate de que reciban suficiente luz, agua y nutrientes según sus necesidades específicas. Las plantas fuertes son más resistentes a las infestaciones.
+    Utiliza macetas con buen drenaje: Un mal drenaje puede causar acumulación de humedad y aumentar el riesgo de plagas y enfermedades fúngicas.
+
+2. Métodos naturales para el control de plagas
+
+Si las plagas ya han hecho su aparición en tus plantas, no te preocupes. Existen varios métodos naturales y efectivos para eliminarlas sin recurrir a productos químicos. Estos métodos no solo son amigables con el medio ambiente, sino que también son seguros para tus plantas y para los animales y personas que comparten tu hogar o jardín.
+Control de plagas con remedios caseros:
+
+    Jabón insecticida casero: El jabón insecticida es uno de los remedios más efectivos y sencillos para combatir plagas como pulgones, cochinillas y ácaros. Para hacerlo, mezcla una cucharadita de jabón líquido neutro (como jabón para platos) en un litro de agua. Rocíalo sobre las plantas infestadas, asegurándote de cubrir tanto las hojas superiores como las inferiores.
+
+    Aceite de neem: El aceite de neem es un insecticida natural que se extrae de las semillas del árbol de neem. Es eficaz contra una amplia variedad de plagas, incluidos pulgones, ácaros, cochinillas y moscas blancas. Dilúyelo según las instrucciones del producto y aplícalo sobre las plantas infestadas. El aceite de neem también actúa como repelente de insectos y previene el crecimiento de hongos.
+
+    Infusión de ajo o cebolla: Las plagas no soportan el fuerte olor de algunos vegetales como el ajo y la cebolla. Puedes hacer una infusión con ajo triturado y agua, dejar reposar durante unas horas y luego rociar sobre las plantas afectadas. Este remedio es útil contra pulgones, moscas blancas y otros insectos.
+
+    Té de manzanilla: La manzanilla tiene propiedades antimicrobianas y antifúngicas. Preparar un té de manzanilla y rociarlo sobre las plantas puede ayudar a combatir hongos y plagas como los ácaros y pulgones.
+
+    Tierra de diatomeas: Esta es una sustancia natural que se obtiene de los restos fósiles de diatomeas (algas microscópicas). Es un insecticida físico que actúa deshidratando los insectos al entrar en contacto con ellos. Espolvorea tierra de diatomeas en la base de las plantas o alrededor de las raíces de las plantas en macetas para controlar plagas como las hormigas y babosas.
+
+3. Control biológico de plagas
+
+El control biológico es una forma efectiva y ecológica de gestionar las plagas utilizando organismos que se alimentan de ellas. Este método no solo es natural, sino que también ayuda a mantener un equilibrio ecológico en tu jardín o espacio interior.
+Consejos sobre control biológico:
+
+    Introducción de insectos benéficos: Puedes atraer o liberar insectos que son enemigos naturales de las plagas. Por ejemplo:
+        Mariquitas: Son conocidas por su voracidad al consumir pulgones y otros insectos pequeños.
+        Abejas y mariposas: Además de ser polinizadoras, ayudan a mantener el equilibrio en el ecosistema.
+        Nematodos beneficiosos: Son pequeños gusanos que atacan a las plagas de suelo, como las larvas de insectos. Puedes comprarlos en tiendas de jardinería especializadas.
+
+    Cuidado con los insecticidas de amplio espectro: Aunque los insecticidas químicos pueden ser eficaces, matan tanto a las plagas como a los insectos beneficiosos. Si usas insecticidas, elige productos específicos para la plaga y aplica solo en las áreas afectadas para no dañar el ecosistema.
+
+4. Manejo físico y mecánico
+
+A veces, el control de plagas puede lograrse mediante métodos físicos y mecánicos simples. Estos métodos pueden ser muy efectivos y no requieren productos adicionales.
+Consejos para el control físico:
+
+    Eliminar manualmente las plagas: Si la infestación es pequeña, puedes eliminar las plagas a mano. Usa un pañuelo o un hisopo de algodón para quitar los pulgones o cochinillas visibles de las hojas y tallos.
+    Trampas de pegamento: Las trampas de pegamento amarillo son útiles para capturar moscas blancas y otros insectos voladores. Coloca estas trampas cerca de las plantas afectadas para reducir la población de insectos.
+    Aislamiento de plantas infestadas: Si una planta está muy infestada, es recomendable aislarla de las demás para evitar que las plagas se propaguen.
+
+5. Protección preventiva para el futuro
+
+Una vez que las plagas han sido controladas o eliminadas, es importante tomar medidas para evitar que vuelvan a aparecer. Mantén tus plantas protegidas para que puedan resistir futuras infestaciones.
+Consejos preventivos a largo plazo:
+
+    Mantén un buen cuidado del jardín: Plantar especies resistentes a plagas o controlar las malas hierbas que puedan albergar insectos es fundamental.
+    Rotación de cultivos: Si tienes un huerto, cambia la ubicación de las plantas cada temporada. Esto ayuda a reducir la acumulación de plagas específicas en el suelo.
+    Usa mallas o barreras: Protege tus plantas con mallas finas o barreras físicas que impidan que los insectos lleguen a las hojas o al suelo.",
                                                                     "Cómo prevenir y controlar las plagas en tus plantas",
                                                                     CURRENT_DATE,
                                                                     "https://images.unsplash.com/photo-1601489333180-64796a70b1ea?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -140,5 +386,11 @@ insert into faq (pregunta, respuesta) values ("¿Puedo tener varias colecciones 
 insert into faq (pregunta, respuesta) values ("¿Puedo compartir mis colecciones de plantas con otros usuarios?",
                                               "Actualmente, nuestras colecciones son privadas y solo accesibles para ti. Sin embargo, puedes compartir el enlace de tu colección con amigos o en redes sociales para que puedan ver las plantas que has añadido. ¡Estamos trabajando en opciones de colaboración para el futuro! ");
 
+insert into faq (pregunta, respuesta) values ("¿Se borrarán mis datos si borro mi cuenta",
+                                              "Sí. Al pulsar en el botón de Borrar cuenta en tu perfil, se borrará toda tu información de nuestra base de datos. Debes estar completamente seguro antes de realizar esta acción. ");
+
+
+insert into faq (pregunta, respuesta) values ("¿Cómo puedo contactar con el administrador o administradora de la página?",
+                                              "Puedes enviar un correo a carmen@email.com y te responderé en la mayor brevedad posible. Todas las sugerencias, reportes de problemas y comentarios son bienvenidos.");
 
 

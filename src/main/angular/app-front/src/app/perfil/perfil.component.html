@@ -38,7 +38,7 @@
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <h6 class="mb-0">Contrasena</h6>
+                <h6 class="mb-0">Contraseña</h6>
               </div>
               <div class="col-sm-9 text-secondary mask-password">
                 {{ usuarioService.get('password') }}
@@ -78,8 +78,8 @@
                     required
                     #nombrecoleccionInput="ngModel"
                   />
-                  <div *ngIf="nombrecoleccionInput.invalid" class="text-danger">
-                    El nombre de la colección es requerido.
+                  <div *ngIf="nombrecoleccionInput.invalid && nombrecoleccionInput.touched" class="text-danger">
+                    El nombre de la colección es obligatorio.
                   </div>
                 </div>
 

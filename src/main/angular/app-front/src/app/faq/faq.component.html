@@ -1,5 +1,8 @@
-<div class="container">
-  <div *ngIf="isLoading">Cargando...</div>
+<div *ngIf="isLoading" class="container">
+  <div >Cargando...</div>
+</div>
+
+<div *ngIf="!isLoading" class="container">
   <h3>Preguntas frecuentes</h3>
   <br>
   <div *ngFor="let faq of faqs, let i = index" class="details">
