@@ -4,13 +4,15 @@ import {VolverComponent} from "../../../../volver/volver.component";
 import {Blog} from "../../../../interfaces/blog";
 import {BlogService} from "../../../../services/blog.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-create-blog',
   standalone: true,
     imports: [
         FormsModule,
-        VolverComponent
+        VolverComponent,
+        NgIf
     ],
   templateUrl: './create-blog.component.html',
   styleUrl: './create-blog.component.scss'

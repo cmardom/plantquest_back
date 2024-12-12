@@ -8,26 +8,47 @@
     <div class="form-group">
       <div>
         <label for="titulo">Titulo</label>
-        <input class="form-control" type="text" id="titulo" [(ngModel)]="blog.titulo" name="titulo" required>
+        <input class="form-control" type="text" id="titulo" [(ngModel)]="blog.titulo" name="titulo" required minlength="5" #titulo="ngModel">
+        <div *ngIf="titulo.invalid" class="text-danger">
+          <small *ngIf="titulo.errors?.['required']">El título es obligatorio</small>
+          <small *ngIf="titulo.errors?.['minlength']">El título es muy corto</small>
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="texto">Texto</label>
-        <textarea  class="form-control" type="text" id="texto" [(ngModel)]="blog.texto" name="texto" required></textarea>
+        <textarea class="form-control" type="text" id="texto" [(ngModel)]="blog.texto" name="texto" required minlength="10" #texto="ngModel"></textarea>
+        <div *ngIf="texto.invalid"  class="text-danger">
+          <small *ngIf="texto.errors?.['required']">El texto es obligatorio</small>
+          <small *ngIf="texto.errors?.['minlength']">El texto es muy corto</small>
+        </div>
       </div>
       <br>
 
       <div>
+        <!--Comienza con http o https (con independencia de las mayúsculas).
+            Sigue con :// (los dos puntos y las dos barras diagonales).
+            Tiene un dominio válido que puede incluir subdominios, y el TLD (dominio de nivel superior) debe ser de al menos dos letras.
+            Opcionalmente puede incluir un número de puerto (entre 2 y 5 dígitos).
+            Opcionalmente puede tener una ruta (después de /). -->
         <label for="imagen">Imagen</label>
-        <textarea class="form-control" type="text"  id="imagen" [(ngModel)]="blog.imagePath" name="imagen" required></textarea>
+        <textarea class="form-control" type="text"  id="imagen" [(ngModel)]="blog.imagePath" name="imagen" required pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?" #imagen="ngModel"></textarea>
+        <div *ngIf="imagen.invalid" class="text-danger">
+          <small *ngIf="imagen.errors?.['required']">La imagen es obligatoria</small>
+          <small *ngIf="imagen.errors?.['pattern']">Use una URL válida para la imagen</small>
+        </div>
       </div>
       <br>
 
       <div>
         <label for="tags">Tags</label>
-        <input class="form-control" type="text" id="tags" [(ngModel)]="blog.tags" name="tags" required>
+        <input class="form-control" type="text" id="tags" [(ngModel)]="blog.tags" name="tags" required minlength="3" #tags="ngModel">
         <small>Separa los tags con comas</small>
+
+        <div *ngIf="tags.invalid" class="text-danger">
+          <small *ngIf="tags.errors?.['required']">Los tags son obligatorios</small>
+          <small *ngIf="tags.errors?.['minlength']">Tag muy corto</small>
+        </div>
       </div>
 
       <br>

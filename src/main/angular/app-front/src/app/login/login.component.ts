@@ -61,7 +61,8 @@ export class LoginComponent implements OnInit
           this.closeAllModals();
         },
         error: (error) => {
-          this.loginError = error;
+          // @ts-ignore
+          this.loginError = "El usuario o la contraseña no son correctos";
           loginForm.reset();
         }
       });

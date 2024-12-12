@@ -51,7 +51,8 @@ export class SigninComponent{
 
         },
         error: (error: undefined)=>{
-          this.signinError=error;
+          // @ts-ignore
+          this.signinError="El usuario o la contraseña no son correctos";
           loginForm.reset();
         }
       });

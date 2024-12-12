@@ -7,11 +7,11 @@
   <form #blogForm="ngForm" (ngSubmit)="onSubmit(blogForm)">
     <div class="form-group d-flex flex-column gap-4">
       <div>
-        <label for="titulo">Titulo</label>
+        <label for="titulo">Título</label>
         <input class="form-control" type="text" id="titulo" [(ngModel)]="blog.titulo" name="titulo" required minlength="5" #titulo="ngModel">
         <div *ngIf="titulo.invalid" class="text-danger">
-          <small *ngIf="titulo.errors?.['required']">El titulo es obligatorio</small>
-          <small *ngIf="titulo.errors?.['minlength']">El titulo es muy corto</small>
+          <small *ngIf="titulo.errors?.['required']">El título es obligatorio</small>
+          <small *ngIf="titulo.errors?.['minlength']">El título es muy corto</small>
         </div>
       </div>
 
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <button class="btn btn-primary me-1" type="submit" [disabled]="blogForm.form.valid">Editar Blog</button>
+      <button class="btn btn-primary me-1" type="submit" [disabled]="!blogForm.form.valid">Editar Blog</button>
     </div>
 
   </form>
