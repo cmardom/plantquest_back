@@ -40,7 +40,7 @@
         </div>
       </div>
       <div>
-        <label for="humedad">Abono</label>
+        <label for="humedad">Humedad</label>
         <input class="form-control" type="text" id="humedad" [(ngModel)]="planta.humedad" name="humedad" required #humedad="ngModel">
         <div class="text-danger">
           <small *ngIf="humedad.errors?.['required']">Campo obligatorio</small>
@@ -96,7 +96,7 @@
 
       <div>
         <label for="info">Información</label>
-        <input class="form-control" type="text" id="info" [(ngModel)]="planta.toxicidad" name="info" required #info="ngModel">
+        <textarea class="form-control" type="text" id="info" [(ngModel)]="planta.info" name="info" required #info="ngModel"></textarea>
         <div class="text-danger">
           <small *ngIf="info.errors?.['required']">Campo obligatorio</small>
 

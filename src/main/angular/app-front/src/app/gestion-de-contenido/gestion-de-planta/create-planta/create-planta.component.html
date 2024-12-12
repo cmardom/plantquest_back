@@ -8,69 +8,100 @@
     <div class="form-group">
       <div>
         <label for="nombre-cientifico">Nombre científico</label>
-        <input class="form-control" type="text" id="nombre-cientifico" [(ngModel)]="planta.nombre_cientifico" name="nombre-cientifico" required>
+        <input class="form-control" type="text" id="nombre-cientifico" [(ngModel)]="planta.nombre_cientifico" name="nombre-cientifico" required #nombreCientifico="ngModel">
+        <div class="text-danger">
+          <small *ngIf="nombreCientifico.errors?.['required']">Campo obligatorio</small>
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="nombre-comun">Nombre común</label>
-        <textarea  class="form-control" type="text" id="nombre-comun" [(ngModel)]="planta.nombre_comun" name="nombre-comun" required></textarea>
+        <textarea class="form-control" type="text" id="nombre-comun" [(ngModel)]="planta.nombre_comun" name="nombre-comun" required #nombreComun="ngModel"></textarea>
+        <div class="text-danger">
+          <small *ngIf="nombreComun.errors?.['required']">Campo obligatorio</small>
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="imagen">Imagen</label>
-        <textarea class="form-control" type="text"  id="imagen" [(ngModel)]="planta.imagePath" name="imagen" required></textarea>
+        <textarea class="form-control" type="text"  id="imagen" [(ngModel)]="planta.imagePath" name="imagen" required #imagen="ngModel" pattern="[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]+-?)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?"></textarea>
+        <div class="text-danger">
+          <small *ngIf="imagen.errors?.['required']">Campo obligatorio</small>
+          <small *ngIf="imagen.errors?.['pattern']">Por favor use una url correcta para la imagen</small>
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="abono">Abono</label>
-        <input class="form-control" type="text" id="abono" [(ngModel)]="planta.abono" name="abono" required>
+        <input class="form-control" type="text" id="abono" [(ngModel)]="planta.abono" name="abono" required #abono="ngModel">
+        <div class="text-danger">
+          <small *ngIf="abono.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
       <div>
         <label for="humedad">Humedad</label>
-        <input class="form-control" type="text" id="humedad" [(ngModel)]="planta.humedad" name="humedad" required>
+        <input class="form-control" type="text" id="humedad" [(ngModel)]="planta.humedad" name="humedad" required #humedad="ngModel">
+        <div class="text-danger">
+          <small *ngIf="humedad.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="iluminacion">Iluminación</label>
-        <input class="form-control" type="text" id="iluminacion" [(ngModel)]="planta.iluminacion" name="iluminacion" required>
+        <input class="form-control" type="text" id="iluminacion" [(ngModel)]="planta.iluminacion" name="iluminacion" required #iluminacion="ngModel">
+        <div class="text-danger">
+          <small *ngIf="iluminacion.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="localizacion">Localización</label>
-        <input class="form-control" type="text" id="localizacion" [(ngModel)]="planta.localizacion" name="localizacion" required>
+        <input class="form-control" type="text" id="localizacion" [(ngModel)]="planta.localizacion" name="localizacion" required #localizacion="ngModel">
+        <div class="text-danger">
+          <small *ngIf="localizacion.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="riego">Riego</label>
-        <input class="form-control" type="text" id="riego" [(ngModel)]="planta.riego" name="riego" required>
+        <input class="form-control" type="text" id="riego" [(ngModel)]="planta.riego" name="riego" required #riego="ngModel">
+        <div class="text-danger">
+          <small *ngIf="riego.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
 
 
       <div>
         <label for="temperatura">Temperatura</label>
-        <input class="form-control" type="text" id="temperatura" [(ngModel)]="planta.temperatura" name="temperatura" required>
+        <input class="form-control" type="text" id="temperatura" [(ngModel)]="planta.temperatura" name="temperatura" required #temperatura="ngModel">
+        <div class="text-danger">
+          <small *ngIf="temperatura.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="toxicidad">Toxicidad</label>
-        <input class="form-control" type="text" id="toxicidad" [(ngModel)]="planta.toxicidad" name="toxicidad" required>
+        <input class="form-control" type="text" id="toxicidad" [(ngModel)]="planta.toxicidad" name="toxicidad" required #toxicidad="ngModel">
+        <div class="text-danger">
+          <small *ngIf="toxicidad.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
 
       <div>
         <label for="info">Información</label>
-        <input class="form-control" type="text" id="info" [(ngModel)]="planta.toxicidad" name="info" required>
+        <textarea class="form-control" type="text" id="info" [(ngModel)]="planta.info" name="info" required #info="ngModel"></textarea>
+        <div class="text-danger">
+          <small *ngIf="info.errors?.['required']">Campo obligatorio</small>
+
+        </div>
       </div>
-      <br>
 
 
       <button class="btn btn-primary me-1" type="submit">Crear Planta</button>

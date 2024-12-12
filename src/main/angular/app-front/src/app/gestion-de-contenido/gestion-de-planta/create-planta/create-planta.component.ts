@@ -5,15 +5,17 @@ import {Blog} from "../../../interfaces/blog";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormsModule, NgForm, ReactiveFormsModule} from "@angular/forms";
 import {VolverComponent} from "../../../volver/volver.component";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-create-planta',
   standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    VolverComponent
-  ],
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        VolverComponent,
+        NgIf
+    ],
   templateUrl: './create-planta.component.html',
   styleUrl: './create-planta.component.scss'
 })
