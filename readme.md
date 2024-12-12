@@ -6,7 +6,7 @@ Este proyecto es una aplicación web que utiliza **Angular** para el frontend y 
 
 Para ejecutar esta aplicación en tu máquina local, asegúrate de tener instalados los siguientes programas:
 
-- **JDK 11 o superior** (para Spring Boot)
+- **JDK 17 o superior** (para Spring Boot)
 - **Node.js y npm** (para Angular)
 - **Maven** (para compilar el backend de Spring Boot)
 
@@ -35,8 +35,9 @@ Para ejecutar esta aplicación en tu máquina local, asegúrate de tener instala
     spring.datasource.password=tu contraseña
 
 5. **Lanza el backend** desde src/main/java/PlantquestApplication o desde el botón de incio de tu IDE.
-6. **Carga los datos** ejecutando el archivo *inserts* en src/main/resources/inserts en una consola de base de datos.
-
+6. **Carga los datos** ejecutando el archivo *inserts* en una consola de base de datos.
+   ```bash
+    cd ./src/main/resources/inserts
 
 
 ### 2. Configuración del Frontend (Angular)
